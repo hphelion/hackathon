@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dita PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd">
+<dita>
+  <topic id="topic_jn4_qst_qr">
+    <title></title>
+    <body>
+      <p>In order to setup the ALS installation, you will need to create an HP Helion public cloud
+        account,and download the cf-management tool.</p>
+    </body>
+  </topic>
+</dita>
