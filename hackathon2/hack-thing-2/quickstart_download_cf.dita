@@ -23,8 +23,20 @@
                 </info>
             </step>
             <step>
+                <cmd>Uncompress the tool into a folder and note the folder name as you will need to run the tool from it.</cmd>
+            </step>
+            <step>
+                <cmd/>
+            </step>
+            <step>
                 <cmd>Refer to the <xref type="external" format="html" href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/reference">ALS Cluster Management Tool command reference</xref>.</cmd> 
             </step>
         </steps>
     </taskbody>
+    
+    
+    
+    <related-links>
+    </related-links>
+    
 </task>

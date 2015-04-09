@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dita PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd">
+<dita>
+  <topic id="topic_nts_f5t_qr">
+    <title>Configure your environment</title>
+    <body>
+      <p>In order to deploy your ALS cluster you need to configure your project in the next couple of steps.</p>
+    </body>
+  </topic>
+</dita>

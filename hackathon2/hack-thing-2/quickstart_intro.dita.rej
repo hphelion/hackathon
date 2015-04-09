@@ -1,0 +1,16 @@
+diff a/hackathon2/hack-thing-2/quickstart_intro.dita b/hackathon2/hack-thing-2/quickstart_intro.dita	(rejected hunks)
+@@ -3,11 +3,7 @@
+ <concept id="quickstart_intro">
+  <title>Introduction</title>
+  <shortdesc/>
+- <conbody>
+-  <p>Welcome!</p>
+-  <p>The Quick Start Developer Trial is the fastest way to create a sandbox environment to evaluate
+-   the HP Helion Development Platform. At the end of the Helion Development Platform Application
+-   Lifecycle Service (ALS) installation and configuration process, you will have a microcloud you
+-   can use to deploy your sample apps. </p>
+- </conbody>
++ <conbody/>
++  <p>In order to setup the ALS installation, you will need to create an HP Helion public cloud
++    account,and download the cf-management tool.</p>
+ </concept>

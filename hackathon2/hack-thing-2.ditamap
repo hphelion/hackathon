@@ -16,13 +16,19 @@
         </prodinfo>
     </topicmeta>
     <topicref href="hack-thing-2/quickstart_intro.dita"/>
-    <topicref href="hack-thing-2/quickstart_create_account.dita"/>
-    <topicref href="hack-thing-2/quickstart_download_cf.dita"/>
-    <topicref href="hack-thing-2/quickstart_login_cloud.dita"/>
-    <topicref href="hack-thing-2/quickstart_enable_compute.dita"/>
-    <topicref href="hack-thing-2/quickstart_obtain_rc_credentials.dita"/>
-    <topicref href="hack-thing-2/quickstart_create_secure_key.dita"/>
-    <topicref href="hack-thing-2/quickstart_create_cluster.dita"/>
+    <topicref href="Setup.dita">
+        <topicref href="hack-thing-2/quickstart_create_account.dita"/>
+        <topicref href="hack-thing-2/quickstart_download_cf.dita"/>
+    </topicref>
+    <topicref href="configure.dita">
+        <topicref href="hack-thing-2/quickstart_login_cloud.dita"/>
+        <topicref href="hack-thing-2/quickstart_enable_compute.dita"/>
+        <topicref href="hack-thing-2/quickstart_obtain_rc_credentials.dita"/>
+        <topicref href="hack-thing-2/quickstart_create_secure_key.dita"/>
+    </topicref>
+    <topicref href="hack-thing-2/quickstart_create_cluster.dita">
+        <topicref href="hack-thing-2/runcommand.dita"/>
+    </topicref>
     <topicref href="hack-thing-2/quickstart_management_console_url.dita"/>
     <topicref href="hack-thing-2/quickstart_deploy_sample_app.dita"/>
     

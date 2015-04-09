@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dita PUBLIC "-//OASIS//DTD DITA Composite//EN" "ditabase.dtd">
+<dita>
+  <topic id="topic_vwr_3st_qr">
+    <title></title>
+      <p>The Quick Start Developer Trial is the fastest way to create a sandbox environment to evaluate the HP Helion Development 
+      Platform. At the end of the Helion Development Platform Application Lifecycle Service (ALS) installation and configuration 
+      process, you will have a microcloud you can use to deploy your sample apps.</p>
+    </body>
+  </topic>
+</dita>
+
+    <body>
+      <p/>Welcome!
