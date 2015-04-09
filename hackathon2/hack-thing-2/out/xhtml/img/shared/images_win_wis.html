@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Install Eucalyptus Windows Integration"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_baseos.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_activedirectory.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="image_win_wis"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Install Eucalyptus Windows Integration</title>
+</head>
+<body id="image_win_wis">
+
+
+	<h1 class="topictitle1">Install Eucalyptus Windows Integration</h1>
+
+	
+	<div><p/>
+
+		<div class="section">
+			<p>To install the Eucalyptus Windows Integration Service:</p>
+
+		</div>
+
+		<ol><li class="stepexpand">
+				<div class="note"><span class="notetitle">Note:</span> The following step assumes you're running a recent version of Windows. If
+					you're running Windows Server 2003, you'll need to download the legacy version
+					of the Windows prep tool from: <a href="http://downloads.eucalyptus.com/software/tools/windows-prep/windows-prep-tools-legacy.iso">http://downloads.eucalyptus.com/software/tools/windows-prep/</a></div>
+
+				<span>If you're running a version of Windows more recent than Windows Server 2003, download the
+					most recent version of the Windows Image Preparation Tool from <a href="http://downloads.eucalyptus.com/software/tools/windows-prep/windows-prep-tools-3.4.0.iso">http://downloads.eucalyptus.com/software/tools/windows-prep/</a> to
+						<span class="filepath">/var/lib/libvirt/images</span> on your NC or on the host
+					running the vSphere client.</span>
+
+			</li>
+<li class="stepexpand">
+				<span>Open the libvirt-kvm-windows-example.xml file you used in the previous section
+					and make the following edits:</span>
+				<div>
+					<ul>
+						<li>Comment out the lines of XML code directing the hypervisor to boot the
+							Windows image from the CDROM.</li>
+
+						<li>Change the text so that <samp class="codeph">windows-prep-tools-latest.iso</samp>
+							replaces the Windows .iso image and is mounted as
+							<samp class="codeph">cdrom</samp>.</li>
+
+						<li>Enter the path to the secondary disk file you created in the previous
+							task.</li>
+
+						<li>Uncomment the lines that direct attachment of a floppy disk, secondary
+							disk, and secondary network interface.</li>
+
+					</ul>
+
+					<div class="tip"><span class="tiptitle">Tip:</span> If you plan on using virtio networking for instances (via
+						USE_VIRTIO_NET option on node controllers), uncommenting the virtio
+						interface in the xml is mandatory</div>
+
+					<p>Your finished file should look similar to the following example:</p>
+
+					
+					<pre class="codeblock">&lt;domain type="kvm"&gt;
+	  &lt;name&gt;eucalyptus-windows&lt;/name&gt;
+    &lt;os&gt;
+    &lt;type&gt;hvm&lt;/type&gt;
+    &lt;!-- &lt;boot dev='cdrom'/&gt; --&gt;
+    &lt;/os&gt;
+    &lt;features&gt;
+        &lt;acpi/&gt;
+    &lt;/features&gt;
+    &lt;memory&gt;524288&lt;/memory&gt;
+    &lt;vcpu&gt;1&lt;/vcpu&gt;
+    &lt;devices&gt;
+        &lt;emulator&gt;/usr/libexec/qemu-kvm&lt;/emulator&gt;
+        &lt;disk type='file'&gt;
+            &lt;source file='/var/lib/libvirt/images/windows_2003.img'/&gt;
+            &lt;target dev='hda'/&gt;
+        &lt;/disk&gt;
+        &lt;disk type='file' device='disk'&gt;
+             &lt;source file='/var/lib/libvirt/images/secondary.img'/&gt;
+             &lt;target dev='vda' bus='virtio'/&gt;
+        &lt;/disk&gt; 
+        &lt;disk type='file' device='floppy'&gt;
+             &lt;source file='/var/lib/libvirt/images/floppy.img'/&gt;
+             &lt;target dev='fda'/&gt;
+        &lt;/disk&gt;
+        &lt;disk type='file' device='cdrom'&gt;
+            &lt;source file='/var/lib/libvirt/images/windows-preps-tools-latest.iso'/&gt;
+            &lt;target dev='hdc'/&gt;
+            &lt;readonly/&gt;
+        &lt;/disk&gt;
+        &lt;interface type='bridge'&gt;
+            &lt;source bridge='br0'/&gt;
+            &lt;model type='rtl8139'/&gt;
+        &lt;/interface&gt;
+        &lt;interface type='bridge'&gt;
+            &lt;source bridge='br0'/&gt;
+            &lt;model type='virtio'/&gt; 
+        &lt;/interface&gt;
+        &lt;graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0'/&gt;
+    &lt;/devices&gt;
+&lt;/domain&gt;</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Start the VM.</span>
+				<div>
+					<pre class="codeblock">cd /var/lib/libvirt/images/
+virsh create libvirt-kvm-windows-example.xml</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>For VMware, use the VMware vSphere client to upload the ISO file to the VSphere
+					datastore. Attach the <span class="filepath">windows-prep-tools-latest.iso</span> to the
+					Windows VM.</span>
+			</li>
+<li class="stepexpand">
+				<span>Log in to Windows and find the Eucalyptus installation files in the CDROM
+					drive.</span>
+				<ul>
+					<li>For Windows Server 2003 R2, run <samp class="codeph">setup.exe</samp>. This
+						automatically installs the .NET framework 2.0, which is not bundled in
+						Server 2003 R2. </li>
+
+					<li>For all other versions, run
+							<samp class="codeph">EucalyptusWindowsIntegration.msi</samp>. (setup.exe will
+						automatically install .NET framework 2.0, which is not bundled in Server
+						2003 R2).</li>
+
+				</ul>
+
+			</li>
+<li class="stepexpand">
+				<span>In the <span class="uicontrol">Choose your hypervisor</span> step, select
+						<span class="uicontrol">KVM</span> and then click <span class="uicontrol">Next</span>.</span>
+				<div><img src="images/ewi_hypervisor.jpg" height="-1" width="-1" alt="Eucalyptus Windows Integrator      select hypervisor window"/>
+					<p>Click <span class="uicontrol">Next</span> and continue until the end of
+						installation.</p>
+
+					
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Reboot the Windows VM</span>
+			</li>
+<li class="stepexpand">
+				<span>Open the Windows device manager and check that the following drivers are found
+					for each device.</span>
+				<div>
+					
+					<ul>
+						<li>Floppy disk drive</li>
+
+						<li>Disk drivers: Red Hat VirtIO SCSI Disk Device</li>
+
+						<li>SCSI and RAID controllers: Red Hat VirtIO SCSI controller</li>
+
+						<li>Network adapters: Red Hat VirtIO Ethernet Adapter</li>
+
+					</ul>
+
+					
+				</div>
+				<div>If the correct drivers are not found, question marks display on the
+					devices. To install the devices, do the following: <ul>
+						<li>Right-click on the devices in question and select <span class="uicontrol">Update
+								Drivers</span> to open the New Hardware Wizard.</li>
+
+						<li>When the new hardware wizard asks if Windows update is to be connected,
+							click <span class="uicontrol">No, not this time</span>.</li>
+
+						<li>Choose <span class="uicontrol">Install software automatically
+								(recommended)</span>.</li>
+
+						<li>If a confirmation popup message displays, click
+								<span class="uicontrol">Continue</span>.</li>
+
+					</ul>
+
+				</div>
+			</li>
+</ol>
+
+		
+	</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../shared/images_win.html" title="This section details the tasks necessary to create a Windows image.">Create a Windows Image (KVM)</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../shared/images_win_baseos.html">Install Base Windows OS</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../shared/images_win_activedirectory.html">Configure Active Directory</a></div>
+</div>
+</div>
+
+</body>
+</html>

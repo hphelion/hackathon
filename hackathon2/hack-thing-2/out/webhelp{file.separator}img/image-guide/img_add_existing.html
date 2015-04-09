@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Bundle, Upload, and Register an Image with Eucalyptus"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.subject" content="image tasks, add an image"/>
+<meta name="keywords" content="image tasks, add an image"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/ig_task_eustore.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_create_image_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_migrating_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_remove_image.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/add_kernel.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/add_ramdisk.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/add_rootfs.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="add_existing"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Bundle, Upload, and Register an Image with Eucalyptus</title>
+</head>
+<body id="add_existing">
+
+
+	<h1 class="topictitle1">Bundle, Upload, and Register an Image with Eucalyptus</h1>
+
+	
+	
+	<div><p/>
+
+		<div class="section">
+			<p>Once you've customized or acquired an image to use with Eucalyptus, you must enable an image
+				as an executable entity. To do that, you must do the following:</p>
+
+			<ol>
+				<li>Bundle a root disk image and kernel/ramdisk pair</li>
+
+				<li>Upload the bundled image to Walrus bucket storage</li>
+
+				<li>Register the data with Eucalyptus</li>
+
+			</ol>
+
+			<div class="important"><span class="importanttitle">Important:</span> Note that while all users can bundle, upload and register images,
+				only users under the <samp class="codeph">administrator</samp> account have the required
+				permissions to upload and register kernels and ramdisks.</div>
+
+			<p>Once you have an image that meets your needs, perform the tasks listed in this
+				section to add the image to your cloud.</p>
+
+		</div>
+
+	</div>
+
+<div>
+<ol class="olchildlinks">
+<li class="olchildlink"><a href="../shared/add_kernel.html">Add a Kernel</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/add_ramdisk.html">Add a Ramdisk</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/add_rootfs.html">Add a Root Filesystem</a><br/>
+</li>
+</ol>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_task_intro.html" title="An image is the basis for instances that you spin up for your computing needs. This section explains how to create or acquire an image and then add it to your Eucalyptus cloud.">Image Tasks</a></div>
+</div>
+<div class="relinfo relconcepts"><strong>Related concepts</strong><br/>
+<div><a href="../image-guide/img_task_create_image_intro.html" title="This section covers how to create or acquire a new image for use in your Eucalyptus cloud..">Create a New Image</a></div>
+<div><a href="../image-guide/img_migrating_intro.html" title="This section covers migrating images to and from your Eucalyptus cloud.">Migrate an Image</a></div>
+</div>
+<div class="relinfo reltasks"><strong>Related tasks</strong><br/>
+<div><a href="../image-guide/ig_task_eustore.html" title="Eucalyptus provides a resource, called EuStore. EuStore contains images that you can download and install. This task explains how to browse and install images from EuStore.">Browse and Install Images from EuStore</a></div>
+<div><a href="../image-guide/img_task_remove_image.html">Remove an Image</a></div>
+</div>
+</div>
+
+</body>
+</html>

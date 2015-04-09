@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="add_existing" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="task:1;4:25">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="title:1;5:9">Install a paravirtual image</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita"/>
+	<prolog class="- topic/prolog " xtrc="prolog:1;7:10" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita">
+		<copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2014"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;8:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita">
+			<keywords class="- topic/keywords " xtrc="keywords:1;9:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita">
+				<indexterm class="- topic/indexterm " xtrc="indexterm:1;10:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita">image tasks <indexterm class="- topic/indexterm " xtrc="indexterm:2;10:39" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita">add an image</indexterm>
+				</indexterm>
+			</keywords>
+		<prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="4.0" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+	</prolog>
+	<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="taskbody:1;15:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="context:1;16:12">
+			<note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="note:1;17:10">As of Eucalyptus version 4.0, it is now required to pass a Eucalyptus Kernel Image
+				(EKI) and a Eucalyptus Ramdisk Image (ERI) when uploading and registering a
+				paravirtual Eucalyptus Machine Image (EMI) using the
+					<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="codeph:1;20:14">euca-bundle-image</codeph>,
+					<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="codeph:2;21:14">euca-bundle-and-upload-image</codeph>, and
+					<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="codeph:3;22:14">euca-register</codeph> command line tools.</note>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="p:1;23:7">Once you've customized or acquired a paravirtual image to use with Eucalyptus, you
+				can enable the image as an executable entity with the following steps:</p>
+			<ol class="- topic/ol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="ol:1;25:8">
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="li:1;26:9">Unless a suitable kernel is already registered, bundle the kernel, upload it to
+					Object Storage, and register it as a new EKI.</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="li:2;28:9">Unless a suitable ramdisk is already registered, bundle the ramdisk, upload it
+					to Object Storage, and register it as a new ERI</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="li:3;30:9">Bundle the root disk image, which must be a Linux partition, requesting the
+					kernel and ramdisk that you desire, upload the bundle to Object Storage, and
+					register it as a new EMI.</li>
+			</ol>
+			<note type="important" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="note:2;34:27">Note that while all users can bundle, upload and register images,
+				only users under the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="codeph:4;35:34">administrator</codeph> account have the required
+				permissions to upload and register kernels and ramdisks.</note>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_add_existing.dita" xtrc="p:2;37:7">Once you have an image that meets your needs, perform the tasks listed in this
+				section to add the image to your cloud.</p>
+		</context>
+	</taskbody>
+</task>

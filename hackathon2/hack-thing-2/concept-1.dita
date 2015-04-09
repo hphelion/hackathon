@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_rkn_xmm_qr">
+ <title>HP Helion 1.1 Development Platform: Java Hello World Sample</title>
+ <shortdesc>This sample demonstrates the minimum requirements for a functional Java application
+  running on Helion OpenStack. This application displays the text "Hello World!" in a web page. You
+  can use this sample to ensure that you have set up your environment for deployment to Helion
+  Development Platform</shortdesc>
+ <conbody>
+  
+ </conbody>
+</concept>

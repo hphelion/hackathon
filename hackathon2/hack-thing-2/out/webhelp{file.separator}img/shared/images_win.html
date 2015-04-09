@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="concept"/>
+<meta name="DC.Title" content="Create a Windows Image (KVM)"/>
+<meta name="abstract" content="This section details the tasks necessary to create a Windows image."/>
+<meta name="description" content="This section details the tasks necessary to create a Windows image."/>
+<meta name="DC.subject" content="image tasks, create an image, Windows"/>
+<meta name="keywords" content="image tasks, create an image, Windows"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_create_image_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_baseos.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_wis.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_activedirectory.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_rdp.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_sysprep.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_vmw_win_convert.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_add.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="images_win"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Create a Windows Image (KVM)</title>
+</head>
+<body id="images_win">
+
+
+	<h1 class="topictitle1">Create a Windows Image (KVM)</h1>
+
+	
+	
+	<div><p>This section details the tasks necessary to create a Windows image.</p>
+
+		<p>We recommend that you perform this task on a node controller (NC), or a host running the same
+			Linux distributions and hypervisors as your NCs. If you are creating the Windows image
+			on a machine currently running as a NC, terminate all running instances and stop the NC.
+			To stop the NC, enter: </p>
+
+		<pre class="codeblock">service eucalyptus-nc stop</pre>
+
+		<p>A template file that closely matches those that Eucalyptus generates at VM instantiation time
+			is located at
+				<span class="filepath">/usr/share/eucalyptus/doc/libvirt-kvm-windows-example.xml</span>. We
+			recommend that you review the file to acquaint yourself with its contents, noting
+			required files, bridges, and resources. For more information about configuring the
+			libvirt.xml file, go to the <a href="http://libvirt.org/formatdomain.html">Domain XML format</a> page in the libvirt documentation.</p>
+
+		<p>To create an image from a Windows OS in VMware you will need one
+			network interface and one disk.</p>
+
+		<div class="note"><span class="notetitle">Note:</span> If you are using VMware, make sure that the Windows VM
+			uses the LSI Logic Parallel driver as the SCSI controller. For some
+			Windows versions, this is not the default SCSI controller in the VM
+			setting.</div>
+
+	</div>
+
+<div>
+<ol class="olchildlinks">
+<li class="olchildlink"><a href="../shared/images_win_baseos.html">Install Base Windows OS</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/images_win_wis.html">Install Eucalyptus Windows Integration</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/images_win_activedirectory.html">Configure Active Directory</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/images_win_rdp.html">Configure Remote Desktop</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/images_win_sysprep.html">Run Sysprep</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/images_vmw_win_convert.html">Convert the VMDK to an Image</a><br/>
+</li>
+<li class="olchildlink"><a href="../shared/images_win_add.html">Add Image to Eucalyptus</a><br/>
+</li>
+</ol>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_task_create_image_intro.html" title="This section covers how to create or acquire a new image for use in your Eucalyptus cloud..">Create a New Image</a></div>
+</div>
+</div>
+
+</body>
+</html>

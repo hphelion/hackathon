@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211151750833/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211151750833/shared/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="images_win_sysprep" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="task:1;4:31">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="title:1;5:9">Run Sysprep</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita"/>
+	<prolog class="- topic/prolog " xtrc="prolog:1;7:10" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita">
+		<copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;8:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita">
+			<keywords class="- topic/keywords " xtrc="keywords:1;9:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita">
+				<indexterm class="- topic/indexterm " xtrc="indexterm:1;10:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita">Sysprep</indexterm>
+			</keywords>
+		<prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+	</prolog>
+	<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="taskbody:1;14:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="context:1;15:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="p:1;16:7">Sysprep is a Microsoft tool for deploying multiple Windows
+				operating systems in an enterprise. Running Sysprep removes
+				system-specific information such as security ID (SID) from the
+				Windows OS before you clone an image. Sysprep then
+				re-initializes the OS after the image is cloned and started on
+				multiple computers. Use Sysprep to prepare images when you use
+				Microsoft Key Management Service to activate license keys. Also,
+				use Sysprep when your Windows systems are attached to Active
+				Directory.</p>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="p:2;25:7">In Eucalyptus, you can run Sysprep before you bundle images with
+				the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="codeph:1;26:17">euca-bundle-image</codeph> or
+					<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="codeph:2;27:14">euca-bundle-instance</codeph> commands. </p>
+			<note type="note" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="note:1;28:22">The Eucalyptus Integration Service supports
+				Sysprep for Windows Server 2008, Windows Server 2008 R2, and
+				Windows 7.</note>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="p:3;31:7">To configure and run Sysprep:</p>
+		</context>
+		<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="steps:1;33:10">
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="step:1;34:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="cmd:1;35:10">Open the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:1;35:30">Eucalyptus Windows
+						Integration</uicontrol> popup (<menucascade class="+ topic/ph ui-d/menucascade " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="menucascade:1;36:51">
+						<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:2;37:18">Windows Programs</uicontrol>
+						<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:3;38:18">Eucalyptus</uicontrol>
+						<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:4;39:18">Eucalyptus Setup</uicontrol>
+					</menucascade>).</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="info:1;41:11"><image href="images/ewi_gen.jpg" scale="80" alt="Eucalyptus Windows Integration      window" placement="inline" class="- topic/image " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="image:1;44:8"/></info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="step:2;46:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="cmd:2;47:10">Click the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:5;47:31">General</uicontrol> tab.</cmd>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="step:3;49:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="cmd:3;50:10">Ensure that <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:6;50:33">Format uninitialized
+						drives</uicontrol> is checked</cmd>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="step:4;53:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="cmd:4;54:10">If you want to edit the Sysprep answer file, click the
+						<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:7;55:18">Open and change</uicontrol> button in the
+					General tab. Otherwise skip this step.</cmd>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="step:5;58:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="cmd:5;59:10">Click the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="uicontrol:8;59:31">Run Sysprep</uicontrol> button.</cmd>
+
+				<stepresult class="- topic/itemgroup task/stepresult " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="stepresult:1;61:17">Sysprep starts.</stepresult>
+
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="step:6;64:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_sysprep.dita" xtrc="cmd:6;65:10">After Sysprep is complete, close the application and
+					shutdown the Windows VM using the Windows Programs
+					menu.</cmd>
+			</step>
+		</steps>
+		
+	</taskbody>
+</task>

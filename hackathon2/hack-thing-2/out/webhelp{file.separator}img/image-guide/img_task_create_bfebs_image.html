@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Create an EBS-Backed Image"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.subject" content="image tasks, create a boot from EBS image"/>
+<meta name="keywords" content="image tasks, create a boot from EBS image"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_create_image_intro.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="img_task_create_bfebs_image"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Create an EBS-Backed Image</title>
+</head>
+<body id="img_task_create_bfebs_image">
+
+
+	<h1 class="topictitle1">Create an EBS-Backed Image</h1>
+
+	
+	
+	<div><p/>
+
+		<div class="section">
+			<p> An EBS-backed image (sometimes referred to as a "bfEBS" image) is an image with a
+				root device that is an EBS volume created from an EBS snapshot. An EBS-backed image
+				has a number of advantages, including: </p>
+
+			<ul>
+				<li>Faster boot time</li>
+
+				<li>Larger volume size limits</li>
+
+				<li>Changes to the data on the image persist after instance termination </li>
+
+			</ul>
+
+		</div>
+
+	</div>
+
+	<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_task_create_image_intro.html" title="This section covers how to create or acquire a new image for use in your Eucalyptus cloud..">Create a New Image</a></div>
+</div>
+</div>
+<div class="nested1" id="img_task_create_bfebs_image.create_image">
+		<h2 class="topictitle2">Create an Image File</h2>
+
+		
+		<div><p/>
+
+			<div class="section">
+				<div class="p"> You can create an EBS-backed EMI from an existing .img ﬁle or create your own .img ﬁle. One
+					way to create your own .img ﬁle is to use virt-install as described below.
+					<div class="note"><span class="notetitle">Note:</span> If you already have .img file, skip to the <a href="img_task_create_bfebs_image.html#img_task_create_bfebs_image.register_image" title="Creating an EBS-backed EMI will require initial assistance from a helper instance. The helper instance can be either an instance store or EBS-backed instance and can be deleted when ﬁnished. It only exists to help create the initial volume that will be the source of the snapshot behind the EBS-backed EMI.">Register an EBS-Backed EMI</a>
+						section. </div>
+</div>
+
+				
+				<div class="note"><span class="notetitle">Note:</span> Use <samp class="codeph">virt-install</samp> on a system with the same operating system
+					version and hypervisor as your Node Controller. If you use an image created by
+					virt-install under a different distribution or hypervisor combination, it is
+					likely that it will not install the correct drivers into the ramdisk and the
+					image will not boot on your Node Controller. </div>
+
+				<p>To create an EBS-backed image file:</p>
+
+			</div>
+
+			<ol><li class="stepexpand">
+					<span>On the designated host, use the QEMU disk utility to create a disk image.
+						For example:</span>
+					<div>
+						<samp class="codeph">qemu-img create -f raw bfebs.img 2G</samp>
+					</div>
+				</li>
+<li class="stepexpand">
+					<span>Use <samp class="codeph">parted</samp> to set the disk label:.</span>
+					<div>
+						<pre class="codeblock">parted bfebs.img mklabel msdos</pre>
+
+					</div>
+				</li>
+<li class="stepexpand">
+					<span>Use virt-install to start a new virtual machine installation using the disk
+						image you just created: </span>
+					<div>
+						<pre class="codeblock">virt-install --name rhel6 --ram 1024 --os-type linux --os-variant rhel6 \
+-c /tmp/media.iso --disk \
+path=/tmp/bfebs.img,device=disk,bus=virtio --vnc</pre>
+
+					</div>
+				</li>
+<li class="stepexpand">
+					<span> Once you have completed the installation, start the virtual machine using
+						virt-manager or other libvirt tool of your choice. </span>
+				</li>
+<li class="stepexpand">
+					<span>Configure the virtual machine by connecting to it and making the following
+						changes:</span>
+					<ol type="a">
+						<li class="substepexpand">
+							<span>Comment out the <samp class="codeph">HWADDR</samp> entry from the
+								<span class="filepath">/etc/sysconfig/network-scripts/ifcfg-eth0</span>
+								file. For example:</span>
+							<div>
+								<pre class="codeblock">DEVICE="eth0"
+BOOTPROTO="dhcp"
+#HWADDR="B8:AC:6F:83:1C:45"
+IPV6INIT="yes"
+MTU="1500"
+NM_CONTROLLED="yes"
+ONBOOT="yes"
+TYPE="Ethernet"
+UUID="499c07cc-4a53-408c-87d2-ce0db991648e"
+PERSISTENT_DHCLIENT=1</pre>
+
+							</div>
+						</li>
+
+						<li class="substepexpand">
+							<span>Add the following option to the end of
+								<samp class="codeph">/boot/grub/menu.lst</samp> to get a serial
+								console:</span>
+							<div>
+								<samp class="codeph">console=ttyS0</samp>
+							</div>
+						</li>
+
+						<li class="substepexpand">
+							<span>Remove the <samp class="codeph">quiet</samp> option from the kernel parameters
+								and grub menu splash image in the
+								<samp class="codeph"><span class="filepath">/boot/grub/menu.lst</span></samp>
+								file.</span>
+						</li>
+
+						<li class="substepexpand">
+							<span>Add the following line to the
+								<samp class="codeph">/etc/sysconfig/network</samp> file to disable the
+								zeroconf route, which can interfere with access to the metadata
+								service:</span>
+							<div><samp class="codeph">NOZEROCONF=yes </samp></div>
+						</li>
+
+						<li class="substepexpand">
+							<span>Edit
+								<samp class="codeph"><span class="filepath">/etc/udev/rules.d/70-persistent-net.rules</span></samp>
+								and remove the entry for the existing NIC.</span>
+						</li>
+
+						<li class="substepexpand">
+							<span>Copy the Eucalyptus <samp class="codeph">rc.local</samp> file from
+								https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local.</span>
+						</li>
+
+					</ol>
+
+				</li>
+</ol>
+
+		</div>
+
+	</div>
+
+	<div class="nested1" id="img_task_create_bfebs_image.register_image">
+		<h2 class="topictitle2">Register an EBS-Backed EMI</h2>
+
+		
+		<div><p>Creating an EBS-backed EMI will require initial assistance from a helper instance. The
+			helper instance can be either an instance store or EBS-backed instance and can be
+			deleted when ﬁnished. It only exists to help create the initial volume that will be the
+			source of the snapshot behind the EBS-backed EMI. </p>
+
+			<div class="section"/>
+
+			<ol><li class="stepexpand">
+					<span> Create and launch a help instance. </span>
+					<div/>
+				</li>
+<li class="stepexpand">
+					<span> Create a volume big enough to hold the bootable .img file. </span>
+					<div>
+						<samp class="codeph">euca-create-volume -z &lt;cluster_name&gt; -s &lt;size_in_GB&gt;</samp>
+					</div>
+				</li>
+<li class="stepexpand">
+					<span> Attach the volume to the helper instance. </span>
+					<div>
+						<samp class="codeph">euca-attach-volume &lt;volume-id&gt; -i &lt;instance-id&gt; -d
+							&lt;device&gt;</samp>
+					</div>
+				</li>
+<li class="stepexpand">
+					<span>Log in to the instance and copy the bootable image to the attached volume by performing
+						one of the following steps:</span>
+					<ul>
+						<li>If the bootable image is saved in an http or ftp repository, use <samp class="codeph">curl</samp>
+							or <samp class="codeph">wget</samp> to download the .img file to the attached
+							volume. For example: 
+							<p>
+								<samp class="codeph">curl &lt;path_to_bootable_image&gt; &gt; &lt;device&gt;</samp>
+							</p>
+</li>
+
+						<li> If the bootable image is from a source other than an http or FTP repository, copy the
+							bootable image from its source to the helper instance, and then copy it
+							to the attached volume using the <samp class="codeph">dd</samp> command. For
+							example: <p>
+								<samp class="codeph">dd if=&lt;path_to_bootable_image&gt; of=&lt;device&gt;
+									bs=1M</samp>
+							</p>
+</li>
+
+					</ul>
+
+				</li>
+<li class="stepexpand">
+					<span>Detach the volume from the instance:</span>
+					<div>
+						<samp class="codeph">euca-detach-volume &lt;volume-id&gt;</samp>
+					</div>
+				</li>
+<li class="stepexpand">
+					<span>Create a snapshot of the volume:</span>
+					<div><samp class="codeph">euca-create-snapshot &lt;volume-id&gt;</samp></div>
+				</li>
+<li class="stepexpand">
+					<span> Register the snapshot: </span>
+					<div>
+						<samp class="codeph">euca-register --name &lt;image-name&gt; --snapshot &lt;snapshot-id&gt;
+							--root-device-name &lt;device&gt;</samp>
+					</div>
+				</li>
+</ol>
+
+			<div class="section">You've now created a EBS-backed image. To maintain data persistence, be sure to use
+				<samp class="codeph">euca-stop-instances</samp> and <samp class="codeph">euca-start-instances</samp>
+				to stop and start your EBS-backed instance.</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>

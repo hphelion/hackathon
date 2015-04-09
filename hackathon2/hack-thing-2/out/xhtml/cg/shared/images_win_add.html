@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Add Image to Eucalyptus"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.subject" content="Images, Windows, Adding, Adding Windows Image"/>
+<meta name="keywords" content="Images, Windows, Adding, Adding Windows Image"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_vmw_win_convert.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="images_win_add"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Add Image to Eucalyptus</title>
+</head>
+<body id="images_win_add">
+
+
+	<h1 class="topictitle1">Add Image to Eucalyptus</h1>
+
+	
+	
+	<div><p/>
+
+		<div class="section">
+			<p>To enable an image as an executable entity, you must bundle and upload the Windows
+				disk image to Walrus, and then register the uploaded image with Eucalyptus.</p>
+
+		</div>
+
+		<div class="p">
+				<span>Run the following command to bundle, upload, and register your Windows disk
+					image:</span>
+				<div>
+					<pre class="codeblock">euca-bundle-image -i &lt;vm_image_file&gt; 
+euca-upload-bundle -b &lt;image_bucket&gt; -m /tmp/&lt;vm_image_file&gt;.manifest.xml
+euca-register --name windows-image-name &lt;image_bucket&gt;/&lt;vm_image_file&gt;.manifest.xml</pre>
+
+				</div>
+			</div>
+
+		<div class="section">Your Windows image is now ready to run as an instance.</div>
+
+		<div class="section">After you register the image, Walrus decrypts the image bundle. This process might
+			take a few minutes for a large Windows image to be decrypted. For example, a 10G image
+			requires that you wait about 10 minutes before you launch the instance. You can use the
+				<a href="../euca2ools-guide/euca-describe-bundle-tasks.html#euca-describe-bundle-tasks" title="Describes currently submitted bundle tasks and their states.">euca-describe-bundle-tasks</a> command line
+			utility to check the status of active bundle tasks. </div>
+
+	</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../shared/images_win.html" title="This section details the tasks necessary to create a Windows image.">Create a Windows Image (KVM)</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../shared/images_vmw_win_convert.html">Convert the VMDK to an Image</a></div>
+</div>
+</div>
+
+</body>
+</html>

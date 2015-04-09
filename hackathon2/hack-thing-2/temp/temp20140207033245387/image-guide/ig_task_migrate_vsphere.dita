@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140207033245387/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140207033245387/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="hg_task_migrate_vsphere" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="task:1;3:36">
+    <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="title:1;4:12">Migrate an Image from vSphere to Eucalyptus</title>
+    <shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;5:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita">To migrate a disk in VMSDK format from vSphere to Eucalyptus, perform the following
+        steps.</shortdesc>
+    <prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="taskbody:1;7:15">
+        <context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="context:1;8:19"/>
+
+        <steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="steps:1;10:16">
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="step:1;11:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="cmd:1;12:22">Download the Eucalyptus Image Tools from github:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="info:1;13:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeblock:1;14:32">yum install python-pip git
+pip-python install -U psphere
+git clone https://github.com/eucalyptus/eucalyptus-image-tools.git
+cd eucalyptus-image-tools</codeblock>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="step:2;20:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="cmd:2;21:22">Download the disk image from vSphere, supplying your vSphere IP address, login,
+                    password, and VM name. For example: </cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="info:2;23:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeblock:2;24:32">python tools/exporters/export_vmdk.py --ip 10.111.1.133 --user your-vsphere-login --password your-vsphere-password\
+                        --vmName your-vm-name --workDir /path.to/yourworkdir
+Downloading 490 bytes
+ File saved to /path.to/yourworkdir/your-vm-name.vmdk
+Downloading 5473598976 bytes
+ File saved to /path.to/yourworkdir/your-vm-name-flat.vmdk</codeblock>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="p:1;30:24"><note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="note:1;30:30">The command will fail if the VM has more than one disk or
+                        NIC.</note></p>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="step:3;34:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="cmd:3;35:22">Convert the VMDK into a raw disk image:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="info:3;36:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeblock:3;37:32">cd /path.to/yourworkdir
+sudo qemu-img convert -O raw your-vm-name.vmdk disk.raw</codeblock>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="p:2;39:24"> This command will create a raw disk image which can then be bundled, uploaded, and
+                        registered with Eucalyptus. <note importance="high" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="note:2;40:77"> When registering the converted disk
+                            image, you must specify the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeph:1;41:65">--virtualization-type=hvm</codeph>
+                            option when running the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeph:2;42:61">euca-register</codeph> command line
+                            tool.)</note>
+                    </p>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:22;46:66" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="concept" xtrc="topicref:18;38:88" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/img_migrating_intro.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Migrate an Image</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">This section covers migrating images to and from your Eucalyptus cloud.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:19;40:83" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/ig_task_prepare_image.dita" role="sibling"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Prepare a Linux Image for Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">This section explains how to prepare an image before importing it for use in         Eucalyptus.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:20;42:76" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/ig_task_migrate_image_aws_to_euca.dita" role="sibling"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Migrate a Linux Image from AWS to Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">You can migrate an S3-backed image from AWS to Eucalyptus.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:21;44:76" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/ig_task_migrate_image_euca_to_aws.dita" role="sibling"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Migrate a Linux Image from Eucalyptus to AWS</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">To migrate an image from Eucalyptus to AWS, perform the following steps. </desc></link></linkpool></related-links>
+</task>

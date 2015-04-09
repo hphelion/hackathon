@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_download_cf">
+    <title>Download the cf-mgmt Tool</title>
+    <shortdesc/>
+    <taskbody>
+        <context>
+            Click the download link that is appropriate for your operating system.
+        </context>
+        <steps>
+            <step>
+                <cmd>Click the download link that is appropriate for your operating system.</cmd>
+                <info>
+                    <ul>
+                        <li><xref format="html" href="http://clients.als.hpcloud.com/cf-mgmt-1.1.0-windows-x86_64.zip" type="external">Microsoft Windows</xref></li>
+                    </ul>
+                    <ul>
+                        <li><xref format="html" href="http://clients.als.hpcloud.com/cf-mgmt-1.1.0-linux-x86_64.zip" type="external">x64 Linux</xref></li>
+                    </ul>
+                    <ul>
+                        <li><xref format="html" href="http://clients.als.hpcloud.com/cf-mgmt-1.1.0-osx-x86_64.zip" type="external">Mac OS X</xref></li>
+                    </ul>
+                </info>
+            </step>
+            <step>
+                <cmd>Refer to the <xref type="external" format="html" href="http://docs.hpcloud.com/helion/devplatform/1.1/als/client/reference">ALS Cluster Management Tool command reference</xref>.</cmd> 
+            </step>
+        </steps>
+    </taskbody>
+</task>

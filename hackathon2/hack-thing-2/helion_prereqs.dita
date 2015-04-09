@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="concept_csf_drm_qr">
+ <title>Helion Prerequisites</title>
+ <shortdesc/>
+ <conbody>
+  <p>This sample is designed to follow the Developer Quickstart(link) and run in the HP Public
+   Cloud, but can also be installed to a Helion OpenStack private cloud with Development
+   Platform(link) installed.</p>
+  <p>If you're using Public Cloud, go here.</p>
+  <p>If you're using Private Cloud, go here.</p>
+ </conbody>
+</concept>

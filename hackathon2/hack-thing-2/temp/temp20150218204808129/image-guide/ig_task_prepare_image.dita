@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="hg_task_prepare_image" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="task:1;3:34">
+    <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="title:1;4:12">Prepare a Linux System for Eucalyptus</title>
+    <shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;5:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita">This section explains how to prepare a running Linux system (cloud instance, virtual
+        machine, or a system running on bare metal) before importing it for use in
+        Eucalyptus.</shortdesc>
+    <prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2014"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="4.0" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="taskbody:1;8:15">
+        <context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="context:1;9:19"/>
+        <steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="steps:1;10:16">
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="step:1;11:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:1;12:22"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="b:1;12:25">Install cloud software and drivers:</b></cmd>
+                <substeps class="- topic/ol task/substeps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substeps:1;13:27">
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:1;14:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:2;15:30">Make sure Virtio drivers are installed if the image is going to be run
+                            in a KVM cluster which has virtio enabled, and verify use if possible
+                            (ie. set disks and network interface in hypervisor, try hot plug in for
+                            disks, etc). For most recent Linux distributions nothing is needed to be
+                            done. </cmd>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:2;21:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:3;22:30"> Make sure Vmware tools are installed if the image is going to be run
+                            in a vmware cluster. There are several options for Linux-based images,
+                            including RPM, yum installations, or through Vmware if the guest is
+                            running in Vmware. </cmd>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:3;27:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:4;28:30"> Make sure appropriate init scripts are in place; for example:
+                            cloud-init packages (if appropriate), and rc.local or similar scripts to
+                            prepare new instances at boot time utilizing user/meta-data. </cmd>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:4;32:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:5;33:30"> Install cloud-init: </cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:1;34:31">
+                            <note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="note:1;35:35">For more information on cloud-init, go to <xref href="https://help.ubuntu.com/community/CloudInit" scope="external" format="html" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="xref:1;38:38"><?ditaot usertext?>https://help.ubuntu.com/community/CloudInit</xref></note>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:1;39:32">For Ubuntu images:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:1;40:40">sudo apt-get install cloud-init</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:2;41:32">For Red Hat, Fedora, and CentOS EL5:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:2;42:40">rpm -Uvh http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:3;43:32">For Red Hat, Fedora, and CentOS EL6:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:3;44:40">rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+yum install cloud-init</codeblock>
+                        </info>
+                    </substep>
+                    
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:5;55:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:6;56:30">Install and configure ssh:</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:2;57:31">
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:4;58:32">For Ubuntu:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:4;59:40">sudo apt-get install openssh-server </codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:5;60:32">For Red Hat, Fedora, and CentOS:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:5;61:40">yum install openssh-server
+chkconfig sshd on</codeblock>
+                        </info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:6;65:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:7;66:30">Install Euca2ools:</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:3;67:31">
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:6;68:32">For Ubuntu:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:6;69:40">sudo apt-get install euca2ools</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:7;70:32">For Red Hat, Fedora, and CentOS:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:7;71:40">yum install euca2ools</codeblock>
+                        </info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:7;74:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:8;75:30">Optionally, update existing packages.</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:4;76:31">
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:8;77:32">For Ubuntu:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:8;78:40">sudo apt-get update
+sudo apt-get upgrade</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:9;80:32">For Red Hat, Fedora, and CentOS:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:9;81:40">yum update</codeblock>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="step:2;86:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:9;87:22"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="b:2;87:25">Prepare the network:</b></cmd>
+                <substeps class="- topic/ol task/substeps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substeps:2;88:27">
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:8;89:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:10;90:30">Disable the firewall. It is recommended that the firewall is disabled
+                            and network rules are instead enforced in the security-group the
+                            instances run in. If the guest's firewall is not disabled, review the
+                            existing rules and make sure they are appropriate for the guest's future
+                            use within a cloud environment. </cmd>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:9;96:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:11;97:30">Clear or disable iptable rules:</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:5;98:31">
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:10;99:32">Save the rules in case you want to restore them later:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:10;100:40">sudo iptables-save &gt; /root/firewall.rules</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:11;101:32">Clear the rules:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:11;102:40">iptables -F
+iptables -X
+iptables -t nat -F
+iptables -t nat -X
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:12;111:32">For Red Hat, Fedora, and CentOS, you can disable iptables via service
+                                scripts. For example:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:12;113:40">/etc/init.d/iptables stop 
+(or...) 
+service iptables stop
+(then use...) 
+chkconfig iptables off  (to disable at boot time as well) </codeblock>
+                        </info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:10;120:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:12;121:30">Disable selinux.</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:6;122:31">
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:13;123:32">In some distributions, the selinux configuration file can be found in
+                                the following locations:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:13;125:40">/etc/sysconfig/selinux
+/etc/selinux/config</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:14;127:32">The following is an example selinux config file:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:14;128:40"># This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#       enforcing - SELinux security policy is enforced.
+#       permissive - SELinux prints warnings instead of enforcing.
+#       disabled - SELinux is fully disabled.
+SELINUX=disabled
+# SELINUXTYPE= type of policy in use. Possible values are:
+#       targeted - Only targeted network daemons are protected.
+#       strict - Full SELinux protection.
+SELINUXTYPE=targeted</codeblock>
+                            <note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="note:2;138:35">Some distributions may not have the selinux config and may need a
+                                flag set in the booter. For example /boot/grub/grub.conf may need
+                                'enforcing=0' added to the 'kernel' configuration line.</note>
+                        </info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:11;143:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:13;144:30">Make sure there is only a single primary network interface.</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:7;145:31">
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:15;146:32">Check the configuration for:</p>
+                            <ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="ul:1;147:33">
+                                <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="li:1;148:37">Enabled on boot (<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeph:1;148:62">ONBOOT="yes"</codeph>)</li>
+                                <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="li:2;149:37">IP provisioning is done via DHCP
+                                        (<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeph:2;150:50">BOOTPROTO="dhcp"</codeph>)</li>
+                                <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="li:3;151:37">MAC address is commented out (for
+                                        example:<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeph:3;152:57">#HWADDR="AA:BB:CC:DD:EE:FF"</codeph>).<note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="note:3;152:101">If
+                                        the system is rebooted after you've commented out the MAC
+                                        address, the MAC address may be restored and will need to be
+                                        commented out again.</note></li>
+                            </ul>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:16;157:32"> For Red Hat, Fedora, and CentOS images, the configuration for the
+                                default network interface can usually be found in the following
+                                file: </p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:15;160:40">/etc/sysconfig/network-scripts/ifcfg-eth0</codeblock>
+                            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="p:17;161:32">The following is an example of an <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeph:4;161:74">ifcfg-eth0</codeph>
+                                configuration file:</p>
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:16;163:40">DEVICE=eth0
+ONBOOT=yes
+#THE HWADDR LINE MUST BE COMMENTED OUT OR REMOVED
+#HWADDR=AA:BB:CC:DD:EE:FF
+TYPE=Ethernet
+BOOTPROTO=dhcp
+PERSISTENT_DHCLIENT=yes</codeblock>
+                        </info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:12;172:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:14;173:30">Remove persistent udev rules:</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:8;174:31">
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:17;175:40">echo "" &gt; /etc/udev/rules.d/70-persistent-net.rules 
+echo "" &gt; /lib/udev/rules.d/75-persistent-net-generator.rules </codeblock>
+                        </info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:13;179:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:15;180:30">On CentOS and Red Hat, disable zeroconf by adding an entry to the
+                                <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeph:5;181:41">/etc/sysconfig/network</codeph> file:</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:9;182:31">
+                            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeblock:18;183:40">NETWORKING=yes
+NOZEROCONF=yes</codeblock>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="step:3;189:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:16;190:22"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="b:3;190:25">Clean the image:</b></cmd>
+                <substeps class="- topic/ol task/substeps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substeps:3;191:27">
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:14;192:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:17;193:30">We recommend that you remove all non-root, non-administrator users
+                            before bundling the image.</cmd>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:15;196:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:18;197:30">Remove root/Administrator password. We recommend that you remove root's
+                            password for Linux systems (for windows, use sysprep (see Administrators
+                            guide for Windows Integration tool). </cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:10;200:31">
+                            <note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="note:4;201:35">Once these passwords are removed, access to this system will be
+                                limited or blocked until this image is recreated as a cloud
+                                instance. SSH host and authorization keys for Linux (or dynamically
+                                created passwords for Windows sysprep) will be used going
+                                forward.</note>
+                        </info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:16;208:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:19;209:30">For larger Windows images, we recommend that you use the tool of your
+                            choice to zero out unused disk space.</cmd>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="substep:17;212:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:20;213:30">Remove any unwanted programs.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="step:4;217:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="cmd:21;218:22">Configure a serial port by adding an option to the end of the
+                        <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeph:6;219:33">/boot/grub/menu.lst</codeph> file:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="info:11;220:23"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="codeph:7;220:31">console=ttyS0</codeph></info>
+            </step>
+        </steps>
+        <result class="- topic/section task/result " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_prepare_image.dita" xtrc="result:1;223:17">You've now prepared your instance for image creation. </result>
+    </taskbody>
+</task>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Browse and Install Images from EuStore"/>
+<meta name="abstract" content="Eucalyptus provides a resource, called EuStore. EuStore contains images that you can download and install. This task explains how to browse and install images from EuStore."/>
+<meta name="description" content="Eucalyptus provides a resource, called EuStore. EuStore contains images that you can download and install. This task explains how to browse and install images from EuStore."/>
+<meta name="DC.subject" content="image tasks, install from EuStore"/>
+<meta name="keywords" content="image tasks, install from EuStore"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="eustore-browse-install"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Browse and Install Images from EuStore</title>
+</head>
+<body id="eustore-browse-install">
+
+
+    <h1 class="topictitle1">Browse and Install Images from EuStore</h1>
+
+    
+    
+    <div><p>Eucalyptus provides a resource, called EuStore. EuStore contains images that you can
+        download and install. This task explains how to browse and install images from
+        EuStore.</p>
+
+        <div class="section">
+            <p>To browse and install an image from EuStore:</p>
+
+        </div>
+
+        <ol><li class="stepexpand">
+                <span>Find an image on EuStore:</span>
+                <div>
+                    <pre class="codeblock">eustore-describe-images</pre>
+
+                </div>
+                <div>This command returns a list of images available from the EuStore. For
+                    example:</div>
+                <div>
+                    <pre class="codeblock">0400376721 fedora      x86_64  starter        kvm               Fedora 16 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+2425352071 fedora      x86_64  starter        kvm               Fedora 17 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+1107385945 centos      x86_64  starter        xen, kvm, vmware  CentOS 5 1.3GB root, Hypervisor-Specific Kernels
+3868652036 centos      x86_64  starter        kvm               CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+1347115203 opensuse    x86_64  starter        kvm               OpenSUSE 12.2 x86_64 - KVM image. SUSE Firewall off. Root disk of 2.5G. Root user enabled. Working with kexec kernel and ramdisk. OpenSUSE minimal base package set..
+.
+.
+.</pre>
+
+                </div>
+                <div>For additional information regarding the images on eustore (for
+                    example, who is the maintainer of the image), use the -v option, which returns
+                    the email address of the maintainer of the image in the last column. For
+                    example:</div>
+                <div>
+                    <pre class="codeblock"># eustore-describe-images -v
+0400376721 fedora      x86_64  starter        kvm               Fedora 16 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+     20121107181713      d13e-1e35   fedora-based           olivier.renault@eucalyptus.com
+2425352071 fedora      x86_64  starter        kvm               Fedora 17 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+     20121107181713      6369-6e28   fedora-based           olivier.renault@eucalyptus.com
+1107385945 centos      x86_64  starter        xen, kvm, vmware  CentOS 5 1.3GB root, Hypervisor-Specific Kernels
+     20120517102326      84ae-59db   centos-based           images@lists.eucalyptus.com
+3868652036 centos      x86_64  starter        kvm               CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+     20121107181713      48df-52d4   centos-based           olivier.renault@eucalyptus.com
+1347115203 opensuse    x86_64  starter        kvm               OpenSUSE 12.2 x86_64 - KVM image. SUSE Firewall off. Root disk of 2.5G. Root user enabled. Working with kexec kernel and ramdisk. OpenSUSE minimal base package set..
+     20121120130646      a981-db13   opensuse-based         lester.wade@eucalyptus.com</pre>
+
+                </div>
+            </li>
+<li class="stepexpand">
+                <span>Pick an available image from the returned list and note the image ID. For this
+                    example, we will choose:</span>
+                <div>
+                    <pre class="codeblock">3868652036 centos      x86_64  starter        kvm               CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.</pre>
+
+                </div>
+            </li>
+<li class="stepexpand">
+                <span>Install the image from EuStore using the eustore-install-image command. For
+                    this example, we only need to specify the image ID and the name of a bucket (the
+                    bucket will be created if it doesn't already exist):</span>
+                <div>
+                    <div class="note"><span class="notetitle">Note:</span>  Some images may require additional parameters (for example, that you
+                        specify a kernel type with the -k option). Please see the
+                        eustore-install-image topic in the Eucalyptus Command Line Reference for
+                        more information. </div>
+
+                </div>
+                <div>
+                    <pre class="codeblock">
+eustore-install-image -b centos-testbucket -i 3868652036 --hypervisor kvm 
+                    </pre>
+
+                </div>
+
+                <div> This command performs a number of tasks for you, including downloading the
+                    image from the central Eucalyptus image store and installing the image on your
+                    own Eucalyptus private cloud. The output from this command will look similar to
+                    the following example: </div>
+                <div>
+                    <pre class="codeblock">Downloading Image :  CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+0-----1-----2-----3-----4-----5-----6-----7-----8-----9-----10
+##############################################################
+
+Checking image bundle
+Unbundling image
+going to look for kernel dir : kvm-kernel
+Bundling/uploading ramdisk
+Checking image
+Compressing image
+Encrypting image
+Splitting image...
+Part: initrd-2.6.32-279.14.1.el6.x86_64.img.part.00
+Generating manifest /tmp/olEuG_/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml
+Checking bucket: centos-testbucket
+Creating bucket: centos-testbucket
+Uploading manifest file
+Uploading part: initrd-2.6.32-279.14.1.el6.x86_64.img.part.00
+Uploaded image as centos-testbucket/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml
+centos-testbucket/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml
+eri-064B387A
+Bundling/uploading kernel
+Checking image
+Compressing image
+Encrypting image
+Splitting image...
+Part: vmlinuz-2.6.32-279.14.1.el6.x86_64.part.00
+Generating manifest /tmp/olEuG_/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml
+Checking bucket: centos-testbucket
+Uploading manifest file
+Uploading part: vmlinuz-2.6.32-279.14.1.el6.x86_64.part.00
+Uploaded image as centos-testbucket/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml
+centos-testbucket/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml
+eki-A4D6398A
+Bundling/uploading image
+Checking image
+Compressing image
+Encrypting image
+Splitting image...
+Part: centos-6.3-x86_64.part.00
+Part: centos-6.3-x86_64.part.01
+Part: centos-6.3-x86_64.part.02
+Part: centos-6.3-x86_64.part.03
+[...example truncated...]
+Part: centos-6.3-x86_64.part.19
+Generating manifest /tmp/olEuG_/centos-6.3-x86_64.manifest.xml
+Checking bucket: centos-testbucket
+Uploading manifest file
+Uploading part: centos-6.3-x86_64.part.00
+Uploading part: centos-6.3-x86_64.part.01
+Uploading part: centos-6.3-x86_64.part.02
+Uploading part: centos-6.3-x86_64.part.03
+[...example truncated...]
+Uploading part: centos-6.3-x86_64.part.19
+Uploaded image as centos-testbucket/centos-6.3-x86_64.manifest.xml
+centos-testbucket/centos-6.3-x86_64.manifest.xml
+Installed image: emi-233637E1
+                    </pre>
+
+                </div>
+                <div> Note the last line in the output, which provides the image ID for the image
+                    you just installed from the euca store. In this example, the image ID is
+                    emi-233637E1. </div>
+            </li>
+<li class="stepexpand">
+                <span>Verify the image was installed on your Eucalyptus cloud. To do this, use the
+                    euca-describe-images command, which returns a list of the available images on
+                    your Eucalyptus cloud:</span>
+                <div>
+                    <pre class="codeblock">
+euca-describe-images | grep centos-testbucket
+                    </pre>
+
+                </div>
+                <div> This command will return output similar to the following example: </div>
+                <div>
+                    <pre class="codeblock">
+IMAGE   eki-A4D6398A    centos-testbucket/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml   345590850920    available   public      x86_64  kernel              instance-store
+IMAGE   eri-064B387A    centos-testbucket/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml    345590850920    available   public      x86_64  ramdisk             instance-store
+IMAGE   emi-233637E1    centos-testbucket/centos-6.3-x86_64.manifest.xml    345590850920    available   public      x86_64  machine eki-A4D6398A    eri-064B387A        instance-store
+                    </pre>
+
+                    <p>The first three characters of the ID returned in the second column indicate
+                        what the object is - <samp class="codeph">eki</samp> indicates a Eucalyptus kernel
+                        image, <samp class="codeph">eri</samp> is a Eucalyptus ramdisk image, and
+                            <samp class="codeph">emi</samp> indicates a Eucalyptus machine image.</p>
+
+                </div>
+                <div> Note the ID of the last image in the output -
+                    <pre class="codeblock">emi-233637E1</pre>
+ - matches that of the image we installed
+                    from EuStore. </div>
+            </li>
+</ol>
+
+        <div class="section">The image has been successfully downloaded from EuStore and installed on your
+            Eucalyptus cloud. </div>
+
+        <div class="section"><p>You can now run an instance from this image and connect to it using SSH.</p>
+
+        	<div class="tip"><span class="tiptitle">Tip:</span> If you use a Debian image from Eustore, add
+        		<samp class="codeph">nozeroconf=yes</samp> in the <span class="filepath">/etc/sysconfig/network</span> file on
+        		the node controller to make sure that the image boots and runs properly. </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

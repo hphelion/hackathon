@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Add a Root Filesystem"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_add_existing.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/add_ramdisk.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="add_rootfs"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Add a Root Filesystem</title>
+</head>
+<body id="add_rootfs">
+
+
+	<h1 class="topictitle1">Add a Root Filesystem</h1>
+
+	
+	<div><p/>
+
+		<div class="section">
+			<p>When you add a root filesystem to Walrus, you bundle the root
+				filesystem file, upload the file to a bucket in Walrus that you
+				name, and then register the root filesystem with Eucalyptus. The
+				bundle operation can include a registered ramdisk (ERI ID) and a
+				registered kernel (EKI ID). The resulting image will associate
+				the three images.</p>
+
+			<p>You can also bundle the root file system independently and associate the ramdisk and kernel
+				with the resulting EMI at run time.
+				</p>
+
+			<p>To add a root filesystem to Walrus:</p>
+
+		</div>
+
+		<div class="p">
+				<span>Use the following three commands:</span>
+				<div>
+					<pre class="codeblock">euca-bundle-image -i &lt;root_filesystem_file&gt; -r &lt;architecture&gt;
+euca-upload-bundle -b &lt;root_filesystem_file_bucket&gt; -m /tmp/&lt;root_filesystem_file&gt;.manifest.xml
+euca-register &lt;root_filesystem_file_bucket&gt;/&lt;root_filesystem_file&gt;.manifest.xml -n &lt;rootfs_name&gt; -a &lt;architecture&gt;</pre>
+
+				</div>
+			</div>
+
+		<div class="example">
+			<p>For example:</p>
+
+			<pre class="codeblock">euca-bundle-image -i euca-fedora-10-x86_64/fedora.10.x86-64.img  --ramdisk eri-722B3CBA --kernel eki-5B3D3859 -r x86_64
+...
+Generating manifest /tmp/fedora.10.x86-64.img.manifest.xml
+
+euca-upload-bundle -b example_rf_bucket -m /tmp/fedora.10.x86-64.img.manifest.xml
+...
+Generating manifest /tmp/fedora.10.x86-64.img.manifest.xml
+
+euca-register example_rf_bucket/fedora.10.x86-64.img.manifest.xml -n example_rf -a x86_64
+IMAGE	 emi-XXXXXXXX</pre>
+
+			<p>Where the returned value <samp class="codeph">emi-XXXXXXXX</samp> is the
+				unique ID of the registered machine image.</p>
+
+		</div>
+
+
+	</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_add_existing.html">Bundle, Upload, and Register an Image with Eucalyptus</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../shared/add_ramdisk.html">Add a Ramdisk</a></div>
+</div>
+</div>
+
+</body>
+</html>

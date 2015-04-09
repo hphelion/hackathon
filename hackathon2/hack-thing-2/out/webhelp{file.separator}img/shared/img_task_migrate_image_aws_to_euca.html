@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Migrate a Linux Image from AWS to Eucalyptus"/>
+<meta name="abstract" content="You can migrate an S3-backed image from AWS to Eucalyptus."/>
+<meta name="description" content="You can migrate an S3-backed image from AWS to Eucalyptus."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="hg_task_migrate_image_aws_to_euca"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Migrate a Linux Image from AWS to Eucalyptus</title>
+</head>
+<body id="hg_task_migrate_image_aws_to_euca">
+
+
+	<h1 class="topictitle1">Migrate a Linux Image from AWS to Eucalyptus</h1>
+
+	
+	<div><p>You can migrate an S3-backed image from AWS to Eucalyptus.</p>
+
+		<div class="section">
+			<div class="note"><span class="notetitle">Note:</span> This topic assumes you are migrating an S3-backed Amazon Machine Image (AMI) that you own. For
+				instructions on creating an S3-backed AMI from an existing AMI, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-snapshot-s3-linux.html" target="_blank">Creating an Instance Store-Backed AMI From an Existing AMI</a>.</div>
+
+			<div class="note"><span class="notetitle">Note:</span> Specific examples may vary depending on the distro running on the
+				image that you want to migrate.</div>
+
+		</div>
+
+		<ol><li class="stepexpand">
+				<span>Set up your Euca2ools configuration to work with both Eucalyptus and Amazon Web
+					Services. For more information, see <span/>.</span>
+			</li>
+<li class="stepexpand">
+				<span>Check ownership of the AMI that you want to migrate to Eucalyptus by using the
+					euca-describe-images command. For example:</span>
+				<div>
+					<pre class="codeblock">euca-describe-images --region us-east-1 --owner 999999999999
+IMAGE	ami-e1a1e888	999999999999/precise-test	999999999999	available	private		x86_64	machine	aki-88aa75e1			instance-store	paravirtual	xen
+	BLOCKDEVICEMAPPING	EPHEMERAL	sda2	ephemeral0</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Run the AWS instance.</span>
+				<div>
+					<pre class="codeblock">euca-run-instance ami-e1a1e888 --region us-east-1 </pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Install Euca2ools on the instance. For instructions, see the Euca2ools
+					Guide.</span>
+			</li>
+<li class="stepexpand">
+				<span>Make sure that you have enough space on a volume to hold the bundle that we
+					will create.</span>
+
+			</li>
+<li class="stepexpand">
+				<span>Bundle the running AWS instance. For example:</span>
+				<div>
+					<pre class="codeblock">sudo -s
+ec2-bundle-vol -b testbucket -d /mnt -u 4299-4227-3585 -k my-aws.pem -c my-aws-cert.pem -r x86_64 -s 2048
+Copying / into the image file /mnt/image...
+Excluding:
+	 /dev/pts
+	 /
+	 /sys
+	 /proc
+	 /proc/sys/fs/binfmt_misc
+	 /dev
+	 /media
+	 /mnt
+	 /proc
+	 /sys
+	 /mnt/image
+	 /mnt/img-mnt
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB) copied, 0.00209056 s, 502 MB/s
+mke2fs 1.42.3 (14-May-2012)
+Bundling image file...
+Splitting /mnt/image.tar.gz.enc...
+Created image.part.00
+Created image.part.01
+[example truncated]
+Created image.part.30
+Generating digests for each part...
+Digests generated.
+Unable to read instance meta-data for ancestor-ami-ids
+Unable to read instance meta-data for ramdisk-id
+Unable to read instance meta-data for product-codes
+Creating bundle manifest...
+ec2-bundle-vol complete.</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Switch the Euca2ools configuration file to use Eucalyptus. You can do this by
+					specifying the Eucalyptus region as defined in your Euca2ools configuration file
+					by specifying the <samp class="codeph">--region</samp> parameter on the command line, or by
+					changing the <samp class="codeph">default-region</samp> option in the Euca2ools
+					configuration file:</span>
+				<div>
+					<pre class="codeblock">default-region = euca-release</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Download the bundle from the AWS S3 bucket:</span>
+				<div>
+					<pre class="codeblock">euca-download-bundle --bucket testbucket --directory /tmp/aws-image/ --region us-east-1
+</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Unbundle the AWS instance bundle:</span>
+				<div>
+					<pre class="codeblock">euca-unbundle --manifest /tmp/aws-image/image.manifest.xml --source /tmp/aws-image/ --destination /tmp/aws-image/ --region us-east-1
+</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Run some checks to make sure that the image can be used with Eucalyptus:</span>
+				<ol type="a">
+					<li class="substepexpand">
+						<span>Mount the image via loopback:</span>
+						<div>
+							<pre class="codeblock">#  sudo mkdir /mnt/aws-image
+	#  sudo mount -o loop /tmp/aws-image/image /mnt/aws-image
+	#  df -ah 
+	……
+	/tmp/aws-image/image
+                      9.9G  1.1G  8.3G  12% /mnt/aws-image
+</pre>
+
+						</div>
+					</li>
+
+					<li class="substepexpand">
+						
+						<span>Make sure that the distro repositories in the image do not point to
+							EC2-specific repositories.</span>
+						
+					</li>
+
+					<li class="substepexpand">
+						<span>Install a non-Xen kernel into the image from distro and make sure
+							VirtIO modules are added. </span>
+					</li>
+
+					<li class="substepexpand">
+						<span>Extract  the ramdisk  and kernel to be bundled, uploaded
+							and registered as ERI and EKI files. In this example,
+							initrd.img-3.2.0-53-virtual and vmlinuz-3.2.0-53-virtual will be copied
+							from /mnt/aws-image/boot to the /tmp/aws-image directory: </span>
+						<div>
+							<pre class="codeblock"># sudo cp /mnt/aws-image/boot/initrd.img-3.2.0-53-virtual /tmp/aws-image/.
+# sudo cp /mnt/aws-image/boot/vmlinuz-3.2.0-53-virtual /tmp/aws-image/.
+</pre>
+
+						</div>
+					</li>
+
+					<li class="substepexpand">
+						<span>Make sure that the file system of the image is either ext2, ext3, or ext4 by using the file command. For example:</span>
+						<div><pre class="codeblock"># file /tmp/aws-image/image
+/tmp/aws-image/image: Linux rev 1.0 ext4 filesystem data (extents) (large files) (huge files)
+</pre>
+</div>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="stepexpand">
+				<span>Bundle the image using euca-bundle-image:</span>
+				<div>
+					<pre class="codeblock">euca-bundle-image -i /tmp/aws-image/image</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Upload the AWS bundled instance to Eucalyptus.</span>
+				<div>
+					<pre class="codeblock">euca-upload-bundle -b hybrid-guide-sample-bucket -m /tmp/aws-image/image.manifest.xml --access-key myaccesskey --secret-key mysecretkey</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Test the new uploaded image.</span>
+				<div>
+					<pre class="codeblock">euca-run-instance emi-a6e15bcf</pre>
+
+				</div>
+			</li>
+</ol>
+
+	</div>
+
+
+</body>
+</html>

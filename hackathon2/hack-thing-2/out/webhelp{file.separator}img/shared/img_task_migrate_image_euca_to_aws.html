@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Migrate a Linux Image from Eucalyptus to AWS"/>
+<meta name="abstract" content="To migrate an image from Eucalyptus to AWS, perform the following steps."/>
+<meta name="description" content="To migrate an image from Eucalyptus to AWS, perform the following steps."/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="hg_task_migrate_image_euca_to_aws"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Migrate a Linux Image from Eucalyptus to AWS</title>
+</head>
+<body id="hg_task_migrate_image_euca_to_aws">
+
+
+	<h1 class="topictitle1">Migrate a Linux Image from Eucalyptus to AWS</h1>
+
+	
+	<div><p>To migrate an image from Eucalyptus to AWS, perform the following steps. </p>
+
+		<div class="section"><div class="note"><span class="notetitle">Note:</span> These are high-level guidelines for moving an instance from Eucalyptus to
+				AWS. Specific examples will vary depending on the distro running on the
+				image.</div>
+</div>
+
+		<ol><li class="stepexpand">
+				<span>Run an instance from the image you chose.</span>
+				<div>
+					<pre class="codeblock">euca-run-instance emi-1A6338AE</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>SSH into the instance and verify that the instance is valid for use with
+					AWS:</span>
+
+				<ol type="a">
+					<li>
+						<span>Download the latest ec2-modules from <a href="http://s3.amazonaws.com/ec2-downloads" target="_blank">http://s3.amazonaws.com/ec2-downloads</a> and put them into the
+								<samp class="codeph">/lib/modules</samp> directory on the instance.</span>
+					</li>
+
+					<li>
+						<span> Copy the AWS EC2 certificate and private key from the AWS instance to
+							your local workstation. </span>
+					</li>
+
+					<li>
+						<span> Shut down unneeded services on the AWS instance (for example, Apache
+							and MySQL). </span>
+					</li>
+
+					<li>
+						<span> Clear out log files and bash history files. </span>
+					</li>
+
+					<li>
+						<span> Remove your ssh keys from the instance. </span>
+					</li>
+
+					<li>
+						<span> Reset passwords for the instance, and for any services that maintain
+							their own password database. </span>
+					</li>
+
+					<li>
+						<span> Clear out any temporary directories. </span>
+					</li>
+
+				</ol>
+
+			</li>
+<li class="stepexpand">
+				<span>Install Euca2ools on the instance.</span>
+				<div>
+					<pre class="codeblock"/>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Mount a volume that is at least 1.5 times as large as the entire
+					instance.</span>
+
+			</li>
+<li class="stepexpand">
+				<span>Bundle the running instance.</span>
+				<div>
+					<pre class="codeblock">euca-bundle-instance </pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Switch the Euca2ools configuration file to use Eucalyptus</span>
+				<div>
+					<pre class="codeblock">default-region = euca-release</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Upload the AWS bundled instance to Eucalyptus.</span>
+				<div>
+					<pre class="codeblock">euca-upload-bundle -b bucket_name -m manifest_file</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Test the new uploaded image.</span>
+				<div>
+					<pre class="codeblock">euca-run-instance emi-a6e15bcf</pre>
+
+				</div>
+			</li>
+</ol>
+
+	</div>
+
+
+</body>
+</html>

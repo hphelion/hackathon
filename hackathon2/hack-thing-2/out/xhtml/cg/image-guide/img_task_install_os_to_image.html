@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Install a Linux Distribution ISO to an Image"/>
+<meta name="abstract" content="This topic shows how to install a Linux distribution ISO and prepare an image for registration with Eucalyptus."/>
+<meta name="description" content="This topic shows how to install a Linux distribution ISO and prepare an image for registration with Eucalyptus."/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_create_image_intro.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="img_task_install_os_to_image"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Install a Linux Distribution ISO to an Image</title>
+</head>
+<body id="img_task_install_os_to_image">
+
+
+    <h1 class="topictitle1">Install a Linux Distribution ISO to an Image</h1>
+
+    
+    <div><p>This topic shows how to install a Linux distribution ISO and prepare an image for
+        registration with Eucalyptus.</p>
+
+        <div class="section"/>
+
+        <ol><li class="stepexpand">
+                <span>Use the QEMU disk utility to create a disk image. In the following example, we
+                    create a 5GB disk image:</span>
+                <div>
+                    <samp class="codeph">qemu-img create -f raw centos6.img 5G</samp>
+                </div>
+            </li>
+<li class="stepexpand">
+                <span> Use the <samp class="codeph">parted</samp> utility to set the disk label. </span>
+                <div>
+                    <samp class="codeph">parted centos6.img mklabel msdos</samp>
+                </div>
+            </li>
+<li class="stepexpand">
+                <span> Use <samp class="codeph">virt-install</samp> to start a new virtual machine installation,
+                    as in the following example (note the example has been broken into multiple
+                    lines for formatting purposes): </span>
+                <div>
+                    <pre class="codeblock">virt-install --name centos6 --ram 1024 --os-type linux --os-variant rhel6 
+ -c /tmp/CentOS-6.3-x86_64-bin-DVD1.iso --disk path=/tmp/centos6.img,device=disk,bus=virtio 
+ --graphics vnc,listen=0.0.0.0 --force </pre>
+
+                </div>
+            </li>
+<li class="stepexpand">
+                <span>Use the VNC client of your choice to connect to the new virtual machine and
+                    complete the installation.</span>
+            </li>
+<li class="stepexpand">
+                <span> Modify the following <samp class="codeph">libvirt.xml</samp> template to create the VM
+                    and run <samp class="codeph">virsh create &lt;libvirt.xml&gt;"</samp>. </span>
+
+                <div>
+                   <pre class="codeblock"> &lt;domain type='kvm'&gt;
+    &lt;name&gt;eucalyptus-centos&lt;/name&gt;
+    &lt;os&gt;
+        &lt;type&gt;hvm&lt;/type&gt;
+    &lt;/os&gt;
+    &lt;features&gt;
+        &lt;acpi/&gt;
+    &lt;/features&gt;
+    &lt;memory&gt;1073741&lt;/memory&gt;
+    &lt;vcpu&gt;1&lt;/vcpu&gt;
+    &lt;devices&gt;
+        &lt;!--&lt;emulator&gt;/usr/bin/kvm&lt;/emulator&gt;--&gt;
+        &lt;disk type='file'&gt;
+            &lt;source file='/tmp/centos6.img'/&gt;
+            &lt;target dev='hda'/&gt;
+        &lt;/disk&gt;
+     &lt;interface type='bridge'&gt;
+         &lt;source bridge='br0'/&gt;
+         &lt;model type='virtio'/&gt;
+     &lt;/interface&gt;
+        &lt;graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0'/&gt;
+    &lt;/devices&gt;
+&lt;/domain&gt;</pre>
+
+                </div>
+            </li>
+<li class="stepexpand">
+                <span>Connect to the virtual machine using your VNC client of choice and make the
+                    following configuration changes:</span>
+                <ol type="a">
+                    <li class="substepexpand">
+                        <span>Modify the <samp class="codeph">/etc/sysconfig/network-scripts/ifcfg-eth0</samp>
+                            file and set the <samp class="codeph">ONBOOT</samp> option to "yes". For
+                            example:</span>
+                        <div>
+                            <pre class="codeblock">DEVICE="eth0"
+BOOTPROTO="dhcp"
+#HWADDR="B8:AC:6F:83:1C:45"
+IPV6INIT="yes"
+MTU="1500"
+NM_CONTROLLED="yes"
+ONBOOT="yes"
+TYPE="Ethernet"
+UUID="499c07cc-4a53-408c-87d2-ce0db991648e"
+PERSISTENT_DHCLIENT=1</pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Enable a serial console on the virtual machine by adding the following
+                            option to the end of the /boot/grub/menu.lst: </span>
+                        <div>
+                            <samp class="codeph">console=ttyS0</samp>
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span> Remove the <samp class="codeph">quiet</samp> option from the kernel parameters
+                            and the grub menu splash image in the
+                                <samp class="codeph">/boot/grub/menu.lst</samp> file. For example: </span>
+                        <div>
+                            <pre class="codeblock"># grub.conf generated by anaconda
+#
+# Note that you do not have to rerun grub after making changes to this file
+# NOTICE:  You have a /boot partition.  This means that
+#          all kernel and initrd paths are relative to /boot/, eg.
+#          root (hd0,0)
+#          kernel /vmlinuz-version ro root=/dev/sda2
+#          initrd /initrd-[generic-]version.img
+#boot=/dev/sda
+default=0
+timeout=5
+#splashimage=(hd0,0)/grub/splash.xpm.gz
+hiddenmenu
+title Eucalyptus (2.6.32-358.18.1.el6.x86_64)
+	root (hd0,0)
+	kernel /vmlinuz-2.6.32-358.18.1.el6.x86_64 ro root=UUID=062b9c31-95f3-424f-8b47-35107cfdfc08 rd_NO_LUKS rd_NO_LVM LANG=en_US.UTF-8 rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=auto  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb
+	initrd /initramfs-2.6.32-358.18.1.el6.x86_64.img</pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span> Add the following line to the <samp class="codeph">/etc/sysconfig/network</samp>
+                            file to disable the zeroconf route, which can interfere with access to
+                            the metadata service: </span>
+                        <div>
+                            <samp class="codeph">NOZEROCONF=yes</samp>
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Edit the <samp class="codeph">/etc/udev/rules.d/70-persistent-net.rules</samp>
+                            file and remove all entries for the existing network interface. Make
+                            sure that you delete all entries before terminating the virtual machine
+                            and registering it with Eucalyptus. </span>
+                    </li>
+
+                </ol>
+
+            </li>
+<li class="stepexpand">
+                <span> Eucalyptus instances use cloud-init to specify actions to run on your instance
+                    at boot time, which can be passed using the userdata parameter. To install and
+                    conifgure cloud-init on your instance:</span>
+                <ol type="a">
+                    <li class="substepexpand">
+                        <span>Install cloud-init:</span>
+                        <div>
+                            <pre class="codeblock"># rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+# yum install cloud-init</pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>By default, cloud-init uses ec2-user as the log-in user. Add ec2-user
+                            to your instance and give it appropriate sudo permissions:</span>
+                        <div>
+                            <pre class="codeblock"> # adduser ec2-user
+ # passwd ec2-user</pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Run visudo and add the following entries at the bottom of the sudoers
+                            file:</span>
+                        <div>
+                            <pre class="codeblock">## Allow root to run any commands anywhere
+     root    ALL=(ALL)       ALL 
+     ec2-user        ALL=(ALL)       NOPASSWD: ALL  </pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span> You can optionally copy Eucalyptus <samp class="codeph">rc.local</samp> file
+                            (available at <a href="https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local" target="_blank">https://github.com/eucalyptus/Eucalyptus-Scripts/blob/master/rc.local</a>) to the <samp class="codeph">/etc</samp> directory on your virtual machine and
+                            modify it as needed. </span>
+                    </li>
+
+                </ol>
+
+            </li>
+</ol>
+
+        <div class="section">You've now installed a distribution from an ISO and created a Eucalyptus-ready image
+            that can be registered with Eucalyptus. </div>
+
+    </div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_task_create_image_intro.html" title="This section covers how to create or acquire a new image for use in your Eucalyptus cloud..">Create a New Image</a></div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101171620604/euca2ools-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101171620604/euca2ools-guide/?><?path2project ../?><reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="euca-describe-bundle-tasks" ditaarch:DITAArchVersion="1.2" domains="(topic reference)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic       reference/reference " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="reference:1;4:44">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="title:1;5:9">euca-describe-bundle-tasks</title>
+
+	<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="shortdesc:1;7:13">Describes currently submitted bundle tasks and their states.</shortdesc>
+	<refbody class="- topic/body        reference/refbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="refbody:1;8:11">
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="section:1;9:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="title:2;10:11">Syntax</title>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeblock:1;11:15">euca-describe-bundle-tasks [<b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="b:1;11:46">bundle</b> ...] [[--filter "name=value"] ...]</codeblock>
+		</section>
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="section:2;14:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="title:3;15:11">Options</title>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="table:1;16:11">
+				<tgroup cols="3" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="tgroup:1;17:22">
+					<colspec colname="col1" colwidth="25*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="colspec:1;18:31"/>
+					<colspec colname="col2" colwidth="60*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="colspec:2;19:31"/>
+					<colspec colname="col3" colwidth="15*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="colspec:3;20:31"/>
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="thead:1;21:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:1;22:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:1;23:15">Option</entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:2;24:15">Description</entry>
+							<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:3;25:15">Required</entry>
+						</row>
+					</thead>
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="tbody:1;28:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:2;29:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:4;30:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:1;30:23"><i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="i:1;30:26">bundle</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:5;31:15">Identifier of the bundle task to describe. If you do not specify
+								a bundle task ID, all bundle tasks are returned.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:6;33:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:49;336:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:145;337:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:57;337:23">-F, --filter <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="i:4;337:39">name=value</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:146;338:15">Filter for limiting the results. See the table in the Available Filters section for a
+								list of  filters. Use quotation marks if the value has a space ("name=value example"). On a Windows system, use quotation marks even without a space in the value ("name=value").</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:147;340:30">No</entry>
+						</row>
+
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="section:3;43:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="title:4;44:11">Available Filters</title>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="p:1;45:7">You can add filters to your request so that the response includes information for
+				only certain bundle tasks. For example, you can use a filter to return only the
+				bundle tasks in the complete state. Some tips for using filters with this
+				command:</p>
+			<ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="ul:1;49:8">
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:1;50:9">You can use multiple values for a filter. Eucalyptus responds with information
+					for a bundle task only if it matches at least one of the filter values that you
+					specified.</li>
+
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:2;54:9">You can use multiple filters. For example, you can specify bundles that are
+					stored in a specific bucket and are in the complete state. Eucalyptus responds
+					with the information for a bundle task only if it matches all the filters that
+					you specified. If there is no match, Eucalyptus returns an empty response.</li>
+
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:3;59:9">You can use wildcards in a filter value. Use an asterisk (*) to match zero or
+					more characters. Use a question mark (?) to match exactly one character. To
+					escape special characters, use a backslash (\) before the character. For
+					example, a value of \*eucalyptus\?\\ searches for the literal string
+					*eucalyptus?\.</li>
+			</ul>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="p:2;65:7">The following are the available filters for
+					<apiname class="+ topic/keyword pr-d/apiname " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="apiname:1;66:15">euca-describe-bundle-tasks</apiname>: </p>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="table:2;67:11">
+				<tgroup cols="2" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="tgroup:2;68:22">
+					<colspec colname="col1" colwidth="25*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="colspec:4;69:31"/>
+					<colspec colname="col2" colwidth="75*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="colspec:5;70:31"/>
+
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="thead:2;72:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:4;73:12">
+							<entry colname="col1" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:8;74:30">Filter</entry>
+							<entry colname="col2" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:9;75:30">Description</entry>
+
+						</row>
+					</thead>
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="tbody:2;79:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:5;80:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:10;81:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:2;81:23">bundle-id</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:11;82:15">ID of the bundle task</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:6;84:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:12;85:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:3;85:23">error-code</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:13;86:15">If the task failed, returns the error code</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:7;88:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:14;89:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:4;89:23">error-message</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:15;90:15">If the task failed, returns the error message</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:8;92:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:16;93:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:5;93:23">instance-id</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:17;94:15">Instance ID that was bundled</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:9;96:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:18;97:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:6;97:23">progress</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:19;98:15">Level of task completion, in percent (for example, 20%)</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:10;100:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:20;101:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:7;101:23">s3-bucket</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:21;102:15">Bucket where the EMI will be stored</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:11;104:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:22;105:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:8;105:23">s3-prefix</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:23;106:15">Beginning of the AMI name</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:12;108:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:24;109:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:9;109:23">start-time</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:25;110:15">Time the task started</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:13;112:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:26;113:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:10;113:23">state</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:27;114:15">State of the task</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="row:14;116:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:28;117:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeph:11;117:23">update-time</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="entry:29;118:15">Time of the most recent update for the task</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="section:1;11:37">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="title:2;12:11">Common Options</title>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="table:1;13:11">
+				<tgroup cols="2" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tgroup:1;14:22">
+					<colspec colname="col1" colwidth="25*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:1;15:31"/>
+					<colspec colname="col2" colwidth="75*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:2;16:31"/>
+
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="thead:1;18:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:1;19:12">
+							<entry colname="col1" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:1;20:30">Option</entry>
+							<entry colname="col2" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:2;21:30">Description</entry>
+
+						</row>
+					</thead>
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tbody:1;25:13">
+						<row id="d45e43" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:2;26:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:3;27:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:1;27:23">--region
+								<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:1;28:12">region</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:4;29:15">Region to direct requests to. Only valid for
+								EC2 endpoints. </entry>
+						</row>
+						<row id="d45e55" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:3;32:21">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:5;33:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:2;33:23">-U,--url <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:2;33:35">url</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:6;34:15">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									</entry>
+						</row>
+						<row id="d45e67" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:4;38:31">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:7;39:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:3;39:23">-I,--access-key-id <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:3;39:45">access_key_id</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:8;40:15">User's access key ID</entry>
+						</row>
+						<row id="d45e79" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:5;42:28">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:9;43:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:4;43:23">-S,--secret-key <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:4;43:42">secret_key</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:10;44:15">User's secret key</entry>
+						</row>
+						<row id="d45e91" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:6;46:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:11;47:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:5;47:23">--config
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:5;48:13">configuration_path</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:12;49:15">Read credentials and cloud settings from the
+								specified config file. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="p:1;50:35">Default:
+										<filepath class="+ topic/ph sw-d/filepath " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="filepath:1;51:21">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</filepath>.</p></entry>
+						</row>
+						<row id="d45e109" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:7;54:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:13;55:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:6;55:23">--debug</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:14;56:15">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</entry>
+						</row>
+						<row id="d45e119" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:8;60:26">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:15;61:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:7;61:23">--debugger</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:16;62:15">Enable interactive debugger on error</entry>
+						</row>
+						<row id="d45e129" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:9;64:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:17;65:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:8;65:23">-h,--help</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:18;66:15">Display the manual page for the
+								command.</entry>
+						</row>
+						<row id="d45e139" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:10;69:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:19;70:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:9;70:23">--version</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:20;71:15">Display the version of this tool</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="section:5;126:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="title:5;127:11">Output</title>
+			<ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="ul:2;128:8">
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:4;129:9">Output type identifier ("BUNDLE")</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:5;130:9">Bundle ID</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:6;131:9">Instance ID</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:7;132:9">Bucket name</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:8;133:9">Image prefix</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:9;134:9">Start time</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:10;135:9">Update time</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:11;136:9">Bundle state (pending, waiting-for-shutdown, bundling, storing, cancelling,
+					complete, failed)</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="li:12;138:9">Percentage progress, if state is "bundling"</li>
+			</ul>
+		</section>
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="section:6;142:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="title:6;143:11">Example</title>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-describe-bundle-tasks.dita" xtrc="codeblock:2;144:15">euca-describe-bundle-tasks
+BUNDLE bun-CFF03DFA i-E7AC420A mah-bukkit winemi pending
+2012-01-01T00:00:00.000Z 2012-01-01T00:00:00.000Z</codeblock>
+		</section>
+	</refbody>
+
+</reference>

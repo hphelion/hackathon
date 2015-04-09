@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_enable_compute">
+    <title>Enable Compute</title>
+    <shortdesc/>
+    <taskbody>
+        <context>In this step, you'll enable compute services for your HP Helion Public Cloud.</context>
+        <steps>
+            <step>
+                <cmd>On the top drop-down menu in the Horizon console, change to the <uicontrol>US East Region</uicontrol>.</cmd>
+                <info>
+                    <image id="quickstart_enable_compute_1" href="images/quickstart_enable_compute_1.png" scale="75"/>
+                </info>
+            </step>
+            <step>
+                <cmd>From the drop-down menu, select <uicontrol>Managed Services</uicontrol>, and then click <uicontrol>Activate Services</uicontrol>.</cmd>
+                <info>
+                    <image id="quickstart_enable_compute_2" href="images/quickstart_enable_compute_2.png" scale="75"/>
+                </info>
+            </step>
+            <step>
+                <cmd>In the <uicontrol>Compute</uicontrol> row, click <uicontrol>Activate</uicontrol> to activate the Compute service.</cmd>
+                <info>
+                    <image id="quickstart_enable_compute_3" href="images/quickstart_enable_compute_3.png" scale="75"/>
+                </info>
+            </step>
+            <step>
+                <cmd>Click the <uicontrol>Project</uicontrol> panel and then the <uicontrol>Compute</uicontrol> sub-panel.</cmd>
+                <info>
+                    <image id="quickstart_enable_compute_4" href="images/quickstart_enable_compute_4.png" scale="75"/>
+                </info>
+            </step>
+            
+        </steps>
+    </taskbody>
+</task>

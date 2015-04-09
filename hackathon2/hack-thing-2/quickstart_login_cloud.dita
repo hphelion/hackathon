@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_login_cloud">
+    <title>Log Into the Public Cloud</title>
+    <shortdesc/>
+    <taskbody>
+        <context> </context>
+        <steps>
+            <step>
+                <cmd>Log into the <xref href="https://horizon.hpcloud.com/" type="external" format="html">Horizon console</xref> using the HP Helion Public Cloud username and
+                    password that you created during registration.</cmd>
+                <info>
+                    <image id="quickstart_login_cloud_1" href="images/quickstart_login_cloud_1.png" scale="75"/>
+                </info>
+            </step>
+            
+        </steps>
+    </taskbody>
+</task>

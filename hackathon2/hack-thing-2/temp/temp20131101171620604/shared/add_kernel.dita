@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101171620604/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101171620604/shared/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="add_kernel" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="task:1;4:23">
+    <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="title:1;5:12">Add a Kernel</title>
+    <shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:17" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita"/>
+    <prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="taskbody:1;7:15">
+        <context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="context:1;8:18">
+            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="p:1;9:16">When you add a kernel to Walrus, you bundle the kernel file,
+                upload the file to a bucket in Walrus that you name, and then
+                register the kernel with Eucalyptus.</p>
+            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="p:2;12:16">To add a kernel to Walrus:</p>
+        </context>
+        <steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="steps:1;14:16">
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="step:1;15:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="cmd:1;16:22">Use the following three commands:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="info:1;17:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="codeblock:1;18:32">euca-bundle-image -i &lt;kernel_file&gt; --kernel true
+euca-upload-bundle -b &lt;kernel_bucket&gt; -m /tmp/&lt;kernel_file&gt;.manifest.xml
+euca-register &lt;kernel_bucket&gt;/&lt;kernel_file&gt;.manifest.xml</codeblock>
+                </info>
+            </step>
+        </steps>
+        <example class="- topic/example " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="example:1;24:18">
+            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="p:3;25:16">For example:</p>
+            <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="codeblock:2;26:24">euca-bundle-image -i euca-fedora-10-x86_64/xen-kernel/vmlinuz-2.6.27.21-0.1-xen --kernel true
+...
+Generating manifest /tmp/vmlinuz-2.6.27.21-0.1-xen.manifest.xml
+
+euca-upload-bundle -b example_kernel_bucket -m /tmp/vmlinuz-2.6.27.21-0.1-xen.manifest.xml
+...
+Uploaded image as example_kernel_bucket/vmlinuz-2.6.27.21-0.1-xen.manifest.xml
+
+euca-register example_kernel_bucket/vmlinuz-2.6.27.21-0.1-xen.manifest.xml
+IMAGE	eki-XXXXXXXX</codeblock>
+            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="p:4;36:16">Where the returned value <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_kernel.dita" xtrc="codeph:1;36:49">eki-XXXXXXXX</codeph> is the
+                unique ID of the registered kernel image.</p>
+        </example>
+
+    </taskbody>
+</task>

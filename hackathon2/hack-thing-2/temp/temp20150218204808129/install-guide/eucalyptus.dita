@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/install-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/install-guide/?><?path2project ../?><concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="eucalyptus" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/install-guide/eucalyptus.dita" xtrc="concept:1;4:26">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/install-guide/eucalyptus.dita" xtrc="title:1;5:9"><ph class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:1;13:24">Eucalyptus</ph> Installation</title>
+	<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/install-guide/eucalyptus.dita" xtrc="shortdesc:1;6:13">This section details steps to install <ph class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:1;13:24">Eucalyptus</ph>.</shortdesc>
+ <conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/install-guide/eucalyptus.dita" xtrc="conbody:1;8:11">
+ 	<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/install-guide/eucalyptus.dita" xtrc="p:1;9:6">To install <ph class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:1;13:24">Eucalyptus</ph>, perform the following tasks in
+ 		the order presented in this section.</p>
+ 	
+ 	
+ </conbody>
+</concept>

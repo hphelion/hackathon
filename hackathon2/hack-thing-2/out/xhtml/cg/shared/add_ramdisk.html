@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Add a Ramdisk"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_add_existing.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/add_kernel.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/add_rootfs.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="add_ramdisk"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Add a Ramdisk</title>
+</head>
+<body id="add_ramdisk">
+
+
+	<h1 class="topictitle1">Add a Ramdisk</h1>
+
+	
+	<div><p/>
+
+		<div class="section">
+			<p>When you add a ramdisk to Walrus, you bundle the ramdisk file,
+				upload the file to a bucket in Walrus that you name, and then
+				register the ramdisk with Eucalyptus.</p>
+
+			<p>To add a ramdisk to Walrus:</p>
+
+		</div>
+
+		<div class="p">
+				<span>Use the following three commands:</span>
+				<div>
+					<pre class="codeblock">euca-bundle-image -i &lt;ramdisk_file&gt; --ramdisk true
+euca-upload-bundle -b &lt;ramdisk_bucket&gt; -m /tmp/&lt;ramdisk_file&gt;.manifest.xml
+euca-register &lt;ramdisk_bucket&gt;/&lt;ramdisk_file&gt;.manifest.xml</pre>
+
+				</div>
+			</div>
+
+		<div class="example">
+			<p>For example:</p>
+
+			<pre class="codeblock">euca-bundle-image -i euca-fedora-10-x86_64/xen-kernel/initrd-2.6.27.21-0.1-xen --ramdisk true
+...
+Generating manifest /tmp/initrd-2.6.27.21-0.1-xen.manifest.xml
+
+euca-upload-bundle -b example_rd_bucket -m /tmp/initrd-2.6.27.21-0.1-xen.manifest.xml
+...
+Uploaded image as example_rd_bucket/initrd-2.6.27.21-0.1-xen.manifest.xm
+
+euca-register example_rd_bucket/initrd-2.6.27.21-0.1-xen.manifest.xml
+IMAGE	eri-XXXXXXXX
+    		</pre>
+
+			<p>Where the returned value <samp class="codeph">eri-XXXXXXXX</samp> is the
+				unique ID of the registered ramdisk image.</p>
+
+		</div>
+
+
+	</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_add_existing.html">Bundle, Upload, and Register an Image with Eucalyptus</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../shared/add_kernel.html">Add a Kernel</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../shared/add_rootfs.html">Add a Root Filesystem</a></div>
+</div>
+</div>
+
+</body>
+</html>

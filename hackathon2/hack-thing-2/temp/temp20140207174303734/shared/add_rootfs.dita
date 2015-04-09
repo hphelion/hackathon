@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140207174303734/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140207174303734/shared/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="add_rootfs" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="task:1;4:23">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="title:1;5:9">Add a Root Filesystem</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita"/>
+	<prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="taskbody:1;7:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="context:1;8:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="p:1;9:7">When you add a root filesystem to Walrus, you bundle the root
+				filesystem file, upload the file to a bucket in Walrus that you
+				name, and then register the root filesystem with Eucalyptus. The
+				bundle operation can include a registered ramdisk (ERI ID) and a
+				registered kernel (EKI ID). The resulting image will associate
+				the three images.</p>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="p:2;15:7">You can also bundle the root file system independently and associate the ramdisk and kernel
+				with the resulting EMI at run time.
+				</p>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="p:3;18:7">To add a root filesystem to Walrus:</p>
+		</context>
+		<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="steps:1;20:10">
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="step:1;21:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="cmd:1;22:10">Use the following three commands:</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="info:1;23:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="codeblock:1;24:17">euca-bundle-image -i &lt;root_filesystem_file&gt; -r &lt;architecture&gt;
+euca-upload-bundle -b &lt;root_filesystem_file_bucket&gt; -m /tmp/&lt;root_filesystem_file&gt;.manifest.xml
+euca-register &lt;root_filesystem_file_bucket&gt;/&lt;root_filesystem_file&gt;.manifest.xml -n &lt;rootfs_name&gt; -a &lt;architecture&gt;</codeblock>
+				</info>
+			</step>
+		</steps>
+		<example class="- topic/example " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="example:1;30:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="p:4;31:7">For example:</p>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="codeblock:2;32:15">euca-bundle-image -i euca-fedora-10-x86_64/fedora.10.x86-64.img  --ramdisk eri-722B3CBA --kernel eki-5B3D3859 -r x86_64
+...
+Generating manifest /tmp/fedora.10.x86-64.img.manifest.xml
+
+euca-upload-bundle -b example_rf_bucket -m /tmp/fedora.10.x86-64.img.manifest.xml
+...
+Generating manifest /tmp/fedora.10.x86-64.img.manifest.xml
+
+euca-register example_rf_bucket/fedora.10.x86-64.img.manifest.xml -n example_rf -a x86_64
+IMAGE	 emi-XXXXXXXX</codeblock>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="p:5;42:7">Where the returned value <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_rootfs.dita" xtrc="codeph:1;42:40">emi-XXXXXXXX</codeph> is the
+				unique ID of the registered machine image.</p>
+		</example>
+
+	</taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:26;51:54" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:23;48:87" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/img_add_existing.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Bundle, Upload, and Register an Image with Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:25;50:55" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/add_ramdisk.dita" role="previous"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Add a Ramdisk</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:27;53:66" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/img_task_remove_image.dita" role="next"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Remove an Image</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link></linkpool></related-links>
+</task>

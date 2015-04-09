@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140206203049659/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140206203049659/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="img_task_modify_existing_image" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="task:1;3:43">
+    <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="title:1;4:12">Create a New Image from an Existing Instance-Store Image</title>
+    <shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;5:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita">A common way to create a new image is to customize an existing image.</shortdesc>
+    <prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="taskbody:1;6:15">
+        <context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="context:1;7:18">
+            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="p:1;8:16">This example shows how to create a new instance store Eucalyptus image based on an
+                existing instance store Eucalyptus instance.</p>
+        </context>
+        <steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="steps:1;11:16">
+
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="step:1;13:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="cmd:1;14:22">Log on to an existing Eucalyptus isntance-store instance and customize the
+                    instance. See <xref keyref="prepare_img" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="xref:1;15:63" href="ig_task_prepare_image.dita" type="task"><?ditaot gentext?>Prepare a Linux Image for Eucalyptus<?ditaot genshortdesc?><desc class="- topic/desc ">This section explains how to prepare an image before importing it for use in         Eucalyptus.</desc></xref> for instructions.</cmd>
+            </step>
+
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="step:2;18:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="cmd:2;19:22">Create a new image based on the image you just modified by using the
+                        <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="codeph:1;20:33">euca-bundle-instance</codeph> command, specifying a name (for
+                    Windows instances, prefix the name with 'windows'), a description, and the
+                    instance ID of the Eucalyptus instance you customized in the previous step. For
+                    example:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="info:1;24:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="codeblock:1;25:32">euca-bundle-instance -b mybundle -p mycentos6 -o $EC2_ACCESS_KEY -w $EC2_SECRET_KEY i-96154365
+BUNDLE     bun-96154365     i-96154365     mybundle     mycentos     62013-11-05T21:37:23.469Z2013-11-05T21:37:23.469Z     pending     0</codeblock>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="p:2;27:24"> This command will the bundle task ID and exit immediately. In the
+                        background, Eucalyptus will begin the bundling process. Depending on the
+                        size of the instance, it can take several minutes for the bundling task
+                        to complete.</p>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="p:3;31:24">You can monitor the status of the bundle task using the
+                            <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="codeph:2;32:37">euca-describe-bundle-tasks</codeph> command, supplying the ID of
+                        the image returned from the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="codeph:3;33:61">eucalyptus-bundle-instance</codeph>
+                        command. For example: </p>
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="codeblock:2;35:32">euca-describe-bundle-tasks
+BUNDLE     bun-96154365     i-96154365     mybundle     mycentos6     2013-11-05T21:37:23.469Z2013-11-05T21:37:58.446Z     storing     0</codeblock>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="p:4;37:24"> </p>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="step:3;40:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="cmd:3;41:22">Once the bundle task is complete, you can register thebundle as an instance-store image using the euca-register command, specifying the path to the bundle manifest 
+                in the format <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="codeph:4;42:39">[bucket]/[prefix].manifest.xml</codeph>. For example:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="info:2;43:23"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="codeph:5;43:31">euca-register mybundle/mycentos6.manifest.xml.</codeph></info>
+            </step>
+        </steps>
+        <result class="- topic/section task/result " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_modify_existing_instance_store_image.dita" xtrc="result:1;46:17">Your new image is now ready for use in your Eucalyptus cloud.</result>
+    </taskbody>
+</task>

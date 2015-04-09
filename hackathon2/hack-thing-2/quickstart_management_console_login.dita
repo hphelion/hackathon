@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_management_console_login">
+    <title>Log In to the Management Console</title>
+    <shortdesc/>
+    <taskbody>
+        <context/>
+        <steps>
+            
+            <step>
+                <cmd>Open the management console URL you obtained in the previous step.</cmd>
+                <info>
+                    <image id="quickstart_management_console_login_1" href="images/quickstart_management_console_login_1.png" scale="75"/>
+                </info>
+                
+            </step>
+            <step>
+                <cmd>Log in using the first username and first password you specified when you created the cluster. For example:</cmd>
+                <info>
+                    <image id="quickstart_management_console_login_2" href="images/quickstart_management_console_login_2.png" scale="75"/>
+                </info>
+                
+            </step>
+        </steps>
+        <postreq>Congratulations! You are now ready to deploy applications.</postreq>
+    </taskbody>
+</task>

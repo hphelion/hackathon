@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140207175414529/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140207175414529/image-guide/?><?path2project ../?><concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="img_concept_understanding_images" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="concept:1;4:48">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="title:1;5:9">Image Overview</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">An image defines what will run on a guest instance with your Eucalyptus cloud.
+		Typically, an image contains one of the Linux distributions like CentOS, Fedora, Ubuntu,
+		Debian or others. It could also contain one of the supported Windows server versions. The
+		format for these is identical.</shortdesc>
+	<prolog class="- topic/prolog " xtrc="prolog:1;10:10" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">
+		<copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;11:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">
+			<keywords class="- topic/keywords " xtrc="keywords:1;12:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">
+				<indexterm class="- topic/indexterm " xtrc="indexterm:1;13:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">image <indexterm class="- topic/indexterm " xtrc="indexterm:2;13:33" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">defined</indexterm>
+					<indexterm class="- topic/indexterm " xtrc="indexterm:3;14:17" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">types of</indexterm>
+					<indexterm class="- topic/indexterm " xtrc="indexterm:4;15:17" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">pre-packaged</indexterm>
+				</indexterm>
+			</keywords>
+		<prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+	</prolog>
+	<conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="conbody:1;20:11">
+
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:1;22:6">Normally when we use the term "image" we mean the root file system. Once bundled,
+			uploaded, and registered with Eucalyptus, such an image is known as a Eucalyptus machine
+			image (EMI).</p>
+
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:2;26:6">There are, however, other types of images that support the EMI. They are the kernel (EKI)
+			and ramdisk (ERI). They contain kernel modules necessary for proper functioning of the
+			image. Often, one set of these ERIs and EKIs are used by multiple EMIs. Once loaded into
+			the Eucalyptus cloud, the EKI and ERI are referred to by the image and you don't have
+			much interaction with them directly. </p>
+
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:3;32:6">To help get you started, Eucalyptus provides pre-packaged virtual machines that are ready
+			to run in your cloud. You can get them at the <xref href="http://emis.eucalyptus.com/" format="html" scope="external" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="xref:1;34:36"><?ditaot usertext?>Eucalyptus Machine Images</xref> page. Each
+			Eucalyptus image from this site comes bundled with a correspoding EKI and ERI. You can
+			manually download these images from the web page, or you can use the Eualyptus Image
+			Store commands to list and describe these images, as well as to install an image in your
+			cloud. For more information, see <xref href="img_task_eustore.dita" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="xref:2;38:72" type="task"><?ditaot usertext?>Browse and Install
+				Images from EuStore<?ditaot genshortdesc?><desc class="- topic/desc ">Eucalyptus provides a resource, called EuStore. EuStore contains images that you can         download and install. This task explains how to browse and install images from         EuStore.</desc></xref>.</p>
+
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:4;41:6">If you find that the pre-packaged images don't meet your needs, you can migrate an image
+			from another cloud system (such as vSphere or Amazon Web Services) or create your own
+			image. See the rest of this guide for more information. </p>
+
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:5;45:6">Once you've created or downloaded the image(s) you plan to use, you can bundle, upload
+			and register the images with your Eucalyptus cloud.</p>
+		
+		<note type="tip" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="note:1;48:20">For a list of supported guest operating systems, go to
+			<xref href="https://www.eucalyptus.com/eucalyptus-cloud/iaas/compatibility" scope="external" format="html" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="xref:3;50:19"><?ditaot usertext?>Eucalyptus Cloud Compatibility Matrix</xref>.</note>
+
+	</conbody>
+</concept>

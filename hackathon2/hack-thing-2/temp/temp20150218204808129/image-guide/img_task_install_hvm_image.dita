@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="img_task_install_hvm_image" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="task:1;4:39">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="title:1;5:9">Install an HVM Image</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita"/>
+	<prolog class="- topic/prolog " xtrc="prolog:1;7:10" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita">
+		<copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2014"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;8:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita">
+			<keywords class="- topic/keywords " xtrc="keywords:1;9:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita">
+				<indexterm class="- topic/indexterm " xtrc="indexterm:1;10:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita">image tasks <indexterm class="- topic/indexterm " xtrc="indexterm:2;10:39" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita">install HVM image</indexterm>
+				</indexterm>
+			</keywords>
+		<prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="4.0" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+	</prolog>
+	<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="taskbody:1;15:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="context:1;16:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:1;17:7"> HVM (Hardware-assisted Virtual Machine) images are sequences of raw sectors of a
+				complete bootable disk, including a boot loader and one or more partitions with an
+				operating system. Such images are self-contained and can be booted on hardware that
+				supports virtualization or on a full software emulation of hardware (QEMU).</p>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:2;21:7">At run time, HVM images can be deployed to disks local to the hypervisor (so-called
+				Instance Store images) or they can run off of dynamic volumes on EBS (so-called
+				EBS-backed instances or boot-from-EBS instances). This topic covers methods for
+				installing an HVM image into either type of EMI.</p>
+		</context>
+	</taskbody>
+	<task id="img_task_install_hvm_image.instance_store" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="task:2;27:55">
+		<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="title:2;28:10">Install an HVM image as an Instance Store EMI</title>
+		<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="shortdesc:2;29:15"/>
+		<prolog class="- topic/prolog " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="prolog:2;30:11">
+			<metadata class="- topic/metadata " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="metadata:2;31:14">
+				<keywords class="- topic/keywords " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="keywords:2;32:15">
+					<indexterm class="- topic/indexterm " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="indexterm:3;33:17">image tasks <indexterm class="- topic/indexterm " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="indexterm:4;33:40">install instance-store HVM image</indexterm>
+					</indexterm>
+				</keywords>
+			</metadata>
+		</prolog>
+		<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="taskbody:2;38:13">
+			<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="context:2;39:14"/>
+			<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="steps:1;40:11">
+				<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:1;41:11">
+					<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:1;42:11">Bundle, upload, and register the HVM image. All of this can be accomplished
+						with a single command.</cmd>
+					<choices class="- topic/ul task/choices " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="choices:1;44:15">
+						<choice class="- topic/li task/choice " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="choice:1;45:15">
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:3;46:11">For Linux images, the required options are:</p>
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:1;47:16">euca-install-image -i /path/to/hvm-image -n name-of-the-image -r
+								x86_64 --virtualization-type hvm -b bucket-name-for-image</codeph>
+						</choice>
+						<choice class="- topic/li task/choice " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="choice:2;50:15">
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:4;51:11">When installing a Windows image, an additional flag is necessary:</p>
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:2;52:16">euca-install-image -i /path/to/hvm-image -n name-of-the-image -r
+								x86_64 --virtualization-type hvm -b bucket-name-for-image
+								--platform=windows</codeph>
+						</choice>
+					</choices>
+				</step>
+			</steps>
+		</taskbody>
+	</task>
+
+	<task id="img_task_install_hvm_image.ebs" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="task:3;62:44">
+		<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="title:3;63:10">Install an HVM image as an EBS-Backed EMI</title>
+		<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="shortdesc:3;64:15"/>
+		<prolog class="- topic/prolog " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="prolog:3;65:11">
+			<metadata class="- topic/metadata " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="metadata:3;66:14">
+				<keywords class="- topic/keywords " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="keywords:3;67:15">
+					<indexterm class="- topic/indexterm " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="indexterm:5;68:17">image tasks <indexterm class="- topic/indexterm " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="indexterm:6;68:40">install EBS image</indexterm>
+					</indexterm>
+				</keywords>
+			</metadata>
+		</prolog>
+		<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="taskbody:3;73:13">
+			<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="context:3;74:13">
+				<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:5;75:8"> An EBS-backed image (sometimes referred to as a "bfEBS" image) is an image with
+					a root device that is an EBS volume created from an EBS snapshot. An EBS-backed
+					image has a number of advantages (over an Instance Store image), including: </p>
+				<ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="ul:1;78:9">
+					<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="li:1;79:10">Faster boot time</li>
+					<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="li:2;80:10">Larger volume size limits</li>
+					<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="li:3;81:10">Changes to the data on the image persist after instance termination </li>
+				</ul>
+			</context>
+		</taskbody>
+
+		<task id="img_task_install_hvm_image.ebs.import_vol" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="task:4;86:56">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="title:4;87:11">Option A: Install an EBS image with euca-import-vol</title>
+			<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="shortdesc:4;88:15">With this method, a single command uploads image data into Object Store and
+				triggers a conversion task, which copies the data into an EBS volume. The volume
+				will be the source of the snapshot behind the EBS-backed EMI. </shortdesc>
+			<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="taskbody:4;91:14">
+				<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="context:4;92:15"/>
+				<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="steps:2;93:12">
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:2;94:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:2;95:12">Import the HVM image file into Object Storage and then copy it into
+							EBS. For example:</cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:1;97:13">
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:3;98:16">euca-import-volume /path/to/hvm-image --format raw
+								--availability-zone AZ-NAME --bucket bucket-for-hvm-image
+								--owner-akid $EC2_ACCESS_KEY --owner-sak $EC2_SECRET_KEY --prefix
+								image-name-prefix --description "textual description"</codeph>
+							<note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="note:1;102:14">
+								<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:6;103:12">If the volume import process was interrupted, import can be
+									resumed (within a one-week deadline) with the following
+									command:</p>
+								<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:4;106:17">euca-resume-import -t import-vol-fae1e94d
+									/path/to/hvm-image</codeph>
+							</note>
+						</info>
+					</step>
+
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:3;112:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:3;113:12">After the volume data has been uploaded to Object Store, an internal
+							conversion task will copy the data into a new EBS volume. You can query
+							the progress of this task with the following command:</cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:2;116:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:5;116:21">euca-describe-conversion-tasks
+							import-vol-fae1e94d</codeph></info>
+					</step>
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:4;119:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:4;120:12">Once the task has finished successfully and the volume is available,
+							you can take a snapshot of the volume:</cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:3;122:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:6;122:21">euca-create-snapshot &lt;volume-id&gt;</codeph></info>
+					</step>
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:5;124:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:5;125:12"> You can now register the snapshot: </cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:4;126:13">
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:7;127:16">euca-register --name &lt;image-name&gt; --snapshot &lt;snapshot-id&gt;
+								--root-device-name &lt;device&gt;</codeph>
+						</info>
+					</step>
+				</steps>
+				<result class="- topic/section task/result " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="result:1;132:13">You've now created a EBS-backed image. To maintain data persistence, be sure
+					to use <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:8;133:21">euca-stop-instances</codeph> and
+						<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:9;134:15">euca-start-instances</codeph> to stop and start your EBS-backed
+					instance.</result>
+			</taskbody>
+		</task>
+
+		<task id="img_task_install_hvm_image.ebs.import_instance" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="task:5;139:61">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="title:5;140:11">Option B: Install an EBS image with euca-import-instance</title>
+			<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="shortdesc:5;141:15">With this method, a single command uploads image data into the Object Store
+				and triggers a conversion task; this conversion task copies the data into an EBS
+				volumetakes a snapshot of the volume, registers the snapshot as an EMI, and deploys the EMI
+				as an instance.</shortdesc>
+			<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="taskbody:5;145:14">
+				<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="context:5;146:15"/>
+				<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="steps:3;147:12">
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:6;148:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:6;149:12">Turn an HVM image into a running EBS instance with a single command:</cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:5;150:13">
+							<note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="note:2;151:14">Just as with euca-run-instance, one can specify the Instance Type
+								for the instance that will run, as well as the SSH key. For
+								example:</note>
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:10;154:16">euca-import-instance /root/paravirtualimage/ubuntuJune06.img
+								--format raw --architecture x86_64 --platform Linux
+								--availability-zone EDU --bucket import_instance --owner-akid
+								$EC2_ACCESS_KEY --owner-sak $EC2_SECRET_KEY --prefix eduii
+								--description "import instance" --key admin --instance-type
+								m1.small</codeph>
+							<note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="note:3;160:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:7;160:17">If volume import process was interrupted (by an interruption of the
+								command or due to a network mishap, import can be resumed (within a
+								one-week deadline).</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:8;162:35">
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:11;163:18">euca-resume-import -t import-i-b393f3f6
+										/path/to/hvm-image</codeph>
+								</p></note>
+						</info>
+					</step>
+					
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:7;169:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:7;170:12">After the volume data has been uploaded to Object Store, an internal
+							conversion task will copy the data into a new EBS volume. You can query
+							the progress of this task with the following command:</cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:6;173:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:12;173:21">euca-describe-conversion-tasks
+							import-i-b393f3f6</codeph></info>
+					</step>
+				</steps>
+				<result class="- topic/section task/result " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="result:2;177:13">Once the conversion task has finished successfully, you should see a running instance.
+					You may log into that instance if you specified an SSH key. To maintain data
+					persistence, be sure to use <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:13;179:42">euca-stop-instances</codeph> and
+						<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:14;180:15">euca-start-instances</codeph> to stop and start your EBS-backed
+					instance.</result>
+			</taskbody>
+		</task>
+
+		<task id="img_task_install_hvm_image.ebs.manual" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="task:6;185:52">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="title:6;186:11">Option C: Install an EBS image using a helper instance</title>
+			<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="shortdesc:6;187:15">This is a more manual method for installing an HVM image into an EBS-backed
+				EMI. Instead of importing the image data into an EBS volume directly, a helper instance
+				is used to copy data from the image file into the volume. The helper instance can be
+				either an instance store or an EBS-backed instance, and can be deleted when ﬁnished. The
+				volume will be the source of the snapshot behind the EBS-backed EMI. </shortdesc>
+			<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="taskbody:6;192:14">
+				<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="context:6;193:15"/>
+				<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="steps:4;194:12">
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:8;195:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:8;196:12"> Create and launch a help instance. </cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:7;197:14"/>
+					</step>
+
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:9;200:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:9;201:12"> Create a volume big enough to hold the bootable image file: </cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:8;202:13">
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:15;203:16">euca-create-volume -z &lt;cluster_name&gt; -s
+								&lt;size_in_GB&gt;</codeph>
+						</info>
+					</step>
+
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:10;208:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:10;209:12"> Attach the volume to the helper instance: </cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:9;210:13">
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:16;211:16">euca-attach-volume &lt;volume-id&gt; -i &lt;instance-id&gt; -d
+								&lt;device&gt;</codeph>
+						</info>
+					</step>
+
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:11;216:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:11;217:12">Log in to the instance and copy the bootable image to the attached
+							volume by performing one of the following steps:</cmd>
+						<choices class="- topic/ul task/choices " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="choices:2;219:16">
+							<choice class="- topic/li task/choice " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="choice:3;220:16">If the bootable image is saved in an http or ftp repository, use
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:17;221:18">curl</codeph> or <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:18;221:43">wget</codeph> to download the
+								.img file to the attached volume. For example: <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:9;222:59">
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:19;223:18">curl &lt;path_to_bootable_image&gt; &gt; &lt;device&gt;</codeph>
+								</p></choice>
+							<choice class="- topic/li task/choice " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="choice:4;225:16"> If the bootable image is from a source other than an http or
+								FTP repository, copy the bootable image from its source to the
+								helper instance, and then copy it to the attached volume using the
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:20;228:18">dd</codeph> command. For example: <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="p:10;228:55">
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:21;229:18">dd if=&lt;path_to_bootable_image&gt; of=&lt;device&gt;
+										bs=1M</codeph>
+								</p></choice>
+						</choices>
+					</step>
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:12;234:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:12;235:12">Detach the volume from the instance:</cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:10;236:13">
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:22;237:16">euca-detach-volume &lt;volume-id&gt;</codeph>
+						</info>
+					</step>
+
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:13;241:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:13;242:12">Create a snapshot of the volume:</cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:11;243:13"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:23;243:21">euca-create-snapshot &lt;volume-id&gt;</codeph></info>
+					</step>
+					<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="step:14;245:12">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="cmd:14;246:12"> Register the snapshot: </cmd>
+						<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="info:12;247:13">
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:24;248:16">euca-register --name &lt;image-name&gt; --snapshot &lt;snapshot-id&gt;
+								--root-device-name &lt;device&gt;</codeph>
+						</info>
+					</step>
+				</steps>
+				<result class="- topic/section task/result " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="result:3;253:13">You've now created a EBS-backed image. To maintain data persistence, be sure
+					to use <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:25;254:21">euca-stop-instances</codeph> and
+						<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_install_hvm_image.dita" xtrc="codeph:26;255:15">euca-start-instances</codeph> to stop and start your EBS-backed
+					instance.</result>
+			</taskbody>
+		</task>
+	</task>
+</task>

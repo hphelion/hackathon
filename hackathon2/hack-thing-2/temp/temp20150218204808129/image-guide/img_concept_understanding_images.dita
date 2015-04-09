@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide/?><?path2project ../?><concept xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="img_concept_understanding_images" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="concept:1;4:48">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="title:1;5:9">Image Overview</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">An image defines what will run on a guest instance in your Eucalyptus cloud. An image
+		contains everything necessary to boot and run an operating system: either one of the Linux
+		distributions – CentOS, Fedora, Ubuntu, Debian, etc – or one of the supported Windows server
+		versions.</shortdesc>
+	<prolog class="- topic/prolog " xtrc="prolog:1;10:10" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">
+		<copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2014"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;11:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">
+			<keywords class="- topic/keywords " xtrc="keywords:1;12:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">
+				<indexterm class="- topic/indexterm " xtrc="indexterm:1;13:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">image <indexterm class="- topic/indexterm " xtrc="indexterm:2;13:33" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">defined</indexterm>
+					<indexterm class="- topic/indexterm " xtrc="indexterm:3;14:17" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">types of</indexterm>
+					<indexterm class="- topic/indexterm " xtrc="indexterm:4;15:17" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita">pre-packaged</indexterm>
+				</indexterm>
+			</keywords>
+		<prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="4.0" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+	</prolog>
+	<conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="conbody:1;20:11">
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:1;21:6">Images of two types are supported by Eucalyptus: <ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="ul:1;21:59">
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="li:1;22:9"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="b:1;22:12">HVM images</b> are raw disks that can boot independently. They can contain
+					Linux or Windows operating systems. HVM stands for Hardware-assisted Virtual
+					Machine because such images can only run efficiently on hardware that supports
+					virtualization. When an HVM image is uploaded and registered, it becomes a
+					Eucalyptus Machine Image (EMI) of type "hvm", with a unique ID.</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="li:2;27:9"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="b:2;27:12">Paravirtual images</b> are Linux images that can boot if they are paired with
+					a kernel and ramdisk that are compatible with the host's hypervisor. Currently
+					only root file system images are supported (on AWS, a paravirtual image can be a
+					file system or a full disk). When a paravirtual image is uploaded and
+					registered, it also becomes an EMI of "paravirtual" type, which needs to be
+					paired with a kernel (EKI) and ramdisk (ERI) images to be usable. EKI contains a
+					kernel (i.e., the ‘vmlinuz’ file typically found in the /boot directory of a
+					Linux system). ERI contains the kernel modules (i.e., the ‘initrd’ file from the
+					/boot directory).</li>
+			</ul>
+		</p>
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:2;38:6">Depending on the method used for upload, an instance's disk will reside on one of two types of
+			storage: <ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="ul:2;39:17">
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="li:3;40:9"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="b:3;40:12">Instance Store - </b> volumes are located on temporary disk space that is destroyed when
+					instances shut down. These volumes are based on a template residing in Object
+					Storage. Instance Store can host either HVM or paravirtual images.</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="li:4;43:9"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="b:4;43:12">Elastic Block Store (EBS) - </b> volumes are disks with lifetimes that can be independent
+					of instances. These volumes are based on snapshots of EBS volumes (instead of
+					templates in Object Storage). Only HVM images can be deployed on EBS in
+					Eucalyptus (in AWS, EBS can also host paravirtual images).</li>
+			</ul></p>
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:3;48:6">To help get you started, Eucalyptus Systems provides pre-packaged virtual machine images that
+			are ready to run in your cloud. You can download them from the <xref href="http://emis.eucalyptus.com/" format="html" scope="external" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="xref:1;50:71"><?ditaot usertext?>Eucalyptus Machine
+				Images</xref> page. Both HVM and paravirtual images are available there. Each
+			paravirtual image comes bundled with a correspoding EKI and ERI.</p>
+
+		<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="p:4;54:6">If you find that the pre-packaged images don't meet your needs, you can migrate an image
+			from another cloud system (such as vSphere or Amazon Web Services) or create your own
+			image. See the rest of this guide for more information. </p>
+
+		<note type="tip" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="note:1;58:20">For a list of supported guest operating systems, go to <xref href="https://www.eucalyptus.com/eucalyptus-cloud/iaas/compatibility" scope="external" format="html" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_concept_understanding_images.dita" xtrc="xref:2;60:36"><?ditaot usertext?>Eucalyptus Cloud Compatibility Matrix</xref>.</note>
+
+	</conbody>
+</concept>

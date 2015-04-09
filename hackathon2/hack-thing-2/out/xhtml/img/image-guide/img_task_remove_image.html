@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Remove an Image"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.subject" content="image tasks, remove an image"/>
+<meta name="keywords" content="image tasks, remove an image"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/ig_task_eustore.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_task_create_image_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_migrating_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_add_existing.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="image_remove"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Remove an Image</title>
+</head>
+<body id="image_remove">
+
+
+    <h1 class="topictitle1">Remove an Image</h1>
+
+    
+	
+    <div><p/>
+
+        <div class="section">
+        	<p>When a new image is uploaded to Eucalyptus, Eucalyptus saves the bundle and the image
+        		manifest to a bucket in Walrus. This bucket is set in the Eucalyptus property
+        		<samp class="codeph">walrus.storagedir</samp>. The default value for this property is
+        		<samp class="codeph">/var/lib/eucalyptus/bukkits</samp>. </p>
+
+        	
+        	<p>When you register an image, Eucalyptus creates the actual image file. Both the image
+        		manifest and the bundle must remain intact to run as an instance.</p>
+
+        	<p>Eucalyptus stores images in the path set </p>
+
+        	
+                	<p>To delete an image fully, you must deregister the image and delete the bundle.
+                		To successfully remove an image and associated bundle files:</p>
+
+        </div>
+
+        <ol><li class="stepexpand">
+                <span>Find the image you want to remove.</span>
+            	<div>
+            		<pre class="codeblock">euca-describe-images 
+IMAGE   emi-E533392E    alpha/centos.5-3.x86-64.img.manifest.xml    965590394582
+available   public   i386    machine eki-345135C9    eri-C4F135BC  instance-store
+IMAGE   <strong>emi-623C38B0</strong>  alpha/ubuntu.9-04.x86-64.img.manifest.xml   965590394582 
+available   public   i386    machine eki-E6B13926    eri-94DB3AB9  instance-store</pre>
+
+            	</div>
+            </li>
+<li class="stepexpand">
+        		<span>Note the image file name (for example, emi-623C38B0).</span>
+        	</li>
+<li class="stepexpand">
+        		<span>Deregister the image.</span>
+        		<div>
+        			<pre class="codeblock">euca-deregister emi-623C38B0
+IMAGE   emi-623C38B0</pre>
+
+        		</div>
+        	</li>
+<li class="stepexpand">
+        		<span>Delete the bundle.</span>
+        		<div>
+        			<pre class="codeblock">euca-delete-bundle -b alpha -p ubuntu.9-04.x86-64.img</pre>
+
+        			<div class="tip"><span class="tiptitle">Tip:</span> If you accidentally try to delete a bundle for a second time, you might
+        				see an error message: <samp class="codeph">problem parsing:
+        					/tmp/centos.5-3.x86-64.img.manifest.xml</samp>. This error only displays if you try to delete a bundle that no longer exists.</div>
+
+        		</div>
+        	</li>
+</ol>
+
+    	<div class="section">When you have finished these steps, display all images to confirm that the image was
+    		removed.
+    	<pre class="codeblock">euca-describe-images 
+IMAGE   emi-E533392E    alpha/centos.5-3.x86-64.img.manifest.xml    965590394582
+available   public   i386    machine eki-345135C9    eri-C4F135BC  instance-store</pre>
+
+    	</div>
+
+    </div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_task_intro.html" title="An image is the basis for instances that you spin up for your computing needs. This section explains how to create or acquire an image and then add it to your Eucalyptus cloud.">Image Tasks</a></div>
+</div>
+<div class="relinfo relconcepts"><strong>Related concepts</strong><br/>
+<div><a href="../image-guide/img_task_create_image_intro.html" title="This section covers how to create or acquire a new image for use in your Eucalyptus cloud..">Create a New Image</a></div>
+<div><a href="../image-guide/img_migrating_intro.html" title="This section covers migrating images to and from your Eucalyptus cloud.">Migrate an Image</a></div>
+</div>
+<div class="relinfo reltasks"><strong>Related tasks</strong><br/>
+<div><a href="../image-guide/ig_task_eustore.html" title="Eucalyptus provides a resource, called EuStore. EuStore contains images that you can download and install. This task explains how to browse and install images from EuStore.">Browse and Install Images from EuStore</a></div>
+<div><a href="../image-guide/img_add_existing.html">Bundle, Upload, and Register an Image with Eucalyptus</a></div>
+</div>
+</div>
+
+</body>
+</html>

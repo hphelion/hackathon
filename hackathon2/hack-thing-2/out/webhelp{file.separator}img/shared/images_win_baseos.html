@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Install Base Windows OS"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.subject" content="Images, Windows"/>
+<meta name="keywords" content="Images, Windows"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_wis.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="images_win_baseos"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Install Base Windows OS</title>
+</head>
+<body id="images_win_baseos">
+
+
+	<h1 class="topictitle1">Install Base Windows OS</h1>
+
+	
+	
+	<div><p/>
+
+		<div class="section">
+			<p>The first task for creating a Windows image is installing a base Windows operating system
+				(OS). To install a base Windows OS using KVM:</p>
+
+		</div>
+
+		<ol><li class="stepexpand">
+				<span>Log in to the stopped NC server or a host that runs the
+					same hypervisor as the NCs.</span>
+			</li>
+<li class="stepexpand">
+				<span>Create a blank disk file. Specify your Windows VM image
+					name using the parameter <samp class="codeph">of</samp>.</span>
+				<div>
+					<pre class="codeblock">dd if=/dev/zero of=windows.&lt;image_name&gt;.img bs=1M count=1 seek=16999</pre>
+
+					<div class="important"><span class="importanttitle">Important:</span> Your image name must start with the
+						word, <samp class="codeph">windows</samp> (all lower-case).</div>
+
+				</div>
+			</li>
+<li class="stepexpand" id="images_win_baseos__win_secondary_disk">
+				<span>Create a floppy and secondary blank disk to be attached to
+					the image later, in order to test paravirtualization
+					drivers</span>
+				<div>
+					<pre class="codeblock">dd if=/dev/zero of=floppy.img \
+	bs=1k count=1474
+	dd if=/dev/zero of=secondary.img \
+	bs=1M count=1 seek=1000</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Copy all of the .img and .iso files to the
+						<span class="filepath">/var/lib/libvirt/images/</span>
+					directory.</span>
+
+			</li>
+<li class="stepexpand">
+				<span>Copy the <span class="filepath">libvirt-kvm-windows-example.xml</span> file to your working
+					directory and rename it to <span class="filepath">libvirt-kvm-windows.xml</span>.</span>
+				<div>
+					<pre class="codeblock"> cp /usr/share/eucalyptus/doc/libvirt-kvm-windows-example.xml /var/lib/libvirt/images/libvirt-kvm-windows.xml </pre>
+
+					<p>or</p>
+
+					<pre class="codeblock"> cp /usr/share/eucalyptus/doc/libvirt-xen-windows-example.xml /var/lib/libvirt/images/libvirt-xen-windows.xml </pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Open the new <span class="filepath">libvirt-kvm-windows.xml</span> file and provide fully qualified
+					paths to the VM image file and iso. Make sure that the name of the bridge is the
+					same as the one used by the hypervisor on which you are creating the Windows
+					image.</span>
+				
+				<div>
+					<p>Your file should look similar to the following example:</p>
+
+					
+					<pre class="codeblock">&lt;domain type='kvm'&gt;
+	  &lt;name&gt;your-domain-name-here&lt;/name&gt;
+    &lt;os&gt;
+    &lt;type&gt;hvm&lt;/type&gt;
+    &lt;boot dev='cdrom'/&gt;
+    &lt;/os&gt;
+    &lt;features&gt;
+        &lt;acpi/&gt;
+    &lt;/features&gt;
+    &lt;memory&gt;524288&lt;/memory&gt;
+    &lt;vcpu&gt;1&lt;/vcpu&gt;
+    &lt;devices&gt;
+        &lt;emulator&gt;/usr/libexec/qemu-kvm&lt;/emulator&gt;
+        &lt;disk type='file'&gt;
+            &lt;source file='/var/lib/libvirt/images/windows_2003.img'/&gt;
+            &lt;target dev='hda'/&gt;
+        &lt;/disk&gt;
+        &lt;!-- &lt;disk type='file' device='disk'&gt;
+             &lt;source file='fully_qualified_path_to_secondary_disk'/&gt;
+             &lt;target dev='vda' bus='virtio'/&gt;
+        &lt;/disk&gt; 
+        &lt;disk type='file' device='floppy'&gt;
+             &lt;source file='fully_qualified_path_to_floppy_disk'/&gt;
+             &lt;target dev='fda'/&gt;
+        &lt;/disk&gt; --&gt;
+        &lt;disk type='file' device='cdrom'&gt;
+            &lt;source file='/var/lib/libvirt/images/en_win_srv_2003_r2_enterprise_with_sp2_cd1_x13-05460.iso'/&gt;
+            &lt;target dev='hdc'/&gt;
+            &lt;readonly/&gt;
+        &lt;/disk&gt;
+        &lt;interface type='bridge'&gt;
+            &lt;source bridge='br0'/&gt;
+            &lt;model type='rtl8139'/&gt;
+        &lt;/interface&gt;
+        &lt;!--&lt;interface type='bridge'&gt;
+            &lt;source bridge='br0'/&gt;
+            &lt;model type='virtio'/&gt; 
+        &lt;/interface&gt; --&gt;
+        &lt;graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0'/&gt;
+    &lt;/devices&gt;
+&lt;/domain&gt;</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Start the VM.</span>
+				<div>
+					<pre class="codeblock">cd /var/lib/libvirt/images
+virsh create libvirt-kvm-windows.xml</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Connect to the virtual console using the VNC client of your
+					choice. On the NC, check the display number that has been
+					allocated by looking at the process table (<samp class="codeph">ps axw |
+						grep vnc</samp>). For example, if the display number
+					is 0, then connect to the NC using the VNC client:</span>
+				<div>
+					<pre class="codeblock">vinagre &lt;machine-hosting-vm&gt;:0</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Follow the standard Windows installation procedure until
+					the VM has completed installing Windows.</span>
+				<div>
+					<div class="tip"><span class="tiptitle">Tip:</span> On some hosts, the VNC’s display number
+						will change when an image restarts. Use
+							<samp class="codeph">ps</samp> to find the current
+						number.</div>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Run <samp class="codeph">virsh list</samp> to display the domain
+					name.</span>
+			</li>
+<li class="stepexpand">
+				<span>Shut down the Windows VM you have just created. The easiest
+					way to shutdown your VM is to use the <samp class="codeph">virsh
+						destroy</samp> command, as shown:</span>
+				<div>
+					<pre class="codeblock">virsh destroy &lt;domain_name&gt;</pre>
+
+				</div>
+			</li>
+</ol>
+
+		<div class="section">To install the base Windows operating system using VMware,
+			create a new VM using the VMware vSphere Client. Install Windows on
+			the VM following standard VMware procedures, and install VMware
+			Tools.</div>
+
+	</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../shared/images_win.html" title="This section details the tasks necessary to create a Windows image.">Create a Windows Image (KVM)</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../shared/images_win.html" title="This section details the tasks necessary to create a Windows image.">Create a Windows Image (KVM)</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../shared/images_win_wis.html">Install Eucalyptus Windows Integration</a></div>
+</div>
+</div>
+
+</body>
+</html>

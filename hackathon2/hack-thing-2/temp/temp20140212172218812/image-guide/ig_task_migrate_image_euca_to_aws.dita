@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140212172218812/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140212172218812/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="hg_task_migrate_image_euca_to_aws" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="task:1;4:46">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="title:1;5:9">Migrate a Linux Image from Eucalyptus to AWS</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita">To migrate an image from Eucalyptus to AWS, perform the following steps. </shortdesc>
+	<prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="taskbody:1;7:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="context:1;8:12"><note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="note:1;8:18">These are high-level guidelines for moving an instance from Eucalyptus to
+				AWS. Specific examples will vary depending on the distro running on the
+				image.</note></context>
+		<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="steps:1;11:10">
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:1;12:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:1;13:10">Run an instance from the image you chose.</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="info:1;14:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="codeblock:1;15:17">euca-run-instance emi-1A6338AE</codeblock>
+				</info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:2;18:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:2;19:10">SSH into the instance and verify that the instance is valid for use with
+					AWS:</cmd>
+
+				<substeps class="- topic/ol task/substeps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substeps:1;22:15">
+					<substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substep:1;23:15">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:3;24:12">Download the latest ec2-modules from <xref href="http://s3.amazonaws.com/ec2-downloads" scope="external" format="html" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="xref:1;25:86"><?ditaot gentext?>http://s3.amazonaws.com/ec2-downloads</xref> and put them into the
+								<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="codeph:1;26:17">/lib/modules</codeph> directory on the instance.</cmd>
+					</substep>
+					<substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substep:2;28:15">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:4;29:12"> Copy the AWS EC2 certificate and private key from the AWS instance to
+							your local workstation. </cmd>
+					</substep>
+					<substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substep:3;32:15">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:5;33:12"> Shut down unneeded services on the AWS instance (for example, Apache
+							and MySQL). </cmd>
+					</substep>
+					<substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substep:4;36:15">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:6;37:12"> Clear out log files and bash history files. </cmd>
+					</substep>
+					<substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substep:5;39:15">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:7;40:12"> Remove your ssh keys from the instance. </cmd>
+					</substep>
+					<substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substep:6;42:15">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:8;43:12"> Reset passwords for the instance, and for any services that maintain
+							their own password database. </cmd>
+					</substep>
+					<substep class="- topic/li task/substep " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="substep:7;46:15">
+						<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:9;47:12"> Clear out any temporary directories. </cmd>
+					</substep>
+				</substeps>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:3;51:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:10;52:10">Install Euca2ools on the instance.</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="info:2;53:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="codeblock:2;54:18"/>
+				</info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:4;57:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:11;58:10">Mount a volume that is at least 1.5 times as large as the entire
+					instance.</cmd>
+
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:5;62:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:12;63:10">Bundle the running instance.</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="info:3;64:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="codeblock:3;65:17">euca-bundle-instance </codeblock>
+				</info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:6;68:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:13;69:10">Switch the Euca2ools configuration file to use Eucalyptus</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="info:4;70:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="codeblock:4;71:17">default-region = euca-release</codeblock>
+				</info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:7;74:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:14;75:10">Upload the AWS bundled instance to Eucalyptus.</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="info:5;76:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="codeblock:5;77:17">euca-upload-bundle -b bucket_name -m manifest_file</codeblock>
+				</info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="step:8;80:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="cmd:15;81:10">Test the new uploaded image.</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="info:6;82:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_image_euca_to_aws.dita" xtrc="codeblock:6;83:17">euca-run-instance emi-a6e15bcf</codeblock>
+				</info>
+			</step>
+		</steps>
+	</taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:21;44:76" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="concept" xtrc="topicref:18;38:88" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/img_migrating_intro.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Migrate an Image</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">This section covers migrating images to and from your Eucalyptus cloud.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:19;40:83" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/ig_task_prepare_image.dita" role="sibling"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Prepare a Linux Image for Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">This section explains how to prepare an image before importing it for use in         Eucalyptus.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:20;42:76" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/ig_task_migrate_image_aws_to_euca.dita" role="sibling"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Migrate a Linux Image from AWS to Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">You can migrate an S3-backed image from AWS to Eucalyptus.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:22;46:66" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/ig_task_migrate_vsphere.dita" role="sibling"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Migrate an Image from vSphere to Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">To migrate a disk in VMSDK format from vSphere to Eucalyptus, perform the following         steps.</desc></link></linkpool></related-links>
+</task>

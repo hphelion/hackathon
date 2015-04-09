@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Add a Kernel"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_add_existing.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/add_ramdisk.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="add_kernel"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Add a Kernel</title>
+</head>
+<body id="add_kernel">
+
+
+    <h1 class="topictitle1">Add a Kernel</h1>
+
+    
+    <div><p/>
+
+        <div class="section">
+            <p>When you add a kernel to Walrus, you bundle the kernel file,
+                upload the file to a bucket in Walrus that you name, and then
+                register the kernel with Eucalyptus.</p>
+
+            <p>To add a kernel to Walrus:</p>
+
+        </div>
+
+        <div class="p">
+                <span>Use the following three commands:</span>
+                <div>
+                    <pre class="codeblock">euca-bundle-image -i &lt;kernel_file&gt; --kernel true --arch &lt;architecture&gt;
+euca-upload-bundle -b &lt;kernel_bucket&gt; -m /tmp/&lt;kernel_file&gt;.manifest.xml
+euca-register &lt;kernel_bucket&gt;/&lt;kernel_file&gt;.manifest.xml -a x86_64 -n mynewkernel</pre>
+
+                </div>
+            </div>
+
+        <div class="example">
+            <p>For example:</p>
+
+            <pre class="codeblock">euca-bundle-image -i euca-fedora-10-x86_64/xen-kernel/vmlinuz-2.6.27.21-0.1-xen --kernel true --arch x86_64
+...
+Generating manifest /tmp/vmlinuz-2.6.27.21-0.1-xen.manifest.xml
+
+euca-upload-bundle -b example_kernel_bucket -m /tmp/vmlinuz-2.6.27.21-0.1-xen.manifest.xml
+...
+Uploaded image as example_kernel_bucket/vmlinuz-2.6.27.21-0.1-xen.manifest.xml
+
+euca-register example_kernel_bucket/vmlinuz-2.6.27.21-0.1-xen.manifest.xml -a x86_64 -n mynewkernel
+IMAGE	eki-XXXXXXXX</pre>
+
+            <p>Where the returned value <samp class="codeph">eki-XXXXXXXX</samp> is the
+                unique ID of the registered kernel image.</p>
+
+        </div>
+
+
+    </div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_add_existing.html">Bundle, Upload, and Register an Image with Eucalyptus</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../shared/add_ramdisk.html">Add a Ramdisk</a></div>
+</div>
+</div>
+
+</body>
+</html>

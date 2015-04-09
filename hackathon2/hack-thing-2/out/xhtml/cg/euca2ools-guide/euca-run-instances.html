@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="euca-run-instances"/>
+<meta name="abstract" content="Runs instances of the specified machine image."/>
+<meta name="description" content="Runs instances of the specified machine image."/>
+<meta name="DC.subject" content="EC2 compatible commands, Eucalyptusrun instances"/>
+<meta name="keywords" content="EC2 compatible commands, Eucalyptusrun instances"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="euca-run-instances"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>euca-run-instances</title>
+</head>
+<body id="euca-run-instances">
+
+
+	<h1 class="topictitle1">euca-run-instances</h1>
+
+
+	
+	
+	<div><p>Runs instances of the specified machine image.</p>
+
+		<div class="section"><h2 class="sectiontitle">Syntax</h2>
+			
+			<pre class="codeblock">euca-run-instances <strong>image_id</strong> [-n <strong>count</strong> ][-g 
+				<strong>group_name</strong> ][-k <strong>keyname</strong> ][-d <strong>user_data_file</strong> ]
+				[-t <strong>instance_type</strong> ][--kernel <strong>kernel</strong> ][--ramdisk <strong>ramdisk</strong> ]
+				[-b <strong>block_device_mapping</strong>][--monitor] [-z <strong>zone</strong> ]  
+				[--disable-api-termination] 
+				[--instance-initiated-shutdown-behavior <strong>value</strong>] 
+				[--placement-group <strong>group_name</strong>]
+				[--tenancy <strong>value</strong>] [--client-token <strong>token_value</strong>] [-s <strong>subnet_value</strong>]
+				[--private-ip-address <strong>address</strong>] [--secondary-private-ip-address <strong>address</strong>]
+				[--secondary-private-ip-address-count <strong>count</strong>] [-a <strong>interface</strong>]
+				[-p <strong>IAM_profile</strong>] [--ebs-optimized]
+				</pre>
+
+		</div>
+
+		<div class="section"><h2 class="sectiontitle">Options</h2>
+			
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+					
+					
+					
+					<thead align="left">
+						<tr>
+							<th class="cellrowborder" valign="top" width="33.754208754208754%" id="d2095e120">Option</th>
+
+							<th class="cellrowborder" valign="top" width="57.82828282828283%" id="d2095e123">Description</th>
+
+							<th class="cellrowborder" valign="top" width="8.417508417508419%" id="d2095e126">Required</th>
+
+						</tr>
+
+					</thead>
+
+
+					<tbody>
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph"><em>image_id</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">ID of the image to run</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">Yes</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-n,--instance-count <em>min[-max]</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Number of instances to run. If this is specified as a range
+								(min-max), Eucalyptus will try to run the maximum number, but no
+								fewer than the minimum number.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-g,--group <em>group</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Security group to run the instance in</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-k,--key <em>keypair</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Name of a key pair</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-d,--user-data <em>user_data</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">User data to pass to the instance</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-f,--user-data-file
+								<em>user_data_file</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">File containing user data to pass to the instance </td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--addressing <em>user_data_file</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(Eucalyptus only) Addressing scheme to use when launching the
+								instance. Use <samp class="codeph">private</samp> to run an instance with no
+								public address. <p>Valid values: <samp class="codeph">public</samp> |
+										<samp class="codeph">private</samp></p>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-t,--instance-type</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Instance type to run. <p>Valid
+									values: <samp class="codeph">m1.small</samp> | <samp class="codeph">t1.micro</samp> | <samp class="codeph">m1.medium</samp> | <samp class="codeph">m1.large</samp> | 
+								    <samp class="codeph">c1.medium</samp> | <samp class="codeph">m1.xlarge</samp> | <samp class="codeph">c1.xlarge</samp> | <samp class="codeph">m2.xlarge</samp> |
+									<samp class="codeph">m3.xlarge</samp> | <samp class="codeph">cc1.4xlarge</samp> | <samp class="codeph">m2.2xlarge</samp> |<samp class="codeph"> m3.2xlarge</samp> | 
+								    <samp class="codeph">m2.4xlarge</samp> | <samp class="codeph">hi1.4xlarge</samp> | <samp class="codeph">cc2.8xlarge</samp> | <samp class="codeph">cg1.4xlarge</samp> | 
+								    <samp class="codeph">cr1.8xlarge</samp> | <samp class="codeph">hs1.8xlarge</samp>
+							</p>
+
+							</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--kernel</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Kernel ID to be used</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--ramdisk</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Ramdisk ID to be used</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-b,--block-device-mapping </samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Block device mapping for the instance. This is passed in the form
+								of &lt;devicename&gt;=&lt;blockdevice&gt;, where:
+									<samp class="codeph">devicename</samp> is the device name of the physical
+								device on the instance to map and <samp class="codeph">blockdevice</samp> is
+								one of the following values: <ul>
+									<li><samp class="codeph">none</samp>: Use this value to suppress existing
+										mapping on the specified image for this device. For example:
+											<samp class="codeph">/dev/sdc=none</samp></li>
+
+									<li><samp class="codeph">ephemeral[0..3]</samp>: Use this value to indicate
+										that an instance local storage device should be mapped to
+										this device. For example:
+											<samp class="codeph">/dev/sdc=ephemeral0</samp></li>
+
+									<li><samp class="codeph">[snapshot-id]:[size]:[delete-on-termination
+											(true|false)]</samp>: Use this value to map a device
+										to an existing EBS-backed volume, and to specify whether the
+										EBS volume should be deleted on termination. This value
+										defaults to <samp class="codeph">true</samp>. <p>To specify a new
+											EBS-backed volume, skip the snapshot ID and pass in a
+											volume size instead. For example:<samp class="codeph">
+												/dev/sdb=:20</samp>.</p>
+</li>
+
+								</ul>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-m, --monitor</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Enable monitoring for the instance. Boolean value. Defaults to
+								Disabled.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--disable-api-termination</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Prevent API calls from terminating the instance(s).</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--instance-initiated-shutdown-behavior
+									<strong>value</strong></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Indicates whether to stop or terminate EBS-backed instances upon
+								shutdown. <p>Valid values: <samp class="codeph">stop</samp> (default) |
+										<samp class="codeph">terminate</samp></p>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--placement-group <strong>group_name</strong></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Specifies the placement group in which to launch the
+								instance.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--tenancy <strong>value</strong></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(VPC only) Indicates the type of tenancy for the instance. A
+								value of <samp class="codeph">dedicated</samp> indicates that the instance
+								should run on single-tenant hardware. <p>Valid values:
+										<samp class="codeph">default</samp> |
+								<samp class="codeph">dedicated</samp></p>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--client-token <strong>token_value</strong></samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Unique identifier to ensure request idempotency.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-s,--subnet <strong>subnet_value</strong>
+								</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(VPC only) Subnet for the instance's network interface.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--private-ip-address <strong>address</strong>
+								</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(VPC only) Assign the specified primary private IP address to an
+								instance's interface.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--secondary-private-ip-address <strong>address</strong>
+								</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(VPC only) Assign the specified secondary private IP address to
+								an instance's network interface. Use this option multiple times to
+								add additional addresses.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--secondary-private-ip-address <strong>address</strong>
+								</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(VPC only) Assign the specified secondary private IP address to
+								an instance's network interface. Use this option multiple times to
+								add additional addresses.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--secondary-private-ip-address-count <strong>count</strong>
+								</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(VPC only) Automatically assign a specific number of secondary
+								private IP addresses to an instance's network interface.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-a, --network-interface <strong>interface</strong>
+								</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">(VPC only) Add the specified network interface to the new instance. <p>If the
+									interface already exists, supply its ID and a numeric index for
+									it, separated by ":", in the form "eni-NNNNNNNN:INDEX". To
+									create a new interface, supply a numeric index and subnet ID for
+									it, along with (in order) an optional description, a primary
+									private IP address, a list of security group IDs to associate
+									with the interface, whether to delete the interface upon
+									instance termination ("true" or "false"), a number of secondary
+									private IP addresses to create automatically, and a list of
+									secondary private IP addresses to assign to the interface,
+									separated by ":", in the form:</p>
+
+								<samp class="codeph">:INDEX:SUBNET:[DESCRIPT
+									ION]:[PRIV_IP]:[GROUP1,GROUP2,...]:[true|false]:[SEC_I
+									P_COUNT|:SEC_IP1,SEC_IP2,...]</samp>. <p>You cannot specify
+									both. </p>
+<p>This option may be used multiple times. Each adds
+									another network interface.</p>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-p, --iam-profile <strong>IAM_profile</strong>
+							</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">The name or ARN of the IAM instance profile to associate
+								with the new instance(s).</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+						
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">--ebs-optimized</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Optimize the new instance(s) for EBS I/O.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="33.754208754208754%" headers="d2095e120 "><samp class="codeph">-z,--availability-zone</samp></td>
+
+							<td class="cellrowborder" valign="top" width="57.82828282828283%" headers="d2095e123 ">Availability zone to run the instance in</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="8.417508417508419%" headers="d2095e126 ">No</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+</div>
+
+		</div>
+
+		<div class="section"><h2 class="sectiontitle">Common Options</h2>
+			
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+					
+					
+
+					<thead align="left">
+						<tr>
+							<th class="cellrowborder" align="center" valign="top" width="25%" id="d2095e670">Option</th>
+
+							<th class="cellrowborder" align="center" valign="top" width="75%" id="d2095e673">Description</th>
+
+
+						</tr>
+
+					</thead>
+
+					<tbody>
+						<tr id="euca-run-instances__d45e43">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">--region
+								<em>region</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">Region to direct requests to. Only valid for
+								EC2 endpoints. </td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e55">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">-U,--url <em>url</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									</td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e67">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">-I,--access-key-id <em>access_key_id</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">User's access key ID</td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e79">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">-S,--secret-key <em>secret_key</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">User's secret key</td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e91">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">--config
+									<em>configuration_path</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">Read credentials and cloud settings from the
+								specified config file. <p>Default:
+										<span class="filepath">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</span>.</p>
+</td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e109">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">--debug</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e119">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">--debugger</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">Enable interactive debugger on error</td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e129">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">-h,--help</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">Display the manual page for the
+								command.</td>
+
+						</tr>
+
+						<tr id="euca-run-instances__d45e139">
+							<td class="cellrowborder" valign="top" width="25%" headers="d2095e670 "><samp class="codeph">--version</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d2095e673 ">Display the version of this tool</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+</div>
+
+		</div>
+
+
+		<div class="section"><h2 class="sectiontitle">Output</h2>
+			
+			<ul>
+				<li>Output type identifier ("RESERVATION")</li>
+
+				<li>Instance ID that uniquely identifies each running instance</li>
+
+				<li>EMI ID of the image on which the instance(s) are based</li>
+
+				<li>Instance state. This is usually pending, which indicates that the instance(s)
+					are preparing to launch</li>
+
+				<li>Key pair name (if a key pair was associated with the instance at launch)</li>
+
+				<li>Product code (if applicable)</li>
+
+				<li>Instance type</li>
+
+				<li>Instance launch time</li>
+
+				<li>Availability zone</li>
+
+				<li>Kernel ID</li>
+
+				<li>RAM disk ID</li>
+
+				<li>Monitoring status</li>
+
+				<li>Root device type (ebs or instance-store)</li>
+
+				<li>Placement group the cluster instance is in</li>
+
+			</ul>
+
+		</div>
+
+
+		<div class="section"><h2 class="sectiontitle">Example</h2>
+			
+			<pre class="codeblock">euca-run-instances -k mykey -g mygroup emi-15A1386E
+RESERVATION r-D8A4438A  790547641019    default
+INSTANCE    i-12623E16  emi-15A1386E    0.0.0.0 0.0.0.0 pending kp00
+ 0       m1.small    2012-01-01T00:00:00.000Z    zone00</pre>
+
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

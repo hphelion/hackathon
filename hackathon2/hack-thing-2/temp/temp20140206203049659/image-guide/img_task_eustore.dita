@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140206203049659/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140206203049659/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="eustore-browse-install" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="task:1;4:35">
+    <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="title:1;5:12">Browse and Install Images from EuStore</title>
+    <shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="shortdesc:1;6:16">Eucalyptus provides a resource, called EuStore. EuStore contains images that you can
+        download and install. This task explains how to browse and install images from
+        EuStore.</shortdesc>
+    <prolog class="- topic/prolog " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="prolog:1;9:13">
+        <metadata class="- topic/metadata " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="metadata:1;10:19">
+            <keywords class="- topic/keywords " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="keywords:1;11:23">
+                <indexterm class="- topic/indexterm " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="indexterm:1;12:28">image tasks <indexterm class="- topic/indexterm " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="indexterm:2;12:51">install from EuStore</indexterm>
+                </indexterm>
+            </keywords>
+        </metadata>
+    </prolog>
+    <taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="taskbody:1;17:15">
+        <context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="context:1;18:18">
+            <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="p:1;19:16">To browse and install an image from EuStore:</p>
+        </context>
+        <steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="steps:1;21:16">
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="step:1;22:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="cmd:1;23:22">Find an image on EuStore:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:1;24:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:1;25:32">eustore-describe-images</codeblock>
+                </info>
+                <tutorialinfo class="- topic/itemgroup task/tutorialinfo " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="tutorialinfo:1;27:31">This command returns a list of images available from the EuStore. For
+                    example:</tutorialinfo>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:2;29:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:2;30:32">0400376721 fedora      x86_64  starter        kvm               Fedora 16 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+2425352071 fedora      x86_64  starter        kvm               Fedora 17 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+1107385945 centos      x86_64  starter        xen, kvm, vmware  CentOS 5 1.3GB root, Hypervisor-Specific Kernels
+3868652036 centos      x86_64  starter        kvm               CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+1347115203 opensuse    x86_64  starter        kvm               OpenSUSE 12.2 x86_64 - KVM image. SUSE Firewall off. Root disk of 2.5G. Root user enabled. Working with kexec kernel and ramdisk. OpenSUSE minimal base package set..
+.
+.
+.</codeblock>
+                </info>
+                <tutorialinfo class="- topic/itemgroup task/tutorialinfo " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="tutorialinfo:2;39:31">For additional information regarding the images on eustore (for
+                    example, who is the maintainer of the image), use the -v option, which returns
+                    the email address of the maintainer of the image in the last column. For
+                    example:</tutorialinfo>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:3;43:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:3;44:32"># eustore-describe-images -v
+0400376721 fedora      x86_64  starter        kvm               Fedora 16 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+     20121107181713      d13e-1e35   fedora-based           olivier.renault@eucalyptus.com
+2425352071 fedora      x86_64  starter        kvm               Fedora 17 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+     20121107181713      6369-6e28   fedora-based           olivier.renault@eucalyptus.com
+1107385945 centos      x86_64  starter        xen, kvm, vmware  CentOS 5 1.3GB root, Hypervisor-Specific Kernels
+     20120517102326      84ae-59db   centos-based           images@lists.eucalyptus.com
+3868652036 centos      x86_64  starter        kvm               CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+     20121107181713      48df-52d4   centos-based           olivier.renault@eucalyptus.com
+1347115203 opensuse    x86_64  starter        kvm               OpenSUSE 12.2 x86_64 - KVM image. SUSE Firewall off. Root disk of 2.5G. Root user enabled. Working with kexec kernel and ramdisk. OpenSUSE minimal base package set..
+     20121120130646      a981-db13   opensuse-based         lester.wade@eucalyptus.com</codeblock>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="step:2;57:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="cmd:2;58:22">Pick an available image from the returned list and note the image ID. For this
+                    example, we will choose:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:4;60:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:4;61:32">3868652036 centos      x86_64  starter        kvm               CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.</codeblock>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="step:3;64:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="cmd:3;65:22">Install the image from EuStore using the eustore-install-image command. For
+                    this example, we only need to specify the image ID and the name of a bucket (the
+                    bucket will be created if it doesn't already exist):</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:5;68:23">
+                    <note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="note:1;69:27"> Some images may require additional parameters (for example, that you
+                        specify a kernel type with the -k option). Please see the
+                        eustore-install-image topic in the Eucalyptus Command Line Reference for
+                        more information. </note>
+                </info>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:6;74:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:5;75:32">
+eustore-install-image -b centos-testbucket -i 3868652036 --hypervisor kvm 
+                    </codeblock>
+                </info>
+
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:7;80:23"> This command performs a number of tasks for you, including downloading the
+                    image from the central Eucalyptus image store and installing the image on your
+                    own Eucalyptus private cloud. The output from this command will look similar to
+                    the following example: </info>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:8;84:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:6;85:32">Downloading Image :  CentOS 6.3 x86_64 - SELinux / iptables disabled. Root disk of 4.5G. Root user enabled.
+0-----1-----2-----3-----4-----5-----6-----7-----8-----9-----10
+##############################################################
+
+Checking image bundle
+Unbundling image
+going to look for kernel dir : kvm-kernel
+Bundling/uploading ramdisk
+Checking image
+Compressing image
+Encrypting image
+Splitting image...
+Part: initrd-2.6.32-279.14.1.el6.x86_64.img.part.00
+Generating manifest /tmp/olEuG_/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml
+Checking bucket: centos-testbucket
+Creating bucket: centos-testbucket
+Uploading manifest file
+Uploading part: initrd-2.6.32-279.14.1.el6.x86_64.img.part.00
+Uploaded image as centos-testbucket/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml
+centos-testbucket/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml
+eri-064B387A
+Bundling/uploading kernel
+Checking image
+Compressing image
+Encrypting image
+Splitting image...
+Part: vmlinuz-2.6.32-279.14.1.el6.x86_64.part.00
+Generating manifest /tmp/olEuG_/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml
+Checking bucket: centos-testbucket
+Uploading manifest file
+Uploading part: vmlinuz-2.6.32-279.14.1.el6.x86_64.part.00
+Uploaded image as centos-testbucket/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml
+centos-testbucket/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml
+eki-A4D6398A
+Bundling/uploading image
+Checking image
+Compressing image
+Encrypting image
+Splitting image...
+Part: centos-6.3-x86_64.part.00
+Part: centos-6.3-x86_64.part.01
+Part: centos-6.3-x86_64.part.02
+Part: centos-6.3-x86_64.part.03
+[...example truncated...]
+Part: centos-6.3-x86_64.part.19
+Generating manifest /tmp/olEuG_/centos-6.3-x86_64.manifest.xml
+Checking bucket: centos-testbucket
+Uploading manifest file
+Uploading part: centos-6.3-x86_64.part.00
+Uploading part: centos-6.3-x86_64.part.01
+Uploading part: centos-6.3-x86_64.part.02
+Uploading part: centos-6.3-x86_64.part.03
+[...example truncated...]
+Uploading part: centos-6.3-x86_64.part.19
+Uploaded image as centos-testbucket/centos-6.3-x86_64.manifest.xml
+centos-testbucket/centos-6.3-x86_64.manifest.xml
+Installed image: emi-233637E1
+                    </codeblock>
+                </info>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:9;144:23"> Note the last line in the output, which provides the image ID for the image
+                    you just installed from the euca store. In this example, the image ID is
+                    emi-233637E1. </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="step:4;148:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="cmd:4;149:22">Verify the image was installed on your Eucalyptus cloud. To do this, use the
+                    euca-describe-images command, which returns a list of the available images on
+                    your Eucalyptus cloud:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:10;152:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:7;153:32">
+euca-describe-images | grep centos-testbucket
+                    </codeblock>
+                </info>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:11;157:23"> This command will return output similar to the following example: </info>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:12;158:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:8;159:32">
+IMAGE   eki-A4D6398A    centos-testbucket/vmlinuz-2.6.32-279.14.1.el6.x86_64.manifest.xml   345590850920    available   public      x86_64  kernel              instance-store
+IMAGE   eri-064B387A    centos-testbucket/initrd-2.6.32-279.14.1.el6.x86_64.img.manifest.xml    345590850920    available   public      x86_64  ramdisk             instance-store
+IMAGE   emi-233637E1    centos-testbucket/centos-6.3-x86_64.manifest.xml    345590850920    available   public      x86_64  machine eki-A4D6398A    eri-064B387A        instance-store
+                    </codeblock>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="p:2;164:24">The first three characters of the ID returned in the second column indicate
+                        what the object is - <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeph:1;165:54">eki</codeph> indicates a Eucalyptus kernel
+                        image, <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeph:2;166:40">eri</codeph> is a Eucalyptus ramdisk image, and
+                            <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeph:3;167:37">emi</codeph> indicates a Eucalyptus machine image.</p>
+                </info>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="info:13;169:23"> Note the ID of the last image in the output -
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeblock:9;170:32">emi-233637E1</codeblock> - matches that of the image we installed
+                    from EuStore. </info>
+            </step>
+        </steps>
+        <result class="- topic/section task/result " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="result:1;174:17">The image has been successfully downloaded from EuStore and installed on your
+            Eucalyptus cloud. </result>
+        <postreq class="- topic/section task/postreq " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="postreq:1;176:18"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="p:3;176:21">You can now run an instance from this image and connect to it using SSH.</p>
+        	<note type="tip" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="note:2;177:27">If you use a Debian image from Eustore, add
+        		<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="codeph:4;178:19">nozeroconf=yes</codeph> in the <filepath class="+ topic/ph sw-d/filepath " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="filepath:1;178:60">/etc/sysconfig/network</filepath> file on
+        		the node controller to make sure that the image boots and runs properly. </note>
+        </postreq>
+
+    </taskbody>
+</task>

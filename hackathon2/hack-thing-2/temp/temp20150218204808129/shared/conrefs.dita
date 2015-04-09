@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/shared/?><?path2project ../?><!--This work by Eucalyptus Systems is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--><dita xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" ditaarch:DITAArchVersion="1.2" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="dita:1;6:7">
+ <concept id="prod" xml:lang="en-us" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic concept glossentry)                            (topic concept glossgroup)                            (topic reference)                            (topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                             (topic task strictTaskbody-c)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="concept:1;7:38">
+  <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="title:1;8:10">Product-specific Entities</title>
+  <conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="conbody:1;9:12">
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:1;10:7">Naming convention: <userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="userinput:1;10:37"><varname class="+ topic/keyword sw-d/varname " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="varname:1;10:46">abb</varname></userinput> (abbreviation for product)
+    followed by <userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="userinput:2;11:28">l</userinput> (long version) or <userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="userinput:3;11:71">s</userinput> (short version),
+    followed by <userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="userinput:4;12:28">t</userinput> if the reference is pre-marked with trademarks.</p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:2;13:7"><ph id="product" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:1;13:24">Eucalyptus</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:3;14:7"><ph id="product_ha" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:2;14:27">Eucalyptus HA</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:4;15:7"><ph id="product_fs" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:3;15:27">Eucalyptus Faststart</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:5;16:7"><ph id="version" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:4;16:24">4.1</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:6;17:7"><ph id="version_long" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:5;17:29">4.1.0</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:7;18:7"><ph id="version_short" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:6;18:30">4.1</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:8;19:7"><ph id="prev_version" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:7;19:29">4.0.2</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:9;20:7"><ph id="prev_version_short" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:8;20:35">4.0</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:10;21:7"><ph id="upgrade_option1" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:9;21:32">3.4.3</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:11;22:7"><ph id="e2ools_version" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:10;22:31">3.2.0</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:12;23:7"><ph id="e2ools_version_short" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:11;23:37">3.2</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:13;24:7"><ph id="e2ools_prev_version" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:12;24:36">3.1.1</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:14;25:7"><ph id="e2ools_prev_version_short" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:13;25:42">3.1</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:15;26:7"><ph id="productinstallpath" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:14;26:35">EUCALYPTUS</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:16;27:7"><ph id="productlowercase" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:15;27:33">eucalyptus</ph></p>
+
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:17;29:7"><ph id="euca_oview" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:16;29:27">Eucalyptus is open source software for building Amazon Web Services
+     compatible private and hybrid clouds.</ph></p>
+
+   <p id="comments_email" class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:18;32:27">For corrections and suggestions about this document, please email us at
+     <xref href="mailto:documentation@eucalyptus.com" scope="external" format="email" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="xref:1;34:7">documentation@eucalyptus.com</xref>. We look forward to your communication and thank you
+    in advance for helping us improve our documentation and our product.</p>
+
+  	<note id="elb_nwmode" type="important" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="note:1;37:43">If you plan to use Elastic Load Balancing (ELB), note that ELB only works
+  		with Managed and Managed (No VLAN) networking modes. This is because ELB relies on security
+  		groups.</note>
+  	
+  	<note id="tech_preview" type="caution" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="note:2;41:43">Eucalyptus HA is currently in technical preview. To
+  		install Eucalyptus without high availability, see <xref href="../install-guide/eucalyptus.dita" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="xref:2;42:102"/>. For
+  		information about technical previews in Eucalyptus, go to <xref href="https://www.eucalyptus.com/eucalyptus-cloud/iaas/roadmap/technology-preview" scope="external" format="html" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="xref:3;45:37">Eucalyptus Technology Preview Features Support Scope </xref>.</note>
+
+  </conbody>
+ </concept>
+ <concept id="vers" xml:lang="en-us" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic concept glossentry)                            (topic concept glossgroup)                            (topic reference)                            (topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                             (topic task strictTaskbody-c)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="concept:2;49:38">
+  <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="title:2;50:10">Version and Release Numbers</title>
+  <conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="conbody:2;51:12">
+
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:19;53:7"><ph id="fullversionnumber" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:17;53:34">Version 4.1.0</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:20;54:7"><ph id="shortversionnumber" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:18;54:35">4.1</ph></p>
+  	<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:21;55:7"><ph id="buildversionstring" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:19;55:35">${env.BUILD_VERSION_STRING}</ph></p>
+
+  </conbody>
+ </concept>
+ <concept id="pub" xml:lang="en-us" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic concept glossentry)                            (topic concept glossgroup)                            (topic reference)                            (topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                             (topic task strictTaskbody-c)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="concept:3;59:37">
+  <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="title:3;60:10">Publications</title>
+  <conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="conbody:3;61:12">
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:22;62:7">Naming convention: <userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="userinput:5;62:37">cit<varname class="+ topic/keyword sw-d/varname " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="varname:2;62:49">ABB</varname></userinput>, where
+     <userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="userinput:6;63:17">cit</userinput> is the indicator that the conref is to a publication title and
+     <varname class="+ topic/keyword sw-d/varname " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="varname:3;64:15">ABB</varname> is the abbreviation for the publication (say, 2-6 characters).</p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:23;65:7">We can't use the "correct" DITA cite tag because the IDD wrapper can't handle it.</p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:24;66:7"><ph id="citinstall" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:20;66:27"><i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="i:1;66:30">Installation Guide</i></ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:25;67:7"><ph id="citadmin" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:21;67:25"><i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="i:2;67:28">Administration Guide</i></ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:26;68:7"><ph id="cituser" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:22;68:24"><i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="i:3;68:27">User Guide</i></ph></p>
+   <!--<p><ph id="citutilities"><i>Derby Tools and Utilities Guide</i></ph></p>
+<p><ph id="citgetstart"><i>Getting Started with Derby</i></ph></p>
+<p><ph id="cittuning"><i>Tuning Derby</i></ph></p>-->
+  </conbody>
+ </concept>
+ <concept id="paths" xml:lang="en-us" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic concept glossentry)                            (topic concept glossgroup)                            (topic reference)                            (topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                             (topic task strictTaskbody-c)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="concept:4;74:39">
+  <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="title:4;75:10">Shared Paths</title>
+  <conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="conbody:4;76:12">
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:27;77:7"><ph id="pathdownload" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:23;77:29">http://db.apache.org/derby/derby_downloads.html</ph></p>
+   <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:28;78:7"><ph id="pathsource" class="- topic/ph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ph:24;78:27">http://db.apache.org/derby/dev/derby_source.html</ph></p>
+
+  </conbody>
+ </concept>
+
+ <concept id="lists" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic concept glossentry)                            (topic concept glossgroup)                            (topic reference)                            (topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                             (topic task strictTaskbody-c)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="concept:5;83:22">
+  <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="title:5;84:10">Shared Lists</title>
+  <conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="conbody:5;85:12">
+ 
+   <ul id="san_devices" class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="ul:1;87:25">
+    <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="li:1;88:9"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:1;88:17">overlay</codeph>—for the SC to use the local filesystem (use this option if
+     you are not using a SAN)</li>
+    <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="li:2;90:9"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:2;90:17">das</codeph>—for DAS Manager</li>
+    <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="li:3;91:9"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:3;91:17">san</codeph>—for SAN Manager</li>
+    <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="li:4;92:9"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:4;92:17">equallogic</codeph>—for EqualLogic Provider</li>
+    <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="li:5;93:9"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:5;93:17">netapp</codeph>—for Netapp Provider</li>
+    <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="li:6;94:9"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:6;94:17">emc-vnx</codeph>—for EMC VNX Provider</li>
+    <li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="li:7;95:9"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:7;95:17">emc-vnx-flare31</codeph>—for EMC VNX Provider running FLARE v5.31</li>
+   </ul>
+
+  </conbody>
+
+ </concept>
+	
+	<concept id="tables" ditaarch:DITAArchVersion="1.2" domains="(topic concept)                            (topic concept glossentry)                            (topic concept glossgroup)                            (topic reference)                            (topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                             (topic task strictTaskbody-c)    " class="- topic/topic concept/concept " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="concept:6;102:23">
+		<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="title:6;103:10">Shared Tables</title>
+		<conbody class="- topic/body  concept/conbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="conbody:6;104:12">
+		<table id="vnet_options" class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="table:1;105:28">
+			<tgroup cols="3" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="tgroup:1;106:21">
+				<colspec colname="col1" colwidth="35%" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="colspec:1;107:45"/>
+				<colspec colname="col2" colwidth="50%" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="colspec:2;108:44"/>
+				<colspec colname="col3" colwidth="15%" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="colspec:3;109:46"/>
+				<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="thead:1;110:12">
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:1;111:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:1;112:29">Option</entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:2;113:28">Description</entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:3;114:30">Modes</entry>
+					</row>
+				</thead>
+				<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="tbody:1;117:12">
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:2;118:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:4;119:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:8;119:22">VNET_ADDRESSPERNET</codeph></entry>
+						
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:5;121:14">This option controls how many VM instances can simultaneously be part of an
+							individual user's security group. This option is set to a power of 2 (8, 16, 32, 64,
+							etc.) but it should never be less than 8 and it cannot be larger than: (the total
+							number of available IP addresses - 2). <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:29;124:50">This option is used with VNET_NETMASK to
+								determine how the IP addresses that are available to VMs are distributed among
+								security groups. VMs within a single security group can communicate directly.
+								Communication between VMs within a security group and clients or VMs in other
+								security groups is controlled by a set of firewall rules. For example, setting</p>
+							<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeblock:1;129:19">VNET_NETMASK="255.255.0.0"
+VNET_ADDRESSPERNET="32"</codeblock>
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:30;131:11">defines a netmask of 255.255.0.0 that uses 16 bits of the IP address to specify a
+								network number. The remaining 16 bits specify valid IP addresses for that network
+								meaning that 2^16 = 65536 IP addresses are assignable on the network. Setting
+								<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:9;134:17">VNET_ADDRESSPERNET="32"</codeph> tells Eucalyptus that each security group
+								can have at most 32 VMs in it (each VM getting its own IP address). Further, it
+								stipulates that at most 2046 security groups can be active at the same time since
+								65536 / 32 = 2048. Eucalyptus reserves two security groups for its own use.</p>
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:31;138:11"> In addition to subnets at Layer 3, Eucalyptus uses VLANs at Layer 2 in the
+								networking stack to ensure isolation (Managed mode only). </p>
+						</entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:6;141:14">Managed, Managed (No VLAN)</entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:3;143:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:7;144:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:10;144:22">VNET_BRIDGE</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:8;145:14">On an NC, this is the name of the bridge interface to which instances' network
+							interfaces should attach. A physical interface that can reach the CC must be attached
+							to this bridge. Common setting for KVM is <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:11;147:58">br0</codeph>. </entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:9;148:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:32;148:17">Edge (on NC)</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:33;148:36">Managed (No VLAN)</p>
+						</entry>
+					</row>
+					<!-- SYSTEM and STATIC modes removed per DOC-1353 -->
+					<!--<row>
+						<entry><codeph>VNET_BROADCAST, VNET_ROUTER </codeph></entry>
+						<entry>The network broadcast and default gateway to supply to instances in DHCP
+							responses.</entry>
+						<entry>Static</entry>
+					</row>-->
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:4;158:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:10;159:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:12;159:22">VNET_DHCPDAEMON</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:11;160:14">The ISC DHCP executable to use. This is set to a distro-dependent value by
+							packaging. The internal default is <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:13;161:51">/usr/sbin/dhcpd3</codeph>.</entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:12;162:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:34;162:17">Edge (on NC)</p>
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:35;163:11">Managed</p>
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:36;164:11">Managed (No VLAN)</p></entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:5;166:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:13;167:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:14;167:22">VNET_DHCPUSER</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:14;168:14">The user the DHCP daemon runs as on your distribution. For CentOS 6 and RHEL 6,
+							this is typically <userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="userinput:7;169:37">root</userinput>. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:37;169:58">Default:
+								<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:15;170:17">dhcpd</codeph></p></entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:15;171:14">
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:38;172:11">Managed</p>
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:39;173:11">Managed (No VLAN)</p></entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:6;175:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:16;176:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:16;176:22">VNET_DNS</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:17;177:14">The address of the DNS server to supply to instances in DHCP responses.
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:40;178:11">Example:</p>
+							<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:17;179:16">VNET_DNS="173.205.188.129"</codeph></entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:18;180:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:41;180:17">Managed</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:42;180:31">Managed (No VLAN)</p></entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:7;182:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:19;183:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:18;183:22">VNET_LOCALIP</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:20;184:14">By default the CC automatically determines which IP address to use when setting
+							up tunnels to other CCs. Set this to the IP address that other CCs can use to reach
+							this CC if tunneling does not work.</entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:21;187:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:43;187:17">Managed</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:44;187:31">Managed (No VLAN)</p></entry>
+					</row>
+					<!-- SYSTEM and STATIC modes removed per DOC-1353 -->
+					<!--<row>
+						<entry><codeph>VNET_MACMAP</codeph></entry>
+						<entry>A map of MAC addresses to IP addresses that Eucalyptus should allocate to
+							instances when running in Static mode. Separate MAC addresses and IP addresses with =
+							characters. Separate pairs with spaces. <p>Example:
+								<codeph>VNET_MACMAP="00:01:02:03:04:05=192.168.1.1
+									A1:A2:A3:A4:A5:A6=192.168.1.2"</codeph>
+							</p>
+						</entry>
+						<entry>Static</entry>
+					</row>-->
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:8;201:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:22;202:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:19;202:22">VNET_MACPREFIX</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:23;203:14">This option is used to specify a prefix for MAC addresses generated by Eucalyptus
+							for VM instances. The prefix has to be in the form <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:20;204:67">HH:HH</codeph> where H is a
+							hexadecimal digit. Example: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:21;205:44">VNET_MACPREFIX="D0:D0"</codeph></entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:24;206:14">Managed, Managed (No VLAN) </entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:9;208:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:25;209:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:22;209:22">VNET_MODE</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:26;210:14">The networking mode in which to run. The same mode must be specified on all CCs and NCs
+								in your cloud. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:45;211:27">Valid values: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:23;211:49">EDGE</codeph> <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:24;211:71">MANAGED</codeph>,
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:25;212:19">MANAGED-NOVLAN</codeph>, </p>
+								<!-- SYSTEM and STATIC modes removed per DOC-1353 -->
+								<!--<p>Default: <codeph>SYSTEM</codeph></p>--></entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:27;215:14">All</entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:10;217:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:28;218:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:26;218:22">VNET_PRIVINTERFACE</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:29;219:14">The name of the network interface that is on the same network as the NCs. In
+							Managed and Managed (No VLAN) modes this must be a bridge for instances in different
+							clusters but in the same security group to be able to reach one another with their
+							private addresses. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:46;222:30">Default: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:27;222:47">eth0</codeph></p></entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:30;223:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:47;223:17">Edge (on NC)</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:48;223:36">Managed</p></entry>
+					</row>
+					
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:11;226:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:31;227:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:28;227:22">VNET_PUBINTERFACE</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:32;228:14"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="b:1;228:17">On a CC</b>, this is the name of the network interface that is connected to
+							the “public” network. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:49;229:33"><b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="b:2;229:36">On an NC</b>, this is the name of the network interface
+								that is connected to the same network as the CC. Depending on the hypervisor's
+								configuration this may be a bridge or a physical interface that is attached to the
+								bridge.</p>
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:50;233:11">Default: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:29;233:28">eth0</codeph></p></entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:33;234:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:51;234:17">Edge (on NC)</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:52;234:36">Managed</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:53;234:50">Managed (No VLAN)</p> </entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:12;236:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:34;237:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:30;237:22">VNET_PUBLICIPS</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:35;238:14">A space-separated list of individual and/or hyphenated ranges of public IP
+							addresses to assign to instances. If you do not set a value for this option, all
+							instances will receive only private IP addresses. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:54;240:61">Example:</p>
+							<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeblock:2;241:19">VNET_PUBLICIPS=
+"173.205.188.140-173.205.188.254"</codeblock>
+							<note type="tip" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="note:3;243:25">To offer more public IPs, you can span subnets. However you must list each
+								subnet range separately. For example: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:31;244:55">"10.133.82.50-10.133.82.254 10.133.83.0-10.133.83.254"</codeph></note>
+						</entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:36;246:14"><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:55;246:17">Managed</p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="p:56;246:31">Managed (No VLAN)</p>
+						</entry>
+					</row>
+					<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="row:13;249:11">
+						<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:37;250:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="codeph:32;250:22">VNET_SUBNET, VNET_NETMASK</codeph></entry>
+						<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:38;251:14">These options control the internal private network used by instances within Eucalyptus.
+							Eucalyptus assigns a distinct subnet of private IP addresses to each security group.
+							This setting dictates how many addresses each of these subnets should contain. Specify
+							a power of 2 between 16 and 2048. This is directly related, though not equal, to the
+							number of instances that can reside in each security group. Eucalyptus reserves
+							eleven addresses per security group.</entry>
+						<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/conrefs.dita" xtrc="entry:39;257:14">Managed, Managed (No VLAN) </entry>
+					</row>
+					
+				</tbody>
+			</tgroup>
+		</table>
+			
+		</conbody>
+	</concept>
+</dita>

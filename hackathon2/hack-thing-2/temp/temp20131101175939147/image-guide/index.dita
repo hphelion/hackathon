@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101175939147/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101175939147/image-guide/?><?path2project ../?><topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="hybrid_guide_welcome" ditaarch:DITAArchVersion="1.2" domains="(topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/index.dita" xtrc="topic:1;4:34">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/index.dita" xtrc="title:1;5:9">Image Management Overview</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/index.dita">Welcome to the Eucalyptus Image Management Guide. This guide contains conceptual
+		overviews about what images are, as well as best practices and common tasks for using images in
+		your cloud.</shortdesc>
+	<prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><body class="- topic/body " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/index.dita" xtrc="body:1;9:8">
+
+		
+		
+		<note importance="high" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/index.dita" xtrc="note:1;13:27">This guide assumes a moderately high level of expertise with
+			the Linux command line. </note><note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/index.dita" xtrc="note:2;14:41">Because of the wide variety of Linux distributions (and other operating systems) that may be
+				running on an instance, specific examples may vary.</note>
+		
+	</body>
+</topic>

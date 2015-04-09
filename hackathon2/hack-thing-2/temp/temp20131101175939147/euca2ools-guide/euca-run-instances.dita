@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101175939147/euca2ools-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101175939147/euca2ools-guide/?><?path2project ../?><reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="euca-run-instances" ditaarch:DITAArchVersion="1.2" domains="(topic reference)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic       reference/reference " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="reference:1;4:36">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="title:1;5:9">euca-run-instances</title>
+
+	<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="shortdesc:1;7:13">Runs instances of the specified machine image.</shortdesc>
+	<refbody class="- topic/body        reference/refbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="refbody:1;8:11">
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="section:1;9:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="title:2;10:11">Syntax</title>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeblock:1;11:15">euca-run-instances <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:1;11:37">image_id</b> [-n <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:2;11:57">count</b> ][-g 
+				<b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:3;12:8">group_name</b> ][-k <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:4;12:31">keyname</b> ][-d <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:5;12:51">user_data_file</b> ]
+				[-t <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:6;13:12">instance_type</b> ][--kernel <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:7;13:44">kernel</b> ][--ramdisk <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:8;13:70">ramdisk</b> ]
+				[-b <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:9;14:12">block_device_mapping</b>][--monitor] [-z <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:10;14:56">zone</b> ]  
+				[--disable-api-termination] 
+				[--instance-initiated-shutdown-behavior <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:11;16:48">value</b>] 
+				[--placement-group <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:12;17:27">group_name</b>]
+				[--tenancy <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:13;18:19">value</b>] [--client-token <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:14;18:49">token_value</b>] [-s <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:15;18:73">subnet_value</b>]
+				[--private-ip-address <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:16;19:30">address</b>] [--secondary-private-ip-address <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:17;19:78">address</b>]
+				[--secondary-private-ip-address-count <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:18;20:46">count</b>] [-a <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:19;20:64">interface</b>]
+				[-p <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:20;21:12">IAM_profile</b>] [--ebs-optimized]
+				</codeblock>
+		</section>
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="section:2;24:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="title:3;25:11">Options</title>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="table:1;26:11">
+				<tgroup cols="3" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="tgroup:1;27:22">
+					<colspec colname="col1" colwidth="4.01*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="colspec:1;28:33"/>
+					<colspec colname="col2" colwidth="6.87*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="colspec:2;29:33"/>
+					<colspec colname="col3" colwidth="1*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="colspec:3;30:30"/>
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="thead:1;31:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:1;32:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:1;33:15">Option</entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:2;34:15">Description</entry>
+							<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:3;35:15">Required</entry>
+						</row>
+					</thead>
+
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="tbody:1;39:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:2;40:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:4;41:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:1;41:23"><i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="i:1;41:26">image_id</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:5;42:15">ID of the image to run</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:6;43:30">Yes</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:3;45:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:7;46:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:2;46:23">-n,--instance-count <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="i:2;46:46">min[-max]</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:8;47:15">Number of instances to run. If this is specified as a range
+								(min-max), Eucalyptus will try to run the maximum number, but no
+								fewer than the minimum number.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:9;50:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:4;52:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:10;53:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:3;53:23">-g,--group <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="i:3;53:37">group</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:11;54:15">Security group to run the instance in</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:12;55:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:5;57:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:13;58:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:4;58:23">-k,--key <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="i:4;58:35">keypair</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:14;59:15">Name of a key pair</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:15;60:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:6;62:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:16;63:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:5;63:23">-d,--user-data <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="i:5;63:41">user_data</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:17;64:15">User data to pass to the instance</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:18;65:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:7;67:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:19;68:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:6;68:23">-f,--user-data-file
+								<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="i:6;69:12">user_data_file</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:20;70:15">File containing user data to pass to the instance </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:21;71:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:8;74:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:22;75:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:7;75:23">--addressing <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="i:7;75:39">user_data_file</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:23;76:15">(Eucalyptus only) Addressing scheme to use when launching the
+								instance. Use <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:8;77:31">private</codeph> to run an instance with no
+								public address. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:1;78:28">Valid values: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:9;78:50">public</codeph> |
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:10;79:19">private</codeph></p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:24;80:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:9;83:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:25;84:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:11;84:23">-t,--instance-type</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:26;85:15">Instance type to run. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:2;85:40">Valid
+									values: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:12;86:26">m1.small</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:13;86:54">t1.micro</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:14;86:82">m1.medium</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:15;86:111">m1.large</codeph> | 
+								    <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:16;87:21">c1.medium</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:17;87:50">m1.xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:18;87:79">c1.xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:19;87:108">m2.xlarge</codeph> |
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:20;88:18">m3.xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:21;88:47">cc1.4xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:22;88:78">m2.2xlarge</codeph> |<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:23;88:107"> m3.2xlarge</codeph> | 
+								    <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:24;89:21">m2.4xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:25;89:51">hi1.4xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:26;89:82">cc2.8xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:27;89:113">cg1.4xlarge</codeph> | 
+								    <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:28;90:21">cr1.8xlarge</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:29;90:52">hs1.8xlarge</codeph>
+							</p>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:27;93:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:10;95:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:28;96:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:30;96:23">--kernel</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:29;97:15">Kernel ID to be used</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:30;98:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:11;100:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:31;101:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:31;101:23">--ramdisk</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:32;102:15">Ramdisk ID to be used</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:33;103:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:12;105:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:34;106:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:32;106:23">-b,--block-device-mapping </codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:35;107:15">Block device mapping for the instance. This is passed in the form
+								of &lt;devicename&gt;=&lt;blockdevice&gt;, where:
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:33;109:18">devicename</codeph> is the device name of the physical
+								device on the instance to map and <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:34;110:51">blockdevice</codeph> is
+								one of the following values: <ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="ul:1;111:42">
+									<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:1;112:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:35;112:22">none</codeph>: Use this value to suppress existing
+										mapping on the specified image for this device. For example:
+											<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:36;114:20">/dev/sdc=none</codeph></li>
+									<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:2;115:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:37;115:22">ephemeral[0..3]</codeph>: Use this value to indicate
+										that an instance local storage device should be mapped to
+										this device. For example:
+											<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:38;118:20">/dev/sdc=ephemeral0</codeph></li>
+									<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:3;119:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:39;119:22">[snapshot-id]:[size]:[delete-on-termination
+											(true|false)]</codeph>: Use this value to map a device
+										to an existing EBS-backed volume, and to specify whether the
+										EBS volume should be deleted on termination. This value
+										defaults to <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:40;123:31">true</codeph>. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:3;123:49">To specify a new
+											EBS-backed volume, skip the snapshot ID and pass in a
+											volume size instead. For example:<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:41;125:53">
+												/dev/sdb=:20</codeph>.</p></li>
+								</ul></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:36;128:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:13;130:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:37;131:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:42;131:23">-m, --monitor</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:38;132:15">Enable monitoring for the instance. Boolean value. Defaults to
+								Disabled.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:39;134:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:14;136:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:40;137:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:43;137:23">--disable-api-termination</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:41;138:15">Prevent API calls from terminating the instance(s).</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:42;139:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:15;142:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:43;143:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:44;143:23">--instance-initiated-shutdown-behavior
+									<b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:21;144:13">value</b></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:44;145:15">Indicates whether to stop or terminate EBS-backed instances upon
+								shutdown. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:4;146:22">Valid values: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:45;146:44">stop</codeph> (default) |
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:46;147:19">terminate</codeph></p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:45;148:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:16;151:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:46;152:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:47;152:23">--placement-group <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:22;152:44">group_name</b></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:47;153:15">Specifies the placement group in which to launch the
+								instance.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:48;155:30">No</entry>
+						</row>
+
+
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:17;160:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:49;161:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:48;161:23">--tenancy <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:23;161:36">value</b></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:50;162:15">(VPC only) Indicates the type of tenancy for the instance. A
+								value of <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:49;163:26">dedicated</codeph> indicates that the instance
+								should run on single-tenant hardware. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:5;164:50">Valid values:
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:50;165:19">default</codeph> |
+								<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:51;166:17">dedicated</codeph></p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:51;167:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:18;170:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:52;171:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:52;171:23">--client-token <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:24;171:41">token_value</b></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:53;172:15">Unique identifier to ensure request idempotency.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:54;173:30">No</entry>
+						</row>
+
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:19;177:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:55;178:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:53;178:23">-s,--subnet <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:25;178:38">subnet_value</b>
+								</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:56;180:15">(VPC only) Subnet for the instance's network interface.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:57;181:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:20;184:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:58;185:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:54;185:23">--private-ip-address <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:26;185:47">address</b>
+								</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:59;187:15">(VPC only) Assign the specified primary private IP address to an
+								instance's interface.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:60;189:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:21;192:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:61;193:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:55;193:23">--secondary-private-ip-address <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:27;193:57">address</b>
+								</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:62;195:15">(VPC only) Assign the specified secondary private IP address to
+								an instance's network interface. Use this option multiple times to
+								add additional addresses.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:63;198:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:22;201:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:64;202:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:56;202:23">--secondary-private-ip-address <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:28;202:57">address</b>
+								</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:65;204:15">(VPC only) Assign the specified secondary private IP address to
+								an instance's network interface. Use this option multiple times to
+								add additional addresses.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:66;207:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:23;210:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:67;211:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:57;211:23">--secondary-private-ip-address-count <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:29;211:63">count</b>
+								</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:68;213:15">(VPC only) Automatically assign a specific number of secondary
+								private IP addresses to an instance's network interface.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:69;215:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:24;218:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:70;219:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:58;219:23">-a, --network-interface <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:30;219:50">interface</b>
+								</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:71;221:15">(VPC only) Add the specified network interface to the new instance. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:6;221:86">If the
+									interface already exists, supply its ID and a numeric index for
+									it, separated by ":", in the form "eni-NNNNNNNN:INDEX". To
+									create a new interface, supply a numeric index and subnet ID for
+									it, along with (in order) an optional description, a primary
+									private IP address, a list of security group IDs to associate
+									with the interface, whether to delete the interface upon
+									instance termination ("true" or "false"), a number of secondary
+									private IP addresses to create automatically, and a list of
+									secondary private IP addresses to assign to the interface,
+									separated by ":", in the form:</p>
+								<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:59;232:17">:INDEX:SUBNET:[DESCRIPT
+									ION]:[PRIV_IP]:[GROUP1,GROUP2,...]:[true|false]:[SEC_I
+									P_COUNT|:SEC_IP1,SEC_IP2,...]</codeph>. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:7;234:53">You cannot specify
+									both. </p><p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="p:8;235:23">This option may be used multiple times. Each adds
+									another network interface.</p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:72;237:30">No</entry>
+						</row>
+						
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:25;240:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:73;241:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:60;241:23">-p, --iam-profile <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="b:31;241:44">IAM_profile</b>
+							</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:74;243:15">The name or ARN of the IAM instance profile to associate
+								with the new instance(s).</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:75;245:30">No</entry>
+						</row>
+						
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:26;248:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:76;249:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:61;249:23">--ebs-optimized</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:77;250:15">Optimize the new instance(s) for EBS I/O.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:78;251:30">No</entry>
+						</row>
+
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="row:27;254:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:79;255:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeph:62;255:23">-z,--availability-zone</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:80;256:15">Availability zone to run the instance in</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="entry:81;257:30">No</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="section:1;11:37">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="title:2;12:11">Common Options</title>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="table:1;13:11">
+				<tgroup cols="2" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tgroup:1;14:22">
+					<colspec colname="col1" colwidth="25*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:1;15:31"/>
+					<colspec colname="col2" colwidth="75*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:2;16:31"/>
+
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="thead:1;18:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:1;19:12">
+							<entry colname="col1" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:1;20:30">Option</entry>
+							<entry colname="col2" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:2;21:30">Description</entry>
+
+						</row>
+					</thead>
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tbody:1;25:13">
+						<row id="d45e43" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:2;26:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:3;27:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:1;27:23">--region
+								<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:1;28:12">region</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:4;29:15">Region to direct requests to. Only valid for
+								EC2 endpoints. </entry>
+						</row>
+						<row id="d45e55" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:3;32:21">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:5;33:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:2;33:23">-U,--url <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:2;33:35">url</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:6;34:15">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									</entry>
+						</row>
+						<row id="d45e67" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:4;38:31">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:7;39:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:3;39:23">-I,--access-key-id <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:3;39:45">access_key_id</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:8;40:15">User's access key ID</entry>
+						</row>
+						<row id="d45e79" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:5;42:28">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:9;43:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:4;43:23">-S,--secret-key <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:4;43:42">secret_key</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:10;44:15">User's secret key</entry>
+						</row>
+						<row id="d45e91" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:6;46:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:11;47:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:5;47:23">--config
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:5;48:13">configuration_path</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:12;49:15">Read credentials and cloud settings from the
+								specified config file. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="p:1;50:35">Default:
+										<filepath class="+ topic/ph sw-d/filepath " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="filepath:1;51:21">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</filepath>.</p></entry>
+						</row>
+						<row id="d45e109" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:7;54:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:13;55:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:6;55:23">--debug</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:14;56:15">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</entry>
+						</row>
+						<row id="d45e119" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:8;60:26">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:15;61:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:7;61:23">--debugger</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:16;62:15">Enable interactive debugger on error</entry>
+						</row>
+						<row id="d45e129" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:9;64:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:17;65:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:8;65:23">-h,--help</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:18;66:15">Display the manual page for the
+								command.</entry>
+						</row>
+						<row id="d45e139" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:10;69:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:19;70:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:9;70:23">--version</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:20;71:15">Display the version of this tool</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="section:4;265:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="title:4;266:11">Output</title>
+			<ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="ul:2;267:8">
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:4;268:9">Output type identifier ("RESERVATION")</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:5;269:9">Instance ID that uniquely identifies each running instance</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:6;270:9">EMI ID of the image on which the instance(s) are based</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:7;271:9">Instance state. This is usually pending, which indicates that the instance(s)
+					are preparing to launch</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:8;273:9">Key pair name (if a key pair was associated with the instance at launch)</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:9;274:9">Product code (if applicable)</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:10;275:9">Instance type</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:11;276:9">Instance launch time</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:12;277:9">Availability zone</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:13;278:9">Kernel ID</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:14;279:9">RAM disk ID</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:15;280:9">Monitoring status</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:16;281:9">Root device type (ebs or instance-store)</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="li:17;282:9">Placement group the cluster instance is in</li>
+			</ul>
+		</section>
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="section:5;286:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="title:5;287:11">Example</title>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-run-instances.dita" xtrc="codeblock:2;288:15">euca-run-instances -k mykey -g mygroup emi-15A1386E
+RESERVATION r-D8A4438A  790547641019    default
+INSTANCE    i-12623E16  emi-15A1386E    0.0.0.0 0.0.0.0 pending kp00
+ 0       m1.small    2012-01-01T00:00:00.000Z    zone00</codeblock>
+		</section>
+	</refbody>
+
+</reference>

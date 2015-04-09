@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Convert the VMDK to an Image"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.subject" content="Images, Windows, Convert VMDK"/>
+<meta name="keywords" content="Images, Windows, Convert VMDK"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_sysprep.html"/>
+<meta name="DC.Relation" scheme="URI" content="../shared/images_win_add.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="images_vmw_win_convert"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Convert the VMDK to an Image</title>
+</head>
+<body id="images_vmw_win_convert">
+
+
+	<h1 class="topictitle1">Convert the VMDK to an Image</h1>
+
+	
+	
+	<div><p/>
+
+		<div class="section">
+			<p>After your Windows VM image is ready on ESX/ESX-i/VCenter, use
+				the <samp class="codeph">euca_imager</samp> command to download the image
+				and convert it to the format Eucalyptus uses. The
+					<samp class="codeph">euca_imager</samp> command converts a remote VMDK
+				located on a datastore into a disk image on the local disk on
+				the CC/VMware Broker machine.</p>
+
+		</div>
+
+		<ol><li class="stepexpand">
+				<span>Log into the CC/VMware Broker machine, set the required 
+					environment variables, and source your <samp class="codeph">eucarc</samp>
+					 file.</span>
+				<div>
+					<pre class="codeblock">export VDDK_HOME=/opt/packages/vddk/ 
+export EUCALYPTUS=/ 
+export LD_LIBRARY_PATH=/opt/packages/vddk/lib/vmware-vix-disklib/lib64/ 
+source ~/.euca/eucarc
+</pre>
+
+				</div>
+			</li>
+<li class="stepexpand">
+				<span>Enter the euca_imager command with appropriate parameters
+					to extract and convert the VMDK to a raw disk image.
+					Parameters are described in the following
+						table:</span>
+				<div>
+					
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+							<thead align="left">
+								<tr>
+									<th class="cellrowborder" valign="top" id="d7495e94">Parameter</th>
+
+									<th class="cellrowborder" valign="top" id="d7495e97">Description</th>
+
+								</tr>
+
+							</thead>
+
+							<tbody>
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">debug</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">Enables <samp class="codeph">euca_imager</samp>
+										debugging output</td>
+
+								</tr>
+
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">in</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">https URL for the vCenter Server or
+										ESX/ESXi machine </td>
+
+								</tr>
+
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">out</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">User-defined name of disk </td>
+
+								</tr>
+
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">login</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">Name used to access the VMware
+										machine </td>
+
+								</tr>
+
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">password</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">Password used to access the VMware
+										machine</td>
+
+								</tr>
+
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">vsphere-vmdk</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">Go to vSphere client, find the
+										virtual machine that you have installed
+										(make sure it is in <samp class="codeph">powered
+										off</samp> state), and select the
+										<span class="uicontrol">Hard disk 1</span>
+										resource. There will be a
+										<span class="uicontrol">Disk File</span> field
+										for the VMDK, and a similar field on the
+										<span class="uicontrol">Option</span> tab for
+										the VMX file. </td>
+
+								</tr>
+
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">vsphere-vmx</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">Same description as vsphere-vmdk
+										parameter. This is optional if you’re
+										contacting an ESX node directly, but may
+										be required when contacting
+										vCenter.</td>
+
+								</tr>
+
+								<tr>
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 "><samp class="codeph">vsphere-datacenter</samp></td>
+
+									<td class="cellrowborder" valign="top" headers="d7495e94 d7495e97 ">Specified name of the datacenter.
+										This is optional if you’re contacting an
+										ESX node directly, but may be required
+										when contacting vCenter.</td>
+
+								</tr>
+
+
+							</tbody>
+
+						</table>
+</div>
+
+				</div>
+			</li>
+</ol>
+
+		<div class="example">
+			<p>The following example shows euca_imager with the appropriate
+				parameters as described above converting a VMDK to a raw disk
+				image. Note that the prefix of the <samp class="codeph">out</samp>
+				parameter must begin with the word <samp class="codeph">windows</samp>.</p>
+
+			<pre class="codeblock">/usr/lib/eucalyptus/euca_imager debug=yes convert in=
+https://192.168.7.198 out=windows.disk login=Administrator password=password 
+vsphere-vmdk="[datastore1]WindowsVM/WindowsVM.vmdk" vsphere-datacenter=DataCenter1
+vsphere-vmx="[datastore1]WindowsVM/WindowsVM.vmx"</pre>
+
+		</div>
+
+		
+	</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../shared/images_win.html" title="This section details the tasks necessary to create a Windows image.">Create a Windows Image (KVM)</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a href="../shared/images_win_sysprep.html">Run Sysprep</a></div>
+<div class="nextlink"><strong>Next topic:</strong> <a href="../shared/images_win_add.html">Add Image to Eucalyptus</a></div>
+</div>
+</div>
+
+</body>
+</html>

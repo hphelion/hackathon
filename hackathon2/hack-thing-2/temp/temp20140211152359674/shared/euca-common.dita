@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211152359674/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211152359674/shared/?><?path2project ../?><!--This work by Eucalyptus Systems is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--><reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="euca-common" ditaarch:DITAArchVersion="1.2" domains="(topic reference)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic       reference/reference " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="reference:1;4:29">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="title:1;5:9">Common Request Options</title>
+	<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="shortdesc:1;6:14"/>
+	<!-- This is the updated file for sharing option information in the CLI reference. The older file,
+		created when the options were structured differently, is shared_params.dita. We'll delete that
+		file after we're finished restructuring. -->
+	<refbody class="- topic/body        reference/refbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="refbody:1;10:11">
+		<section id="euca_common_options" class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="section:1;11:37">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="title:2;12:11">Common Options</title>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="table:1;13:11">
+				<tgroup cols="2" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tgroup:1;14:22">
+					<colspec colname="col1" colwidth="25*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:1;15:31"/>
+					<colspec colname="col2" colwidth="75*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:2;16:31"/>
+
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="thead:1;18:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:1;19:12">
+							<entry colname="col1" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:1;20:30">Option</entry>
+							<entry colname="col2" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:2;21:30">Description</entry>
+
+						</row>
+					</thead>
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tbody:1;25:13">
+						<row id="region" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:2;26:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:3;27:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:1;27:23">--region
+								<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:1;28:12">region</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:4;29:15">Region to direct requests to. Only valid for
+								EC2 endpoints. </entry>
+						</row>
+						<row id="url" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:3;32:21">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:5;33:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:2;33:23">-U,--url <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:2;33:35">url</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:6;34:15">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									</entry>
+						</row>
+						<row id="access_key_id" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:4;38:31">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:7;39:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:3;39:23">-I,--access-key-id <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:3;39:45">access_key_id</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:8;40:15">User's access key ID</entry>
+						</row>
+						<row id="secret_key" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:5;42:28">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:9;43:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:4;43:23">-S,--secret-key <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:4;43:42">secret_key</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:10;44:15">User's secret key</entry>
+						</row>
+						<row id="config" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:6;46:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:11;47:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:5;47:23">--config
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:5;48:13">configuration_path</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:12;49:15">Read credentials and cloud settings from the
+								specified config file. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="p:1;50:35">Default:
+										<filepath class="+ topic/ph sw-d/filepath " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="filepath:1;51:21">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</filepath>.</p></entry>
+						</row>
+						<row id="debug" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:7;54:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:13;55:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:6;55:23">--debug</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:14;56:15">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</entry>
+						</row>
+						<row id="debugger" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:8;60:26">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:15;61:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:7;61:23">--debugger</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:16;62:15">Enable interactive debugger on error</entry>
+						</row>
+						<row id="help" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:9;64:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:17;65:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:8;65:23">-h,--help</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:18;66:15">Display the manual page for the
+								command.</entry>
+						</row>
+						<row id="version" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:10;69:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:19;70:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:9;70:23">--version</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:20;71:15">Display the version of this tool</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+	</refbody>
+</reference>

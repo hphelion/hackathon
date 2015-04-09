@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20150218204808129/image-guide/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="eustore-browse-install" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="task:1;4:35">
+    <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="title:1;5:12">Browse and Download from Eucalyptus</title>
+    <shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita">Eucalyptus Systems provides a few prebuilt "starter" images that you can download and
+        install. This is one of the simplest ways to get started with Eucalyptus. Many other
+        organizations, including Linux distributions, publish starter images for use on cloud
+        systems, which can also be installed on Eucalyptus using the steps in this
+        guide.</shortdesc>
+    <prolog class="- topic/prolog " xtrc="prolog:1;11:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita">
+        <copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2014"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;12:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita">
+            <keywords class="- topic/keywords " xtrc="keywords:1;13:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita">
+                <indexterm class="- topic/indexterm " xtrc="indexterm:1;14:28" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita">image tasks <indexterm class="- topic/indexterm " xtrc="indexterm:2;14:51" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita">install prebuilt images</indexterm>
+                </indexterm>
+            </keywords>
+        <prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="4.0" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+    </prolog>
+    <taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="taskbody:1;19:15">
+        <context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="context:1;20:19"/>
+        <steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="steps:1;21:16">
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="step:1;22:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="cmd:1;23:22">With your Web browser, explore the image catalog at <xref href="http://emis.eucalyptus.com" format="html" scope="external" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="xref:1;25:26"><?ditaot usertext?>http://emis.eucalyptus.com/</xref></cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="step:2;27:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="cmd:2;28:22">Download an image of your choice (we suggest starting with images that have
+                    "hvm" as their Virtualization Type, as they are easier to install and work for
+                    both Instance Store and EBS-backed instances).</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="step:3;32:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="cmd:3;33:22">Optionally, if the image is compressed (has a .tgz or .gz extension), you will
+                    have to uncompress it.</cmd>
+            </step>
+        </steps>
+        <result class="- topic/section task/result " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="result:1;37:17">If you obtained an HVM image, you now have a raw disk file that can be installed
+            using instructions in the <xref href="img_task_install_hvm_image.dita#img_task_install_hvm_image" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="xref:2;39:83" type="task"><?ditaot usertext?>Install an HVM
+                image<?ditaot genshortdesc?><desc class="- topic/desc "/></xref> section. If you obtained a paravirtual image with kernel and ramdisk,
+            you can install them with instructions in the <xref href="img_add_existing.dita#add_existing" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide/img_task_eustore.dita" xtrc="xref:3;42:59" type="task"><?ditaot usertext?>Install a paravirtual image<?ditaot genshortdesc?><desc class="- topic/desc "/></xref>
+            section.</result>
+    </taskbody>
+</task>

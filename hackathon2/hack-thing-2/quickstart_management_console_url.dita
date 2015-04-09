@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_management_console_url">
+    <title>Get Your Management Console URL</title>
+    <shortdesc/>
+    <taskbody>
+        <context/>
+        <steps>
+            <step>
+                <cmd>Go back to the HP Helion Public CLoud management console.</cmd>
+                
+            </step>
+            <step>
+                <cmd>From the <uicontrol>Compute</uicontrol> menu, select <uicontrol>Instances</uicontrol>.</cmd>
+                <info>
+                    <image id="quickstart_management_console_url_1" href="images/quickstart_management_console_url_1.png" scale="75"/>
+                </info>
+                <info>
+                    The cluster will be running on a single virtual machine in your account that will have the name cluster1-core
+                </info>
+            </step>
+            
+            <step>
+                <cmd>Write down the public facing IP (15.X.X.X) under the IP Address Column</cmd>
+                
+            </step>
+            <step>
+                <cmd>Your URL will be <codeph>https:://&lt;IP>.xio.io</codeph>. For example:</cmd>
+                <info>
+                    <image id="quickstart_management_console_url_2" href="images/quickstart_management_console_url_2.png" scale="75"/>
+                </info>
+                <info>Use this URL in your web browser to navigate to the web-based ALS management console.</info>
+            </step>
+            
+            
+        </steps>
+    </taskbody>
+</task>

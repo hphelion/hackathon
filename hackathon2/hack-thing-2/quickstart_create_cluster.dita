@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_create_cluster">
+    <title>Create a Cluster</title>
+    <shortdesc/>
+    <taskbody>
+        <!-- *** STYLE NOTE: The following steps instruct the user to do more than one thing, which is 
+            generally considered poor task topic hygiene. I'd suggest breaking them into individual steps. -->
+        <context/>
+        <steps>
+            <step>
+                <cmd>Open a terminal window and change directory to the location where you installed
+                    the <codeph>cf-mgmt</codeph> command-line tool.</cmd>
+
+            </step>
+            
+            <step>
+                <cmd>Run the appropriate command set for the target host's operating system:</cmd>
+                <substeps>
+                    <substep>
+                        <cmd>For Microsoft Windows, open the RC file you downloaded with a text
+                            editor. Use the variables values in the file to set the indicated
+                            values. Then run the command: </cmd>
+                        <info>
+                            <![CDATA[cf-mgmt.exe ^
+   --os-auth-url <OS_AUTH_URL from openstackrc> ^
+   --os-username <OS_USERNAME from openstackrc> ^
+   --os-password <OpenStack password> ^
+   --os-tenant-id <OS_TENANT_ID from openstackrc> ^
+   --os-tenant-name <OS_TENANT_NAME from openstackrc> ^
+   --os-region-name <OS_REGION_NAME from openstackrc> ^
+create-cluster ^
+   --keypair-name <name of keypair created earlier> ^
+   --admin-email <email address for admin user> ^
+   --admin-password <password for admin user> ^
+   --load trial.yml]]>
+                        </info>
+                    </substep>
+                    <substep>
+                        <cmd>
+                            For Mac or Linux, run the following commands:
+                        </cmd>
+                        <info>
+                            <![CDATA[source <path to openstackrc file>
+./cf-mgmt create-cluster \
+--keypair-name <name of keypair created earlier> \
+--admin-email <emailaddress for admin user> \
+--admin-password <password for admin user> \
+--load trial.yml]]>
+                        </info>
+                    </substep>
+                </substeps>
+            </step>
+        </steps>
+    </taskbody>
+</task>

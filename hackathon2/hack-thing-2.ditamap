@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This work by Eucalyptus Systems is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.-->
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en">
+    <title>Hackathon 2</title>
+    <topicmeta>
+        <copyright>
+            <copyryear year="2015"/>
+            <copyrholder>Hewlett-Packard</copyrholder>
+        </copyright>
+        <prodinfo>
+            <prodname>HelionHackathon Part 2</prodname>
+            <vrmlist>
+                <vrm version="1.0"/>
+            </vrmlist>
+        </prodinfo>
+    </topicmeta>
+    <topicref href="hack-thing-2/quickstart_intro.dita"/>
+    <topicref href="hack-thing-2/quickstart_create_account.dita"/>
+    <topicref href="hack-thing-2/quickstart_download_cf.dita"/>
+    <topicref href="hack-thing-2/quickstart_login_cloud.dita"/>
+    <topicref href="hack-thing-2/quickstart_enable_compute.dita"/>
+    <topicref href="hack-thing-2/quickstart_obtain_rc_credentials.dita"/>
+    <topicref href="hack-thing-2/quickstart_create_secure_key.dita"/>
+    <topicref href="hack-thing-2/quickstart_create_cluster.dita"/>
+    <topicref href="hack-thing-2/quickstart_management_console_url.dita"/>
+    <topicref href="hack-thing-2/quickstart_deploy_sample_app.dita"/>
+    
+        
+   
+  
+</map>

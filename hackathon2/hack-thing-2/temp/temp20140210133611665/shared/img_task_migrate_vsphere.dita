@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140210133611665/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140210133611665/shared/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="hg_task_migrate_vsphere" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="task:1;3:36">
+    <title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="title:1;4:12">Migrate an Image from vSphere to Eucalyptus</title>
+    <shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="shortdesc:1;5:16">To migrate a disk in VMSDK format from vSphere to Eucalyptus, perform the following
+        steps.</shortdesc>
+    <taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="taskbody:1;7:15">
+        <context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="context:1;8:19"/>
+
+        <steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="steps:1;10:16">
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="step:1;11:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="cmd:1;12:22">Download the Eucalyptus Image Tools from github:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="info:1;13:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeblock:1;14:32">yum install python-pip git
+pip-python install -U psphere
+git clone https://github.com/eucalyptus/eucalyptus-image-tools.git
+cd eucalyptus-image-tools</codeblock>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="step:2;20:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="cmd:2;21:22">Download the disk image from vSphere, supplying your vSphere IP address, login,
+                    password, and VM name. For example: </cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="info:2;23:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeblock:2;24:32">python tools/exporters/export_vmdk.py --ip 10.111.1.133 --user your-vsphere-login --password your-vsphere-password\
+                        --vmName your-vm-name --workDir /path.to/yourworkdir
+Downloading 490 bytes
+ File saved to /path.to/yourworkdir/your-vm-name.vmdk
+Downloading 5473598976 bytes
+ File saved to /path.to/yourworkdir/your-vm-name-flat.vmdk</codeblock>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="p:1;30:24"><note class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="note:1;30:30">The command will fail if the VM has more than one disk or
+                        NIC.</note></p>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="step:3;34:19">
+                <cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="cmd:3;35:22">Convert the VMDK into a raw disk image:</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="info:3;36:23">
+                    <codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeblock:3;37:32">cd /path.to/yourworkdir
+sudo qemu-img convert -O raw your-vm-name.vmdk disk.raw</codeblock>
+                    <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="p:2;39:24"> This command will create a raw disk image which can then be bundled, uploaded, and
+                        registered with Eucalyptus. <note importance="high" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="note:2;40:77"> When registering the converted disk
+                            image, you must specify the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeph:1;41:65">--virtualization-type=hvm</codeph>
+                            option when running the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/img_task_migrate_vsphere.dita" xtrc="codeph:2;42:61">euca-register</codeph> command line
+                            tool.)</note>
+                    </p>
+                </info>
+            </step>
+        </steps>
+    </taskbody>
+</task>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140210133611665/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140210133611665/shared/?><?path2project ../?><!--This work by Eucalyptus Systems is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License. See the accompanying LICENSE file for more information.--><reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="shared_params" ditaarch:DITAArchVersion="1.2" domains="(topic reference)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic       reference/reference " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="reference:1;4:31">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="title:1;5:9">Shared Options</title>
+	<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="shortdesc:1;6:13">Many Euca2ools commands share a set of common parameters. This
+		table details these shared options.</shortdesc>
+	<refbody class="- topic/body        reference/refbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="refbody:1;8:11">
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="section:1;10:12">
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="table:1;11:11">
+
+				<tgroup cols="3" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="tgroup:1;13:22">
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="thead:1;14:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:1;15:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:1;16:15">Option</entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:2;17:15">Description</entry>
+							<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:3;18:15">Required</entry>
+						</row>
+					</thead>
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="tbody:1;21:13">
+						<row id="access_key_id" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:2;22:31">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:4;23:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:1;23:23">-a,--access-key</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:5;24:15">User's access key ID</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:6;25:30">Yes</entry>
+
+						</row>
+						<row id="secret_key" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:3;28:28">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:7;29:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:2;29:23">-s,--secret-key</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:8;30:15">User's secret key</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:9;31:30">No</entry>
+
+						</row>
+						<row id="config" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:4;34:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:10;35:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:3;35:23">--config</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:11;36:15">Read credentials and cloud settings from the
+								specified config file. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:1;37:35">Default:
+										<filepath class="+ topic/ph sw-d/filepath " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="filepath:1;38:21">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</filepath>.</p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:12;40:30">No</entry>
+						</row>
+						<row id="debug" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:5;42:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:13;43:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:4;43:23">--debug</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:14;44:15">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:15;47:30">No</entry>
+						</row>
+						<row id="debugger" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:6;49:26">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:16;50:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:5;50:23">--debugger</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:17;51:15">Enable interactive debugger on error</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:18;52:30">No</entry>
+
+						</row>
+						<row id="help" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:7;55:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:19;56:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:6;56:23">-h,--help</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:20;57:15">Display the manual page for the
+								command.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:21;59:30">No</entry>
+						</row>
+						<row id="region" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:8;61:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:22;62:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:7;62:23">--region</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:23;63:15">Region to direct requests to. Only valid for
+								EC2 endpoints. <draft-comment translate="no" class="- topic/draft-comment " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="draft-comment:1;64:39">Meaning
+									what?</draft-comment></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:24;66:30">No</entry>
+						</row>
+						<row id="url" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:9;68:21">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:25;69:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:8;69:23">-U,--url</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:26;70:15">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									<draft-comment translate="no" class="- topic/draft-comment " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="draft-comment:2;72:25">What does this sentence
+									mean?</draft-comment></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:27;74:30">No</entry>
+						</row>
+						<row id="version" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:10;76:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:28;77:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:9;77:23">--version</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:29;78:15">Display the version of this tool</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:30;79:30">No</entry>
+						</row>
+						<!--<row id="euca_auth">
+    					<entry><codeph>-\-euca-auth</codeph></entry>
+    					<entry>Use NC authentication mode</entry>
+    				</row>-->
+						<row id="protocol" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:11;85:26">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:31;86:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:10;86:23">-P,--protocol</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:32;87:15">The protocol. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:2;87:32">Valid Values:
+										<userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="userinput:1;88:22">tcp</userinput> |
+										<userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="userinput:2;89:22">udp</userinput> |
+										<userinput class="+ topic/ph sw-d/userinput " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="userinput:3;90:22">icmp</userinput></p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:33;91:30">No</entry>
+						</row>
+						<row id="port_range" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:12;93:28">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:34;94:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:11;94:23">-p,--port-range</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:35;95:15">Range of ports for the rule (specified as
+								"from-to").</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:36;97:30">No</entry>
+
+						</row>
+						<row id="icmp_type" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:13;100:27">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:37;101:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:12;101:23">-t,--icmp-type-code</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:38;102:15">ICMP type and code specified as
+								"type:code"</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:39;104:30">No</entry>
+						</row>
+						<row id="source_group" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:14;106:30">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:40;107:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:13;107:23">-o,--source-group</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:41;108:15">Group from which traffic is authorized by the
+								rule. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:42;110:30">No</entry>
+						</row>
+						<row id="source_group_user" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:15;112:35">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:43;113:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:14;113:23">-u,--source-group-user</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:44;114:15"> User ID for the source group. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:45;115:30">No</entry>
+						</row>
+						<row id="source_subnet" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:16;117:31">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:46;118:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:15;118:23">-s,--source-subnet </codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:47;119:15">The source subnet for the rule. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:3;119:50">Default:
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:16;120:19">0.0.0.0/0</codeph></p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:48;121:30">No</entry>
+						</row>
+						<row id="user" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:17;123:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:49;124:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:17;124:23">-u,--user</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:50;125:15">12-digit user ID of the person who is
+								bundling the image. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:51;127:30">No</entry>
+						</row>
+						<row id="cert" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:18;129:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:52;130:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:18;130:23">-c,--cert</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:53;131:15">Path to the user's PEM-encoded certificate.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:54;132:30">No</entry>
+						</row>
+						<row id="private_key" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:19;134:29">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:55;135:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:19;135:23">-k,--privatekey </codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:56;136:15">Path to user's PEM-encoded private key.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:57;137:30">No</entry>
+						</row>
+						<row id="prefix" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:20;139:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:58;140:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:20;140:23">-p,--prefix</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:59;141:15">The prefix for the bundle image files. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:60;142:30">No</entry>
+						</row>
+						<row id="kernel" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:21;144:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:61;145:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:21;145:23">--kernel</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:62;146:15">ID of the kernel you want to associate with
+								the image. You can override this ID in <xref href="../euca2ools-guide/euca-register.dita" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="xref:1;148:56"/> and <xref href="../euca2ools-guide/euca-run-instances.dita" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="xref:2;149:61"/> at
+								runtime. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:4;150:21">If you are bundling a kernel image,
+									set to <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:22;151:25">true</codeph>.</p>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:63;153:30">No</entry>
+						</row>
+						<row id="ramdisk" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:22;155:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:64;156:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:23;156:23">--ramdisk</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:65;157:15">ID of the ramdisk to be associated with the
+								image. You can override this ID in <xref href="../euca2ools-guide/euca-register.dita" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="xref:3;159:56"/> and <xref href="../euca2ools-guide/euca-run-instances.dita" class="- topic/xref " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="xref:4;160:61"/> at
+								runtime. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:5;161:21">If you are bundling a ramdisk image,
+									set to <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:24;162:25">true</codeph>.</p>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:66;164:30">No</entry>
+						</row>
+						<row id="product_codes" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:23;166:31">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:67;167:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:25;167:23">--product-codes</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:68;168:15">Product codes to be associated with the
+								image.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:69;170:30">No</entry>
+						</row>
+						<row id="block_device_mapping" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:24;172:38">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:70;173:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:26;173:23">-b,--block-device-mapping</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:71;174:15">Default block device mapping for the image.
+								The format of the mapping is a comma-separated
+								list of key=value pairs. <draft-comment translate="no" class="- topic/draft-comment " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="draft-comment:3;176:49">Scot's
+									notes say: "sda=(/dev/sdf=none) no block
+									device mapping" and "Google block device
+									mapping (see CLI ref for EC2)"
+									Uh...?</draft-comment>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:72;182:30">No</entry>
+						</row>
+						<row id="destination" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:25;184:29">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:73;185:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:27;185:23">-d,--destination </codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:74;186:15">Directory to store the bundled image in. We
+								recommend that you include this option where
+								allowed. <draft-comment translate="no" class="- topic/draft-comment " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="draft-comment:4;188:33">Scot's notes: "on your
+									machine where you're running the command
+									from where you want it to
+									go."</draft-comment>
+								<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:6;192:12">Default: <filepath class="+ topic/ph sw-d/filepath " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="filepath:2;192:31">/tmp</filepath></p>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:75;194:30">No</entry>
+						</row>
+
+						<row id="ec2cert" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:26;197:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:76;198:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:28;198:23">--ec2cert</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:77;199:15">Path to the cloud's X.509 certificate. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:78;200:30">No</entry>
+						</row>
+						<row id="arch" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:27;202:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:79;203:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:29;203:23">-r,--arch</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:80;204:15">Target architecture for the image.
+									<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:7;205:13">Default: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:30;205:30">x86_64</codeph></p>
+								<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:8;206:12">Valid values: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:31;206:34">i386</codeph> |
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:32;207:19">x86_64</codeph></p>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:81;209:30">No</entry>
+						</row>
+						<row id="batch" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:28;211:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:82;212:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:33;212:23">--batch</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:83;213:15">Run in batch mode. This is for compatibility
+								only, and has no effect. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:84;215:30">No</entry>
+						</row>
+						<row id="directory" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:29;217:27">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:85;218:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:34;218:23">-d,--directory</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:86;219:15">Working directory where bundle should be
+								generated </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:87;221:30">No</entry>
+						</row>
+						<row id="policy" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:30;223:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:88;224:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:35;224:23"> -c,--policy</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:89;225:15">Base64-encoded S3 upload policy</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:90;226:30">No</entry>
+						</row>
+						<row id="policy_signature" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:31;228:34">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:91;229:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:36;229:23">-policysignature</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:92;230:15">Signature for the upload policy</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:93;231:30">No</entry>
+						</row>
+						<row id="acl" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:32;233:21">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:94;234:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:37;234:23">-acl</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:95;235:15">Canned ACL policy</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:96;236:30">No</entry>
+						</row>
+						<row id="size" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:33;238:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:97;239:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:38;239:23">-s,--size
+								<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="i:1;240:12">size_in_mb</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:98;241:15">Size of the image in MB</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:99;242:30">No</entry>
+						</row>
+						<row id="all" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:34;244:21">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:100;245:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:39;245:23">-a,--all</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:101;246:15">Bundle all directories, including mounted
+								filesystems. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:102;248:30">No</entry>
+						</row>
+						<row id="no_inherit" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:35;250:28">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:103;251:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:40;251:23">--no-inherit</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:104;252:15">Do not add instance metadata to the bundled
+								image. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:105;254:30">No</entry>
+						</row>
+						<row id="exclude" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:36;256:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:106;257:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:41;257:23">-e,--exclude <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="i:2;257:39">directory_1,
+										directory_2,...</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:107;259:15">Comma-separated list of directories to
+								exclude. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:108;261:30">No</entry>
+						</row>
+						<row id="include" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:37;263:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:109;264:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:42;264:23">-i,--include <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="i:3;264:39">directory_1,
+										directory_2,...</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:110;266:15">Comma-separated list of directories to
+								include. </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:111;268:30">No</entry>
+						</row>
+						<row id="volume" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:38;270:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:112;271:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:43;271:23">--volume</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:113;272:15">Path to mounted volume to bundle.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:114;273:30">No</entry>
+						</row>
+						<row id="fstab" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:39;275:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:115;276:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:44;276:23">--fstab</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:116;277:15">Path to the fstab to be bundled with
+								image.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:117;279:30">No</entry>
+						</row>
+						<row id="generate_fstab" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:40;281:32">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:118;282:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:45;282:23">--generate-fstab</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:119;283:15">Generate fstab to bundle in image.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:120;284:30">No</entry>
+						</row>
+						<row id="user_access_key" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:41;286:33">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:121;287:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:46;287:23">-o,--user-access-key</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:122;288:15">Access key ID of the owner of the
+								bucket</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:123;290:30">No</entry>
+						</row>
+						<row id="user_secret_key" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:42;292:33">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:124;293:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:47;293:23">-w,--user-secret-key</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:125;294:15">Secret key used to sign the upload
+								policy</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:126;296:30">No</entry>
+						</row>
+						<row id="expires" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:43;298:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:127;299:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:48;299:23">-x,--expires</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:128;300:15">Expiration, in hours, for the generated upload policy. Default value is
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:49;301:18">24</codeph>.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:129;302:30">No</entry>
+						</row>
+						<row id="instance_id" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:44;304:29">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:130;305:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:50;305:23">instance_id</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:131;306:15">Unique ID of the instance</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:132;307:30">No</entry>
+						</row>
+						<row id="description" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:45;309:29">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:133;310:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:51;310:23">-d,--description</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:134;311:15">Brief description of the image</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:135;312:30">No</entry>
+						</row>
+						<row id="no_reboot" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:46;314:27">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:136;315:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:52;315:23">--no-reboot</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:137;316:15">When set to true, the instance is not shut
+								down before creating the image. When this option
+								is used, file system integrity on the created
+								image cannot be guaranteed. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:9;319:40">Valid values:
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:53;320:19">true</codeph> |
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:54;321:19">false</codeph></p>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:138;323:30">No</entry>
+						</row>
+						<row id="manifest" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:47;325:26">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:139;326:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:55;326:23">-m,--manifest</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:140;327:15">Path to the manifest file.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:141;328:30">No</entry>
+						</row>
+						<row id="clear" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:48;330:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:142;331:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:56;331:23">--clear</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:143;332:15">Delete the bucket containing the
+								image.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:144;334:30">No</entry>
+						</row>
+						<row id="filter" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="row:49;336:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:145;337:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="codeph:57;337:23">-F, --filter <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="i:4;337:39">name=value</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:146;338:15">Filter for limiting the results. See the table in the Available Filters section for a
+								list of  filters. Use quotation marks if the value has a space ("name=value example"). On a Windows system, use quotation marks even without a space in the value ("name=value").</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="entry:147;340:30">No</entry>
+						</row>
+						<!--<row>
+    					<entry><codeph></codeph></entry>
+    					<entry></entry>
+    				</row>-->
+					</tbody>
+				</tgroup>
+			</table>
+			<p id="euca_no_output" class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/shared_params.dita" xtrc="p:10;349:27">Eucalyptus does not return any message.</p>
+		</section>
+	</refbody>
+</reference>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_deploy_sample_app">
+    <title>Deploy an Application from the Sample Application Gallery</title>
+    <shortdesc/>
+    <taskbody>
+        <context/>
+        <steps>
+
+            <step>
+                <cmd>Scroll down and click the <uicontrol>Deploy from the Sample
+                        Applications</uicontrol> button.</cmd>
+                <info>
+                    <image id="quickstart_deploy_sample_app_1"
+                        href="images/quickstart_deploy_sample_app_1.png" scale="75"/>
+                </info>
+
+            </step>
+            <step>
+                <cmd>Click <uicontrol>Deploy App</uicontrol> in one of the sample apps (we recommend
+                    starting with a hello world app). For example:</cmd>
+                <info>
+                    <image id="quickstart_deploy_sample_app_2"
+                        href="images/quickstart_deploy_sample_app_2.png" scale="75"/>
+                </info>
+            </step>
+            <step>
+                <cmd>Fill out the application deployment form:</cmd>
+                <substeps>
+                    <substep>
+                        <cmd>Enter a name in the <uicontrol>App Name</uicontrol> text box.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select a space from the <uicontrol>Space</uicontrol> drop-down list
+                            box.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Select domain in the <codeph>15.X.X.X</codeph> address range.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Check the <uicontrol>Start application after deployment</uicontrol>
+                            check box.</cmd>
+                    </substep>
+                    <substep>
+                        <cmd>Click <uicontrol>Deploy Application</uicontrol>.</cmd>
+                    </substep>
+                </substeps>
+                <info>
+                    <image id="quickstart_deploy_sample_app_3"
+                        href="images/quickstart_deploy_sample_app_3.png" scale="75"/>
+                </info>
+                <info> The <uicontrol>View App</uicontrol> button will be enabled before the app is ready. Usually it takes a few
+                    minutes for the application to be fully deployed. When the app is fully
+                    deployed, the log stream will show output similar to the following: </info>
+                <info>
+                    <codeblock>http://helion-helloworld-java-edmwx.15.X.X.X.xip.io/ deployed
+All done.</codeblock>
+                </info>
+            </step>
+            <step>
+                <cmd>Click <uicontrol>View App</uicontrol>.</cmd>
+                <info>
+                    <image id="quickstart_deploy_sample_app_4"
+                        href="images/quickstart_deploy_sample_app_4.png" scale="75"/>
+                </info>
+            </step>
+        </steps>
+        <postreq>Congratulations! You have now deployed your first application!</postreq>
+    </taskbody>
+</task>

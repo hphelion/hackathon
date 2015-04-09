@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Create a Cluster"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="prodname" content="HelionHackathon Part 2"/>
+<meta name="version" content="1.0"/>
+<meta name="copyright" content="Hewlett-Packard 2015" type="primary"/>
+<meta name="DC.Rights.Owner" content="Hewlett-Packard 2015" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="quickstart_create_cluster"/>
+<link rel="stylesheet" type="text/css" href="..//commonltr.css"/>
+<title>Create a Cluster</title>
+</head>
+<body id="quickstart_create_cluster">
+
+
+    <h1 class="title topictitle1">Create a Cluster</h1>
+
+    
+    <div class="body taskbody"><p class="shortdesc"/>
+
+        
+        <div class="section context"/>
+
+        <ol class="ol steps"><li class="li step">
+                <span class="ph cmd">Open a terminal window and change directory to the location where you installed
+                    the <samp class="ph codeph">cf-mgmt</samp> command-line tool.</span>
+
+            </li>
+<li class="li step">
+                <span class="ph cmd">Run the appropriate command set for the target host's operating system:</span>
+                <ol type="a" class="ol substeps">
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd">For Microsoft Windows, open the RC file you downloaded with a text
+                            editor. Use the variables values in the file to set the indicated
+                            values. Then run the command: </span>
+                        <div class="itemgroup info">
+                            cf-mgmt.exe ^
+   --os-auth-url &lt;OS_AUTH_URL from openstackrc&gt; ^
+   --os-username &lt;OS_USERNAME from openstackrc&gt; ^
+   --os-password &lt;OpenStack password&gt; ^
+   --os-tenant-id &lt;OS_TENANT_ID from openstackrc&gt; ^
+   --os-tenant-name &lt;OS_TENANT_NAME from openstackrc&gt; ^
+   --os-region-name &lt;OS_REGION_NAME from openstackrc&gt; ^
+create-cluster ^
+   --keypair-name &lt;name of keypair created earlier&gt; ^
+   --admin-email &lt;email address for admin user&gt; ^
+   --admin-password &lt;password for admin user&gt; ^
+   --load trial.yml
+                        </div>
+                    </li>
+
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd">
+                            For Mac or Linux, run the following commands:
+                        </span>
+                        <div class="itemgroup info">
+                            source &lt;path to openstackrc file&gt;
+./cf-mgmt create-cluster \
+--keypair-name &lt;name of keypair created earlier&gt; \
+--admin-email &lt;emailaddress for admin user&gt; \
+--admin-password &lt;password for admin user&gt; \
+--load trial.yml
+                        </div>
+                    </li>
+
+                </ol>
+
+            </li>
+</ol>
+
+    </div>
+
+
+</body>
+</html>

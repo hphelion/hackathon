@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="euca-register"/>
+<meta name="abstract" content="Registers a manifest for use with the cloud. Note that the registered image by default is set to private. To make publically available, use the euca-modify-image-attribute and set the --add value to all."/>
+<meta name="description" content="Registers a manifest for use with the cloud. Note that the registered image by default is set to private. To make publically available, use the euca-modify-image-attribute and set the --add value to all."/>
+<meta name="DC.subject" content="EC2 compatible commands, Eucalyptus register"/>
+<meta name="keywords" content="EC2 compatible commands, Eucalyptus register"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="euca-register"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>euca-register</title>
+</head>
+<body id="euca-register">
+
+
+	<h1 class="topictitle1">euca-register</h1>
+
+	
+	
+	<div><p>Registers a manifest for use with the cloud. Note that the
+		registered image by default is set to private. To make publically
+		available, use the <span class="apiname">euca-modify-image-attribute</span> and
+		set the <samp class="codeph">--add</samp> value to
+		<samp class="codeph">all</samp>.</p>
+
+		<div class="section"><h2 class="sectiontitle">Syntax</h2>
+			
+			<pre class="codeblock">euca-register [<strong>manifest</strong>] -n <strong>name</strong> [-d <strong>description</strong> ] 
+				[-a <strong>architecture</strong> ][--kernel <strong>kernel</strong> ] [--ramdisk <strong>ramdisk</strong> ]
+				[--root-device-name <strong>root_device_name</strong> ] [-b block_device_mapping ] 
+				[-s <strong>snapshot</strong> ][--virtualization-type type]
+			</pre>
+
+		</div>
+
+		<div class="section"><h2 class="sectiontitle">Options</h2>
+			
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+					
+					
+					
+					<thead align="left">
+						<tr>
+							<th class="cellrowborder" valign="top" width="25%" id="d1015e91">Option</th>
+
+							<th class="cellrowborder" valign="top" width="60%" id="d1015e94">Description</th>
+
+							<th class="cellrowborder" valign="top" width="15%" id="d1015e97">Required</th>
+
+						</tr>
+
+					</thead>
+
+
+					<tbody>
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph"><em>manifest</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">Path to the uploaded image (bucket/manifest).
+								Required if you are registering an S3-based
+								image.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">Conditional</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">-n,--name</samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">Name of the image. <p>Constraints: 3-128
+									alphanumeric characters, parenthesis (()),
+									commas (,), slashes (/), dashes (-), or
+									underscores(_)</p>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">Yes</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">-d,--description
+									<em>description</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">Description of the image <p>Constraints: Up
+									to 255 characters.</p>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">-a,--architecture
+									<em>architecture</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">The architecture of the image <p>Valid
+									Values: <samp class="codeph">i386</samp> |
+										<samp class="codeph">x86_64</samp></p>
+</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">--kernel</samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">Kernel ID associated with the image</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">--ramdisk</samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">Ramdisk ID associated with the image </td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">--root-device-name
+									<em>name</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">Root device name (for example, /dev/sda1, or
+								xvda) </td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">-b,--block-device-mapping
+										<em>mapping</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">Block device mapping for the instance. This
+								is passed in the form of
+								&lt;devicename&gt;=&lt;blockdevice&gt;, where:
+									<samp class="codeph">devicename</samp> is the device
+								name of the physical device on the instance to
+								map and <samp class="codeph">blockdevice</samp> is one of
+								the following values: <ul>
+									<li><samp class="codeph">none</samp>: Use this value to
+										suppress existing mapping on the
+										specified image for this device. For
+										example:
+										<samp class="codeph">/dev/sdc=none</samp></li>
+
+									<li><samp class="codeph">ephemeral[0..3]</samp>: Use
+										this value to indicate that an instance
+										local storage device should be mapped to
+										this device. For example:
+										<samp class="codeph">/dev/sdc=ephemeral0</samp></li>
+
+									<li><samp class="codeph">[snapshot-id]:[size]:[delete-on-termination
+										(true|false)]</samp>: Use this value
+										to map a device to an existing
+										EBS-backed volume, and to specify
+										whether the EBS volume should be deleted
+										on termination. This value defaults to
+										<samp class="codeph">true</samp>. <p>To specify a
+										new EBS-backed volume, skip the snapshot
+										ID and pass in a volume size instead.
+										For example:<samp class="codeph">
+										/dev/sdb=:20</samp>.</p>
+</li>
+
+								</ul>
+
+							</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">-s,--snapshot
+									<em>snapshot</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">EBS snapshot ID to use as the root
+								device</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e91 "><samp class="codeph">--virtualization-type
+								<em>type</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d1015e94 ">[Administrator only] The virtualization type for the new image.
+							<p>
+								Valid values: <samp class="codeph">paravirtual</samp> | <samp class="codeph">hvm</samp>
+							</p>
+
+							</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d1015e97 ">No</td>
+
+						</tr>
+
+
+					</tbody>
+
+				</table>
+</div>
+
+		</div>
+
+		<div class="section"><h2 class="sectiontitle">Common Options</h2>
+			
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+					
+					
+
+					<thead align="left">
+						<tr>
+							<th class="cellrowborder" align="center" valign="top" width="25%" id="d1015e325">Option</th>
+
+							<th class="cellrowborder" align="center" valign="top" width="75%" id="d1015e328">Description</th>
+
+
+						</tr>
+
+					</thead>
+
+					<tbody>
+						<tr id="euca-register__d45e43">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">--region
+								<em>region</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">Region to direct requests to. Only valid for
+								EC2 endpoints. </td>
+
+						</tr>
+
+						<tr id="euca-register__d45e55">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">-U,--url <em>url</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									</td>
+
+						</tr>
+
+						<tr id="euca-register__d45e67">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">-I,--access-key-id <em>access_key_id</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">User's access key ID</td>
+
+						</tr>
+
+						<tr id="euca-register__d45e79">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">-S,--secret-key <em>secret_key</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">User's secret key</td>
+
+						</tr>
+
+						<tr id="euca-register__d45e91">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">--config
+									<em>configuration_path</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">Read credentials and cloud settings from the
+								specified config file. <p>Default:
+										<span class="filepath">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</span>.</p>
+</td>
+
+						</tr>
+
+						<tr id="euca-register__d45e109">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">--debug</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</td>
+
+						</tr>
+
+						<tr id="euca-register__d45e119">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">--debugger</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">Enable interactive debugger on error</td>
+
+						</tr>
+
+						<tr id="euca-register__d45e129">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">-h,--help</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">Display the manual page for the
+								command.</td>
+
+						</tr>
+
+						<tr id="euca-register__d45e139">
+							<td class="cellrowborder" valign="top" width="25%" headers="d1015e325 "><samp class="codeph">--version</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d1015e328 ">Display the version of this tool</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+</div>
+
+		</div>
+
+
+		<div class="section"><h2 class="sectiontitle">Output</h2>
+			
+			<ul>
+				<li>Output type identifier ("IMAGE")</li>
+
+				<li>Image ID</li>
+
+				<li/>
+
+			</ul>
+
+		</div>
+
+
+		<div class="section"><h2 class="sectiontitle">Example</h2>
+			
+			<pre class="codeblock">euca-register -a i386 --description 'My new image' --name 'myimage'
+mah-bukkit/myimage.img.manifest.xml
+IMAGE   emi-15A1386E</pre>
+
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

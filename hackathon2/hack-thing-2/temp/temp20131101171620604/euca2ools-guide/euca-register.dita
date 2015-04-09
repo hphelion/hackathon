@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101171620604/euca2ools-guide?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20131101171620604/euca2ools-guide/?><?path2project ../?><reference xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="euca-register" ditaarch:DITAArchVersion="1.2" domains="(topic reference)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)    " class="- topic/topic       reference/reference " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="reference:1;4:31">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="title:1;5:9">euca-register</title>
+	<shortdesc class="- topic/shortdesc " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="shortdesc:1;6:13">Registers a manifest for use with the cloud. Note that the
+		registered image by default is set to private. To make publically
+		available, use the <apiname class="+ topic/keyword pr-d/apiname " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="apiname:1;8:31">euca-modify-image-attribute</apiname> and
+		set the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:1;9:19">--add</codeph> value to
+		<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:2;10:11">all</codeph>.</shortdesc>
+
+	<refbody class="- topic/body        reference/refbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="refbody:1;12:11">
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="section:1;13:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="title:2;14:11">Syntax</title>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeblock:1;15:15">euca-register [<b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:1;15:33">manifest</b>] -n <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:2;15:53">name</b> [-d <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:3;15:69">description</b> ] 
+				[-a <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:4;16:12">architecture</b> ][--kernel <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:5;16:43">kernel</b> ] [--ramdisk <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:6;16:70">ramdisk</b> ]
+				[--root-device-name <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:7;17:28">root_device_name</b> ] [-b block_device_mapping ] 
+				[-s <b class="+ topic/ph hi-d/b " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="b:8;18:12">snapshot</b> ][--virtualization-type type]
+			</codeblock>
+		</section>
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="section:2;21:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="title:3;22:11">Options</title>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="table:1;23:11">
+				<tgroup cols="3" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="tgroup:1;24:22">
+					<colspec colname="col1" colwidth="25*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="colspec:1;25:31"/>
+					<colspec colname="col2" colwidth="60*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="colspec:2;26:31"/>
+					<colspec colname="col3" colwidth="15*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="colspec:3;27:31"/>
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="thead:1;28:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:1;29:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:1;30:15">Option</entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:2;31:15">Description</entry>
+							<entry colname="col3" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:3;32:15">Required</entry>
+						</row>
+					</thead>
+
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="tbody:1;36:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:2;37:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:4;38:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:3;38:23"><i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="i:1;38:26">manifest</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:5;39:15">Path to the uploaded image (bucket/manifest).
+								Required if you are registering an S3-based
+								image.</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:6;42:30">Conditional</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:3;44:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:7;45:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:4;45:23">-n,--name</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:8;46:15">Name of the image. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="p:1;46:37">Constraints: 3-128
+									alphanumeric characters, parenthesis (()),
+									commas (,), slashes (/), dashes (-), or
+									underscores(_)</p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:9;50:30">Yes</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:4;52:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:10;53:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:5;53:23">-d,--description
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="i:2;54:13">description</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:11;55:15">Description of the image <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="p:2;55:43">Constraints: Up
+									to 255 characters.</p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:12;57:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:5;59:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:13;60:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:6;60:23">-a,--architecture
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="i:3;61:13">architecture</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:14;62:15">The architecture of the image <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="p:3;62:48">Valid
+									Values: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:7;63:26">i386</codeph> |
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:8;64:19">x86_64</codeph></p></entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:15;65:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:6;67:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:16;68:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:9;68:23">--kernel</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:17;69:15">Kernel ID associated with the image</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:18;70:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:7;72:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:19;73:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:10;73:23">--ramdisk</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:20;74:15">Ramdisk ID associated with the image </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:21;75:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:8;77:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:22;78:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:11;78:23">--root-device-name
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="i:4;79:13">name</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:23;80:15">Root device name (for example, /dev/sda1, or
+								xvda) </entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:24;82:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:9;84:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:25;85:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:12;85:23">-b,--block-device-mapping
+										<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="i:5;86:14">mapping</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:26;87:15">Block device mapping for the instance. This
+								is passed in the form of
+								&lt;devicename&gt;=&lt;blockdevice&gt;, where:
+									<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:13;90:18">devicename</codeph> is the device
+								name of the physical device on the instance to
+								map and <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:14;92:25">blockdevice</codeph> is one of
+								the following values: <ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="ul:1;93:35">
+									<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="li:1;94:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:15;94:22">none</codeph>: Use this value to
+										suppress existing mapping on the
+										specified image for this device. For
+										example:
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:16;98:19">/dev/sdc=none</codeph></li>
+									<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="li:2;99:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:17;99:22">ephemeral[0..3]</codeph>: Use
+										this value to indicate that an instance
+										local storage device should be mapped to
+										this device. For example:
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:18;103:19">/dev/sdc=ephemeral0</codeph></li>
+									<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="li:3;104:14"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:19;104:22">[snapshot-id]:[size]:[delete-on-termination
+										(true|false)]</codeph>: Use this value
+										to map a device to an existing
+										EBS-backed volume, and to specify
+										whether the EBS volume should be deleted
+										on termination. This value defaults to
+										<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:20;110:19">true</codeph>. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="p:4;110:37">To specify a
+										new EBS-backed volume, skip the snapshot
+										ID and pass in a volume size instead.
+										For example:<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:21;113:31">
+										/dev/sdb=:20</codeph>.</p></li>
+								</ul>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:27;117:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:10;119:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:28;120:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:22;120:23">-s,--snapshot
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="i:6;121:13">snapshot</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:29;122:15">EBS snapshot ID to use as the root
+								device</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:30;124:30">No</entry>
+						</row>
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="row:11;126:12">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:31;127:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:23;127:23">--virtualization-type
+								<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="i:7;128:12">type</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:32;129:15">[Administrator only] The virtualization type for the new image.
+							<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="p:5;130:11">
+								Valid values: <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:24;131:31">paravirtual</codeph> | <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeph:25;131:62">hvm</codeph>
+							</p>
+							</entry>
+							<entry colname="col3" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="entry:33;134:30">No</entry>
+						</row>
+
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="section:1;11:37">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="title:2;12:11">Common Options</title>
+			<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="table:1;13:11">
+				<tgroup cols="2" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tgroup:1;14:22">
+					<colspec colname="col1" colwidth="25*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:1;15:31"/>
+					<colspec colname="col2" colwidth="75*" class="- topic/colspec " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="colspec:2;16:31"/>
+
+					<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="thead:1;18:13">
+						<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:1;19:12">
+							<entry colname="col1" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:1;20:30">Option</entry>
+							<entry colname="col2" align="center" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:2;21:30">Description</entry>
+
+						</row>
+					</thead>
+					<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="tbody:1;25:13">
+						<row id="d45e43" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:2;26:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:3;27:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:1;27:23">--region
+								<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:1;28:12">region</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:4;29:15">Region to direct requests to. Only valid for
+								EC2 endpoints. </entry>
+						</row>
+						<row id="d45e55" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:3;32:21">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:5;33:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:2;33:23">-U,--url <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:2;33:35">url</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:6;34:15">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									</entry>
+						</row>
+						<row id="d45e67" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:4;38:31">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:7;39:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:3;39:23">-I,--access-key-id <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:3;39:45">access_key_id</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:8;40:15">User's access key ID</entry>
+						</row>
+						<row id="d45e79" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:5;42:28">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:9;43:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:4;43:23">-S,--secret-key <i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:4;43:42">secret_key</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:10;44:15">User's secret key</entry>
+						</row>
+						<row id="d45e91" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:6;46:24">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:11;47:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:5;47:23">--config
+									<i class="+ topic/ph hi-d/i " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="i:5;48:13">configuration_path</i></codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:12;49:15">Read credentials and cloud settings from the
+								specified config file. <p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="p:1;50:35">Default:
+										<filepath class="+ topic/ph sw-d/filepath " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="filepath:1;51:21">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</filepath>.</p></entry>
+						</row>
+						<row id="d45e109" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:7;54:23">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:13;55:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:6;55:23">--debug</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:14;56:15">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</entry>
+						</row>
+						<row id="d45e119" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:8;60:26">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:15;61:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:7;61:23">--debugger</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:16;62:15">Enable interactive debugger on error</entry>
+						</row>
+						<row id="d45e129" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:9;64:22">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:17;65:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:8;65:23">-h,--help</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:18;66:15">Display the manual page for the
+								command.</entry>
+						</row>
+						<row id="d45e139" class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="row:10;69:25">
+							<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:19;70:15"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="codeph:9;70:23">--version</codeph></entry>
+							<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/euca-common.dita" xtrc="entry:20;71:15">Display the version of this tool</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</section>
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="section:4;144:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="title:4;145:11">Output</title>
+			<ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="ul:2;146:8">
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="li:4;147:9">Output type identifier ("IMAGE")</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="li:5;148:9">Image ID</li>
+				<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="li:6;149:10"/>
+			</ul>
+		</section>
+
+		<section class="- topic/section " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="section:5;153:12">
+			<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="title:5;154:11">Example</title>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/euca2ools-guide/euca-register.dita" xtrc="codeblock:2;155:15">euca-register -a i386 --description 'My new image' --name 'myimage'
+mah-bukkit/myimage.img.manifest.xml
+IMAGE   emi-15A1386E</codeblock>
+		</section>
+	</refbody>
+
+</reference>

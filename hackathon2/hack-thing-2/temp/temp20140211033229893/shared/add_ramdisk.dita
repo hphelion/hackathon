@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211033229893/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211033229893/shared/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="add_ramdisk" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="task:1;4:24">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="title:1;5:9">Add a Ramdisk</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita"/>
+	<prolog class="- topic/prolog "><copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata "><prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata></prolog><taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="taskbody:1;7:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="context:1;8:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="p:1;9:7">When you add a ramdisk to Walrus, you bundle the ramdisk file,
+				upload the file to a bucket in Walrus that you name, and then
+				register the ramdisk with Eucalyptus.</p>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="p:2;12:7">To add a ramdisk to Walrus:</p>
+		</context>
+		<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="steps:1;14:10">
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="step:1;15:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="cmd:1;16:10">Use the following three commands:</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="info:1;17:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="codeblock:1;18:17">euca-bundle-image -i &lt;ramdisk_file&gt; --ramdisk true
+euca-upload-bundle -b &lt;ramdisk_bucket&gt; -m /tmp/&lt;ramdisk_file&gt;.manifest.xml
+euca-register &lt;ramdisk_bucket&gt;/&lt;ramdisk_file&gt;.manifest.xml</codeblock>
+				</info>
+			</step>
+		</steps>
+		<example class="- topic/example " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="example:1;24:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="p:3;25:7">For example:</p>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="codeblock:2;26:15">euca-bundle-image -i euca-fedora-10-x86_64/xen-kernel/initrd-2.6.27.21-0.1-xen --ramdisk true
+...
+Generating manifest /tmp/initrd-2.6.27.21-0.1-xen.manifest.xml
+
+euca-upload-bundle -b example_rd_bucket -m /tmp/initrd-2.6.27.21-0.1-xen.manifest.xml
+...
+Uploaded image as example_rd_bucket/initrd-2.6.27.21-0.1-xen.manifest.xm
+
+euca-register example_rd_bucket/initrd-2.6.27.21-0.1-xen.manifest.xml
+IMAGE	eri-XXXXXXXX
+    		</codeblock>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="p:4;37:7">Where the returned value <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/add_ramdisk.dita" xtrc="codeph:1;37:40">eri-XXXXXXXX</codeph> is the
+				unique ID of the registered ramdisk image.</p>
+		</example>
+
+	</taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:25;50:55" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:23;48:87" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../image-guide/img_add_existing.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Bundle, Upload, and Register an Image with Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:24;49:54" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/add_kernel.dita" role="previous"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Add a Kernel</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:26;51:54" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/add_rootfs.dita" role="next"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Add a Root Filesystem</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link></linkpool></related-links>
+</task>

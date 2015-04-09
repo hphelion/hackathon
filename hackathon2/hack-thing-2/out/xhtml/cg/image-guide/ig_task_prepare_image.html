@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="task"/>
+<meta name="DC.Title" content="Prepare a Linux Image for Eucalyptus"/>
+<meta name="abstract" content="This section explains how to prepare an image before importing it for use in Eucalyptus."/>
+<meta name="description" content="This section explains how to prepare an image before importing it for use in Eucalyptus."/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/img_migrating_intro.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/ig_task_migrate_image_aws_to_euca.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/ig_task_migrate_image_euca_to_aws.html"/>
+<meta name="DC.Relation" scheme="URI" content="../image-guide/ig_task_migrate_vsphere.html"/>
+<meta name="prodname" content="Eucalyptus"/>
+<meta name="version" content="3.4"/>
+<meta name="copyright" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Rights.Owner" content="Eucalyptus Systems 2013" type="primary"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="hg_task_prepare_image"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>Prepare a Linux Image for Eucalyptus</title>
+</head>
+<body id="hg_task_prepare_image">
+
+
+    <h1 class="topictitle1">Prepare a Linux Image for Eucalyptus</h1>
+
+    
+    <div><p>This section explains how to prepare an image before importing it for use in
+        Eucalyptus.</p>
+
+        <div class="section"/>
+
+
+        <ol><li class="stepexpand">
+                <span><strong>Install cloud software and drivers:</strong></span>
+                <ol type="a">
+                    <li class="substepexpand">
+                        <span>Make sure Virtio drivers are installed if the image is going to be run
+                            in a KVM cluster which has virtio enabled, and verify use if possible
+                            (ie. set disks and network interface in hypervisor, try hot plug in for
+                            disks, etc). For most recent Linux distributions nothing is needed to be
+                            done. </span>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span> Make sure Vmware tools are installed if the image is going to be run
+                            in a vmware cluster. There are several options for Linux-based images,
+                            including RPM, yum installations, or through Vmware if the guest is
+                            running in Vmware. </span>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span> Make sure appropriate init scripts are in place; for example:
+                            cloud-init packages (if appropriate), and rc.local or similar scripts to
+                            prepare new instances at boot time utilizing user/meta-data. </span>
+                    </li>
+
+                    <li class="substepexpand">
+
+                        <span> Install cloud-init: </span>
+
+                        <div>
+                            <div class="note"><span class="notetitle">Note:</span> For more information on cloud-init, go to <a href="https://help.ubuntu.com/community/CloudInit" target="_blank">https://help.ubuntu.com/community/CloudInit</a></div>
+
+                            <p>For Ubuntu images:</p>
+
+                            <pre class="codeblock">sudo apt-get install cloud-init</pre>
+
+                            <p>For Red Hat, Fedora, and CentOS EL5:</p>
+
+                            <pre class="codeblock">rpm -Uvh http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm</pre>
+
+                            <p>For Red Hat, Fedora, and CentOS EL6:</p>
+
+                            <pre class="codeblock">rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+yum install cloud-init</pre>
+
+                        </div>
+                    </li>
+
+                    
+                    <li class="substepexpand">
+                        <span>Install and configure ssh:</span>
+                        <div>
+                            <p>For Ubuntu:</p>
+
+                            <pre class="codeblock">sudo apt-get install openssh-server </pre>
+
+                            <p>For Red Hat, Fedora, and CentOS:</p>
+
+                            <pre class="codeblock">yum install openssh-server
+chkconfig sshd on</pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Install Euca2ools:</span>
+                        <div>
+                            <p>For Ubuntu:</p>
+
+                            <pre class="codeblock">sudo apt-get install euca2ools</pre>
+
+                            <p>For Red Hat, Fedora, and CentOS:</p>
+
+                            <pre class="codeblock">yum install euca2ools</pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Optionally, update existing packages.</span>
+                        <div>
+                            <p>For Ubuntu:</p>
+
+                            <pre class="codeblock">sudo apt-get update
+sudo apt-get upgrade</pre>
+
+                            <p>For Red Hat, Fedora, and CentOS:</p>
+
+                            <pre class="codeblock">yum update</pre>
+
+                        </div>
+                    </li>
+
+                </ol>
+
+            </li>
+<li class="stepexpand">
+                <span><strong>Prepare the network:</strong></span>
+                <ol type="a">
+                    <li class="substepexpand">
+                        <span>Disable the firewall. It is recommended that the firewall is disabled
+                            and network rules are instead enforced in the security-group the
+                            instances run in. If the guest's firewall is not disabled, review the
+                            existing rules and make sure they are appropriate for the guest's future
+                            use within a cloud environment. </span>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Clear or disable iptable rules:</span>
+                        <div>
+                            <p>Save the rules in case you want to restore them later:</p>
+
+                            <pre class="codeblock">sudo iptables-save &gt; /root/firewall.rules</pre>
+
+                            <p>Clear the rules:</p>
+
+                            <pre class="codeblock">iptables -F
+iptables -X
+iptables -t nat -F
+iptables -t nat -X
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT</pre>
+
+                            <p>For Red Hat, Fedora, and CentOS, you can disable iptables via service
+                                scripts. For example:</p>
+
+                            <pre class="codeblock">/etc/init.d/iptables stop 
+(or...) 
+service iptables stop
+(then use...) 
+chkconfig iptables off  (to disable at boot time as well) </pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Disable selinux.</span>
+                        <div>
+                            <p>In some distributions, the selinux configuration file can be found in
+                                the following locations:</p>
+
+                            <pre class="codeblock">/etc/sysconfig/selinux
+/etc/selinux/config</pre>
+
+                            <p>The following is an example selinux config file:</p>
+
+                            <pre class="codeblock"># This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#       enforcing - SELinux security policy is enforced.
+#       permissive - SELinux prints warnings instead of enforcing.
+#       disabled - SELinux is fully disabled.
+SELINUX=disabled
+# SELINUXTYPE= type of policy in use. Possible values are:
+#       targeted - Only targeted network daemons are protected.
+#       strict - Full SELinux protection.
+SELINUXTYPE=targeted</pre>
+
+                            <div class="note"><span class="notetitle">Note:</span> Some distributions may not have the selinux config and may need a
+                                flag set in the booter. For example /boot/grub/grub.conf may need
+                                'enforcing=0' added to the 'kernel' configuration line.</div>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Make sure there is only a single primary network interface.</span>
+                        <div>
+                            <p>Check the configuration for:</p>
+
+                            <ul>
+                                <li>Enabled on boot (<samp class="codeph">ONBOOT="yes"</samp>)</li>
+
+                                <li>IP provisioning is done via DHCP
+                                        (<samp class="codeph">BOOTPROTO="dhcp"</samp>)</li>
+
+                                <li>MAC address is commented out (for
+                                        example:<samp class="codeph">#HWADDR="AA:BB:CC:DD:EE:FF"</samp>).<div class="note"><span class="notetitle">Note:</span> If
+                                        the system is rebooted after you've commented out the MAC
+                                        address, the MAC address may be restored and will need to be
+                                        commented out again.</div>
+</li>
+
+
+                            </ul>
+
+                            <p> For Red Hat, Fedora, and CentOS images, the configuration for the
+                                default network interface can usually be found in the following
+                                file: </p>
+
+                            <pre class="codeblock">/etc/sysconfig/network-scripts/ifcfg-eth0</pre>
+
+                            <p>The following is an example of an <samp class="codeph">ifcfg-eth0</samp>
+                                configuration file:</p>
+
+                            <pre class="codeblock">DEVICE=eth0
+ONBOOT=yes
+#THE HWADDR LINE MUST BE COMMENTED OUT OR REMOVED
+#HWADDR=AA:BB:CC:DD:EE:FF
+TYPE=Ethernet
+BOOTPROTO=dhcp
+PERSISTENT_DHCLIENT=yes</pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Remove persistent udev rules:</span>
+                        <div>
+                            <pre class="codeblock">echo "" &gt; /etc/udev/rules.d/70-persistent-net.rules 
+echo "" &gt; /lib/udev/rules.d/75-persistent-net-generator.rules </pre>
+
+                        </div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>On CentOS and Red Hat, disable zeroconf by adding an entry to the
+                                <samp class="codeph">/etc/sysconfig/network</samp> file:</span>
+                        <div>
+                            <pre class="codeblock">NETWORKING=yes
+NOZEROCONF=yes</pre>
+
+                        </div>
+                    </li>
+
+                </ol>
+
+            </li>
+<li class="stepexpand">
+                <span><strong>Clean the image:</strong></span>
+                <ol type="a">
+                    <li class="substepexpand">
+                        <span>We recommend that you remove all non-root, non-administrator users
+                            before bundling the image.</span>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Remove root/Administrator password. We recommend that you remove root's
+                            password for Linux systems (for windows, use sysprep (see Administrators
+                            guide for Windows Integration tool). </span>
+                        <div><div class="note"><span class="notetitle">Note:</span> Once these passwords are removed, access to this system will be
+                                limited or blocked until this image is recreated as a cloud
+                                instance. SSH host and authorization keys for Linux (or dynamically
+                                created passwords for Windows sysprep) will be used going
+                                forward.</div>
+</div>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>For larger Windows images, we recommend that you use the tool of your choice to zero out unused disk space.</span>
+                    </li>
+
+                    <li class="substepexpand">
+                        <span>Remove any unwanted programs.</span>
+                    </li>
+
+                </ol>
+
+            </li>
+<li class="stepexpand">
+                <span>Configure a serial port by adding an option to the end of the <samp class="codeph">/boot/grub/menu.lst</samp> file:</span>
+                <div><samp class="codeph">console=ttyS0</samp></div>
+            </li>
+</ol>
+
+        <div class="section">You've now prepared your instance for image creation. ** add 'continue to...' link to image creation topic here **</div>
+
+    </div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="../image-guide/img_migrating_intro.html" title="This section covers migrating images to and from your Eucalyptus cloud.">Migrate an Image</a></div>
+</div>
+<div class="relinfo reltasks"><strong>Related tasks</strong><br/>
+<div><a href="../image-guide/ig_task_migrate_image_aws_to_euca.html" title="You can migrate an S3-backed image from AWS to Eucalyptus.">Migrate a Linux Image from AWS to Eucalyptus</a></div>
+<div><a href="../image-guide/ig_task_migrate_image_euca_to_aws.html" title="To migrate an image from Eucalyptus to AWS, perform the following steps.">Migrate a Linux Image from Eucalyptus to AWS</a></div>
+<div><a href="../image-guide/ig_task_migrate_vsphere.html" title="To migrate a disk in VMSDK format from vSphere to Eucalyptus, perform the following steps.">Migrate an Image from vSphere to Eucalyptus</a></div>
+</div>
+</div>
+
+</body>
+</html>

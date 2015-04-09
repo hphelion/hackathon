@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart_create_secure_key">
+    <title>Create a Secure Key</title>
+    <shortdesc/>
+    <taskbody>
+        <context/>
+        <steps>
+            <step>
+                <cmd>Click on the <uicontrol>Key Pairs</uicontrol> tab.</cmd>
+                
+            </step>
+            <step>
+                <cmd>Click <uicontrol>+ Create Key Pair</uicontrol>.</cmd>
+                <info>
+                    <image id="quickstart_create_secure_key_1" href="images/quickstart_create_secure_key_1.png" scale="75"/>
+                </info>
+            </step>
+            
+            <step>
+                <cmd>Enter a name in the <uicontrol>Key Pair Name</uicontrol> field and then click <uicontrol>Create Key Pair</uicontrol>.</cmd>
+                <!-- Add an image here -->
+                
+            </step>
+            <step>
+                <cmd>When prompted, save the <codeph>keyPairName.pem</codeph> file.</cmd>
+                <!-- More info needed here -->
+            </step>
+            
+        </steps>
+    </taskbody>
+</task>

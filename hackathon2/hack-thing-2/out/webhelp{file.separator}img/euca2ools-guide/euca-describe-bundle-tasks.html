@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="euca-describe-bundle-tasks"/>
+<meta name="abstract" content="Describes currently submitted bundle tasks and their states."/>
+<meta name="description" content="Describes currently submitted bundle tasks and their states."/>
+<meta name="DC.subject" content="EC2 compatible commands, Eucalyptus bundle tasks"/>
+<meta name="keywords" content="EC2 compatible commands, Eucalyptus bundle tasks"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="euca-describe-bundle-tasks"/>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"/>
+<title>euca-describe-bundle-tasks</title>
+</head>
+<body id="euca-describe-bundle-tasks">
+
+
+	<h1 class="topictitle1">euca-describe-bundle-tasks</h1>
+
+
+	
+	
+	<div><p>Describes currently submitted bundle tasks and their states.</p>
+
+		<div class="section"><h2 class="sectiontitle">Syntax</h2>
+			
+			<pre class="codeblock">euca-describe-bundle-tasks [<strong>bundle</strong> ...] [[--filter "name=value"] ...]</pre>
+
+		</div>
+
+
+		<div class="section"><h2 class="sectiontitle">Options</h2>
+			
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+					
+					
+					
+					<thead align="left">
+						<tr>
+							<th class="cellrowborder" valign="top" width="25%" id="d41e60">Option</th>
+
+							<th class="cellrowborder" valign="top" width="60%" id="d41e63">Description</th>
+
+							<th class="cellrowborder" valign="top" width="15%" id="d41e66">Required</th>
+
+						</tr>
+
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e60 "><samp class="codeph"><em>bundle</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d41e63 ">Identifier of the bundle task to describe. If you do not specify
+								a bundle task ID, all bundle tasks are returned.</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d41e66 ">No</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e60 "><samp class="codeph">-F, --filter <em>name=value</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="60%" headers="d41e63 ">Filter for limiting the results. See the table in the Available Filters section for a
+								list of  filters. Use quotation marks if the value has a space ("name=value example"). On a Windows system, use quotation marks even without a space in the value ("name=value").</td>
+
+							<td class="cellrowborder" align="center" valign="top" width="15%" headers="d41e66 ">No</td>
+
+						</tr>
+
+
+					</tbody>
+
+				</table>
+</div>
+
+		</div>
+
+		<div class="section"><h2 class="sectiontitle">Available Filters</h2>
+			
+			<p>You can add filters to your request so that the response includes information for
+				only certain bundle tasks. For example, you can use a filter to return only the
+				bundle tasks in the complete state. Some tips for using filters with this
+				command:</p>
+
+			<ul>
+				<li>You can use multiple values for a filter. Eucalyptus responds with information
+					for a bundle task only if it matches at least one of the filter values that you
+					specified.</li>
+
+
+				<li>You can use multiple filters. For example, you can specify bundles that are
+					stored in a specific bucket and are in the complete state. Eucalyptus responds
+					with the information for a bundle task only if it matches all the filters that
+					you specified. If there is no match, Eucalyptus returns an empty response.</li>
+
+
+				<li>You can use wildcards in a filter value. Use an asterisk (*) to match zero or
+					more characters. Use a question mark (?) to match exactly one character. To
+					escape special characters, use a backslash (\) before the character. For
+					example, a value of \*eucalyptus\?\\ searches for the literal string
+					*eucalyptus?\.</li>
+
+			</ul>
+
+			<p>The following are the available filters for
+					<span class="apiname">euca-describe-bundle-tasks</span>: </p>
+
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+					
+					
+
+					<thead align="left">
+						<tr>
+							<th class="cellrowborder" align="center" valign="top" width="25%" id="d41e144">Filter</th>
+
+							<th class="cellrowborder" align="center" valign="top" width="75%" id="d41e147">Description</th>
+
+
+						</tr>
+
+					</thead>
+
+					<tbody>
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">bundle-id</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">ID of the bundle task</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">error-code</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">If the task failed, returns the error code</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">error-message</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">If the task failed, returns the error message</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">instance-id</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">Instance ID that was bundled</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">progress</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">Level of task completion, in percent (for example, 20%)</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">s3-bucket</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">Bucket where the EMI will be stored</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">s3-prefix</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">Beginning of the AMI name</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">start-time</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">Time the task started</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">state</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">State of the task</td>
+
+						</tr>
+
+						<tr>
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e144 "><samp class="codeph">update-time</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e147 ">Time of the most recent update for the task</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+</div>
+
+		</div>
+
+		<div class="section"><h2 class="sectiontitle">Common Options</h2>
+			
+			
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all">
+					
+					
+
+					<thead align="left">
+						<tr>
+							<th class="cellrowborder" align="center" valign="top" width="25%" id="d41e276">Option</th>
+
+							<th class="cellrowborder" align="center" valign="top" width="75%" id="d41e279">Description</th>
+
+
+						</tr>
+
+					</thead>
+
+					<tbody>
+						<tr id="euca-describe-bundle-tasks__d45e43">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">--region
+								<em>region</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">Region to direct requests to. Only valid for
+								EC2 endpoints. </td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e55">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">-U,--url <em>url</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">URL of the cloud to connect to. Expects an
+								EC2 endpoint /services/Eucalyptus.
+									</td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e67">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">-I,--access-key-id <em>access_key_id</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">User's access key ID</td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e79">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">-S,--secret-key <em>secret_key</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">User's secret key</td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e91">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">--config
+									<em>configuration_path</em></samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">Read credentials and cloud settings from the
+								specified config file. <p>Default:
+										<span class="filepath">$HOME/.eucarc or
+										/etc/euca2ools/eucarc</span>.</p>
+</td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e109">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">--debug</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">Prints what the command sends to the server
+								and what it receives from the server. Use when
+								you're trying to debug Euca2ools.</td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e119">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">--debugger</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">Enable interactive debugger on error</td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e129">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">-h,--help</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">Display the manual page for the
+								command.</td>
+
+						</tr>
+
+						<tr id="euca-describe-bundle-tasks__d45e139">
+							<td class="cellrowborder" valign="top" width="25%" headers="d41e276 "><samp class="codeph">--version</samp></td>
+
+							<td class="cellrowborder" valign="top" width="75%" headers="d41e279 ">Display the version of this tool</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+</div>
+
+		</div>
+
+
+		<div class="section"><h2 class="sectiontitle">Output</h2>
+			
+			<ul>
+				<li>Output type identifier ("BUNDLE")</li>
+
+				<li>Bundle ID</li>
+
+				<li>Instance ID</li>
+
+				<li>Bucket name</li>
+
+				<li>Image prefix</li>
+
+				<li>Start time</li>
+
+				<li>Update time</li>
+
+				<li>Bundle state (pending, waiting-for-shutdown, bundling, storing, cancelling,
+					complete, failed)</li>
+
+				<li>Percentage progress, if state is "bundling"</li>
+
+			</ul>
+
+		</div>
+
+
+		<div class="section"><h2 class="sectiontitle">Example</h2>
+			
+			<pre class="codeblock">euca-describe-bundle-tasks
+BUNDLE bun-CFF03DFA i-E7AC420A mah-bukkit winemi pending
+2012-01-01T00:00:00.000Z 2012-01-01T00:00:00.000Z</pre>
+
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

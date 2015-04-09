@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140212162639374/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140212162639374/shared/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="images_vmw_win_convert" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="task:1;4:35">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="title:1;5:9">Convert the VMDK to an Image</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita"/>
+	<prolog class="- topic/prolog " xtrc="prolog:1;7:10" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita">
+		<copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;8:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita">
+			<keywords class="- topic/keywords " xtrc="keywords:1;9:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita">
+				<indexterm class="- topic/indexterm " xtrc="indexterm:1;10:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita">Images <indexterm class="- topic/indexterm " xtrc="indexterm:2;10:34" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita">Windows <indexterm class="- topic/indexterm " xtrc="indexterm:3;10:53" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita">Convert
+							VMDK</indexterm>
+					</indexterm>
+				</indexterm>
+			</keywords>
+		<prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+	</prolog>
+	<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="taskbody:1;17:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="context:1;18:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="p:1;19:7">After your Windows VM image is ready on ESX/ESX-i/VCenter, use
+				the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:1;20:17">euca_imager</codeph> command to download the image
+				and convert it to the format Eucalyptus uses. The
+					<codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:2;22:14">euca_imager</codeph> command converts a remote VMDK
+				located on a datastore into a disk image on the local disk on
+				the CC/VMware Broker machine.</p>
+		</context>
+		<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="steps:1;26:10">
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="step:1;27:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="cmd:1;28:10">Log into the CC/VMware Broker machine, set the required 
+					environment variables, and source your <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:3;29:53">eucarc</codeph>
+					 file.</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="info:1;31:11">
+					<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeblock:1;32:17">export VDDK_HOME=/opt/packages/vddk/ 
+export EUCALYPTUS=/ 
+export LD_LIBRARY_PATH=/opt/packages/vddk/lib/vmware-vix-disklib/lib64/ 
+source ~/.euca/eucarc
+</codeblock>
+				</info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="step:2;39:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="cmd:2;40:10">Enter the euca_imager command with appropriate parameters
+					to extract and convert the VMDK to a raw disk image.
+					Parameters are described in the following
+						table:<draft-comment translate="no" class="- topic/draft-comment " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="draft-comment:1;43:28">Verify these params and
+						descriptions.</draft-comment></cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="info:2;45:11">
+					<table class="- topic/table " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="table:1;46:13">
+						<tgroup cols="2" class="- topic/tgroup " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="tgroup:1;47:24">
+							<thead class="- topic/thead " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="thead:1;48:15">
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:1;49:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:1;50:17">Parameter</entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:2;51:17">Description</entry>
+								</row>
+							</thead>
+							<tbody class="- topic/tbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="tbody:1;54:15">
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:2;55:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:3;56:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:4;56:25">debug</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:4;57:17">Enables <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:5;57:33">euca_imager</codeph>
+										debugging output</entry>
+								</row>
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:3;60:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:5;61:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:6;61:25">in</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:6;62:17">https URL for the vCenter Server or
+										ESX/ESXi machine </entry>
+								</row>
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:4;65:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:7;66:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:7;66:25">out</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:8;67:17">User-defined name of disk </entry>
+								</row>
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:5;69:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:9;70:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:8;70:25">login</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:10;71:17">Name used to access the VMware
+										machine </entry>
+								</row>
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:6;74:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:11;75:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:9;75:25">password</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:12;76:17">Password used to access the VMware
+										machine</entry>
+								</row>
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:7;79:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:13;80:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:10;80:25">vsphere-vmdk</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:14;81:17">Go to vSphere client, find the
+										virtual machine that you have installed
+										(make sure it is in <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:11;83:39">powered
+										off</codeph> state), and select the
+										<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="uicontrol:1;85:22">Hard disk 1</uicontrol>
+										resource. There will be a
+										<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="uicontrol:2;87:22">Disk File</uicontrol> field
+										for the VMDK, and a similar field on the
+										<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="uicontrol:3;89:22">Option</uicontrol> tab for
+										the VMX file. </entry>
+								</row>
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:8;92:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:15;93:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:12;93:25">vsphere-vmx</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:16;94:17">Same description as vsphere-vmdk
+										parameter. This is optional if you’re
+										contacting an ESX node directly, but may
+										be required when contacting
+										vCenter.</entry>
+								</row>
+								<row class="- topic/row " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="row:9;100:14">
+									<entry colname="col1" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:17;101:17"><codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:13;101:25">vsphere-datacenter</codeph></entry>
+									<entry colname="col2" class="- topic/entry " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="entry:18;102:17">Specified name of the datacenter.
+										This is optional if you’re contacting an
+										ESX node directly, but may be required
+										when contacting vCenter.</entry>
+								</row>
+
+							</tbody>
+						</tgroup>
+					</table>
+				</info>
+			</step>
+		</steps>
+		<example class="- topic/example " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="example:1;114:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="p:2;115:7">The following example shows euca_imager with the appropriate
+				parameters as described above converting a VMDK to a raw disk
+				image. Note that the prefix of the <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:14;117:48">out</codeph>
+				parameter must begin with the word <codeph class="+ topic/ph pr-d/codeph " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeph:15;118:48">windows</codeph>.</p>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_vmw_win_convert.dita" xtrc="codeblock:2;119:15">/usr/lib/eucalyptus/euca_imager debug=yes convert in=
+https://192.168.7.198 out=windows.disk login=Administrator password=password 
+vsphere-vmdk="[datastore1]WindowsVM/WindowsVM.vmdk" vsphere-datacenter=DataCenter1
+vsphere-vmx="[datastore1]WindowsVM/WindowsVM.vmx"</codeblock>
+		</example>
+		
+	</taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:16;34:70" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="concept" xtrc="topicref:10;28:80" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/images_win.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Create a Windows Image (KVM)</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">This section details the tasks necessary to create a Windows image.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:15;33:66" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/images_win_sysprep.dita" role="previous"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Run Sysprep</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:17;35:62" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/images_win_add.dita" role="next"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Add Image to Eucalyptus</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link></linkpool></related-links>
+</task>

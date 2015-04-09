@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><?workdir /Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211192806652/shared?><?workdir-uri file:/Users/scottb/Documents/git/documentation/content/en_us/image-guide/temp/temp20140211192806652/shared/?><?path2project ../?><task xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="images_win_activedirectory" ditaarch:DITAArchVersion="1.2" domains="(topic task)                            (topic hi-d)                             (topic ut-d)                             (topic indexing-d)                            (topic hazard-d)                            (topic abbrev-d)                            (topic pr-d)                             (topic sw-d)                            (topic ui-d)                            (topic task strictTaskbody-c)    " class="- topic/topic task/task " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="task:1;4:39">
+	<title class="- topic/title " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="title:1;5:9">Configure Active Directory</title>
+	<shortdesc class="- topic/shortdesc " xtrc="shortdesc:1;6:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita"/>
+	<prolog class="- topic/prolog " xtrc="prolog:1;7:10" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita">
+		<copyright class="- topic/copyright " xtrc="copyright:1;7:20" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <copyryear class="- topic/copyryear " xtrc="copyryear:1;8:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" year="2013"/>
+            <copyrholder class="- topic/copyrholder " xtrc="copyrholder:1;9:26" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus Systems</copyrholder>
+        </copyright><metadata class="- topic/metadata " xtrc="metadata:1;8:13" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita">
+			<keywords class="- topic/keywords " xtrc="keywords:1;9:14" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita">
+				<indexterm class="- topic/indexterm " xtrc="indexterm:1;10:16" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita">Active Directory</indexterm>
+			</keywords>
+		<prodinfo class="- topic/prodinfo " xtrc="prodinfo:1;11:19" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+            <prodname class="- topic/prodname " xtrc="prodname:1;12:23" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">Eucalyptus</prodname>
+            <vrmlist class="- topic/vrmlist " xtrc="vrmlist:1;13:22" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap">
+                <vrm class="- topic/vrm " version="3.4" xtrc="vrm:1;14:37" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"/>
+            </vrmlist>
+        </prodinfo></metadata>
+	</prolog>
+	<taskbody class="- topic/body task/taskbody " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="taskbody:1;14:12">
+		<context class="- topic/section task/context " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="context:1;15:12">
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="p:1;16:7">The Eucalyptus Integration service lets an enterprise with
+				existing Active Directory domains attach Windows instances to
+				the domains and control access to these instances using the
+				existing AD user database. Users can log into the instance
+				either using their domain credentials or the Administrator’s
+				password generated with the <cmdname class="+ topic/keyword sw-d/cmdname " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="cmdname:1;21:42">euca-get-password</cmdname>
+				command. </p>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="p:2;23:7">Because AD technology is tightly integrated with domain name
+				service (DNS), the default name server contacted by the instance
+				must be able to resolve the AD address as a proper domain
+				controller. You can do this for all networking modes except
+				System, by configuring the following line the CC’s
+				eucalyptus.conf file:</p>
+			<codeblock xml:space="preserve" class="+ topic/pre pr-d/codeblock " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="codeblock:1;29:15">VNET_DNS=&lt;domain_controller_IP_address&gt;</codeblock>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="p:3;30:7">If there is no such pre-existing DNS set-up or your networking
+				mode is System, you might need to change the VM’s network
+				interface so that the preferred DNS server points to the domain
+				controller. </p>
+			<p class="- topic/p " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="p:4;34:7">To set up Active Directory: </p>
+		</context>
+		<steps class="- topic/ol task/steps " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="steps:1;36:10">
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="step:1;37:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="cmd:1;38:10">Click <menucascade class="+ topic/ph ui-d/menucascade " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="menucascade:1;38:29">
+						<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:1;39:18">Windows Programs</uicontrol>
+						<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:2;40:18">Eucalyptus</uicontrol>
+						<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:3;41:18">Eucalyptus Setup</uicontrol>
+					</menucascade>. </cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="info:1;43:11"><image href="images/ewi_win_start.jpg" scale="80" alt="Eucalyptus setup selection" placement="inline" class="- topic/image " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="image:1;44:41"/></info>
+				<stepresult class="- topic/itemgroup task/stepresult " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="stepresult:1;45:17">The <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:4;45:32">Eucalyptus Windows
+						Integration</uicontrol> popup displays.</stepresult>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="step:2;48:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="cmd:2;49:10">Click the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:5;49:31">Active Directory</uicontrol> tab in
+					the Eucalyptus Windows Integration window and enter the
+					following information:</cmd>
+				<info class="- topic/itemgroup task/info " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="info:2;52:11">
+					<image href="images/ewi_ad.jpg" scale="80" alt="Active Directory tab" placement="inline" class="- topic/image " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="image:2;54:35"/>
+					<ul class="- topic/ul " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="ul:1;55:10">
+						<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="li:1;56:11">Enter the domain name of the existing Active Directory
+							domain controller in the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:6;57:44">AD
+								Address</uicontrol> field.</li>
+						<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="li:2;59:11">Enter the administrator username in the
+								<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:7;60:20">Admin Username</uicontrol> field. We
+							recommend using a generic user account that has
+							permission to join a computer to a domain or a
+							specific organizational unit.</li>
+						<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="li:3;64:11">Enter and confirm the password in the
+								<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:8;65:20">Admin Password</uicontrol> field.
+							Note that the Admin username and password are
+							required to join an instance to an Active Directory.
+							When launched in Eucalyptus, these properties will
+							be deleted as soon as the instance joins (or fails
+							to join) the domain.</li>
+						<li class="- topic/li " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="li:4;71:11">Optionally, enter an organizational unit in the
+								<uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:9;72:20">Organizational Unit</uicontrol>
+							field. This specifies a container that the instances
+							launched from this image will be attach to.</li>
+					</ul>
+					<note type="tip" class="- topic/note " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="note:1;76:23">If the values entered in this section are
+						incorrect, the launched instances will fail to join the
+						domain. We recommend that you verify the information by
+						manually joining a computer to a domain using the same
+						information that you entered in this step. You may first
+						log in the launched instance using the administrator
+						password (<cmdname class="+ topic/keyword sw-d/cmdname " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="cmdname:2;82:26">euca-get-passcword</cmdname>) and
+						manually join the domain for verification.</note>
+				</info>
+			</step>
+			<step class="- topic/li task/step " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="step:3;86:10">
+				<cmd class="- topic/ph task/cmd " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="cmd:3;87:10">Click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="/Users/scottb/Documents/git/documentation/content/en_us/shared/images_win_activedirectory.dita" xtrc="uicontrol:10;87:27">Apply</uicontrol>.</cmd>
+			</step>
+		</steps>
+		
+	</taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:13;31:74" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap"><link class="- topic/link " mapclass="- map/topicref " type="concept" xtrc="topicref:10;28:80" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/images_win.dita" role="parent"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Create a Windows Image (KVM)</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">This section details the tasks necessary to create a Windows image.</desc></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:12;30:62" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/images_win_wis.dita" role="previous"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Install Eucalyptus Windows Integration</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link><link class="- topic/link " mapclass="- map/topicref " type="task" xtrc="topicref:14;32:62" xtrf="/Users/scottb/Documents/git/documentation/content/en_us/image-guide.ditamap" href="../shared/images_win_rdp.dita" role="next"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Configure Remote Desktop</linktext><?ditaot genshortdesc?><desc class="- topic/desc "/></link></linkpool></related-links>
+</task>
